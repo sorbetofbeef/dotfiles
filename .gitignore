@@ -1,0 +1,12 @@
+**/**/**.bak
+**/**/*.bak
+*/**/*.bak
+*/*.bak
+*/.bak
+*.bak
+**/**/**.backup
+**/.backup
+*/.backup
+*.backup
+neomutt/.keys
+zsh/.*

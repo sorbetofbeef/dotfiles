@@ -1,0 +1,24 @@
+bars=primary
+
+primary-output=LVDS-1
+primary-left=clock
+primary-right=memory,cpu
+primary-center=ws
+
+ws-dso=workspace
+ws-show_all=true
+ws-name_only=true
+ws-length=40
+
+clock-dso=clock
+clock-format=%A, %B %d, %Y  %H:%M 
+clock-length=40
+
+cpu-dso=cpu
+cpu-format= %u%% 
+cpu-length=20
+
+memory-dso=memory
+memory-percent=true
+memory-format= %.0f%s 
+memory-length=20

@@ -1,0 +1,26 @@
+#!/bin/sh
+
+case $start_up in
+  1 )
+    _start_sway
+    ;;
+  2 )
+    _start_cinnamon
+    ;;
+  3 )
+    _start_hikari
+    ;;
+  4 )
+    _start_river
+    ;;
+  5 ) 
+    _start_nothing
+    ;;
+  * )
+    echo "Invalid choice; how'd you even get here?"
+    exit 1
+    ;;
+esac
+export $(dbus-launch)
+eval $(keychain --dir ~/.ssh/keychain --eval 4163DAE3A25242C4 ~/.ssh/id_ed25519 --agents gpg,ssh) &&
+startx -- vt 1 "${XINITRC}"

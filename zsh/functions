@@ -1,0 +1,31 @@
+#!/bin/sh
+
+service="$1"
+
+error_exit(){
+	msg="$1"
+	[ -z "$msg" ] && msg="unknown error"
+	printf "\nERROR: ${msg}. Exitting now"
+	exit 1
+}
+
+_check() {
+	[ -z "$service" ]&& error_exit "a service name argument is required"
+	return
+}
+
+link() {
+	if [ -x "/etc/sv/${servic}/run" ]; then
+		ln -sv "/etc/sv/${service}" /var/service/
+	else
+    		error_exit "service $service does not exist"
+	fi
+	return 
+}
+
+main() {
+    _check || error_exit
+    link || error_exit
+}
+
+main

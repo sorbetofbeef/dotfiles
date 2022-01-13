@@ -1,0 +1,20 @@
+set icons true
+set drawbox true
+set globsearch true
+set incsearch true
+set number true
+set relativenumber true
+set scrolloff 4
+set tabstop 2
+
+map D delete
+map H set hidden!
+
+map a push $nvim<space>
+map A push $mkdir<space>
+
+map t $tar -xf $f
+map T $for file in $fs ; do tar -xf $file ; done
+
+map z $unzip $f
+map Z $for file in $fs ; do unzip $file ; done

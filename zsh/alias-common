@@ -1,0 +1,114 @@
+##############################
+# ~/.config/zsh/alias-common #
+#                            # 
+#     COMMON ALIASES         #
+#     --------------         #
+#      -- 06.20.2021         #
+#                            #
+##############################
+
+# XBPS
+# alias \
+	# xI='doas xbps-install -S' \
+	# xR='doas xbps-remove -Ro' \
+	# xU='doas xbps-install -Su' \
+	# xF='doas xbps-query -M -R --regex' 
+
+# XBPS
+alias \
+	kI='kiss install' \
+	kB='kiss build' \
+	kR='kiss remove' \
+	kU='kiss update' \
+	kS='kiss search \* | rg -i' 
+
+# SV
+alias \
+	sA="doas link-service" \
+	sRm="doas rm -Iv /var/service/${1}" \
+	sU='doas sv up' \
+	sD='doas sv down' \
+	sO='doas sv once' \
+	sRe='doas sv restart' \
+	sM='doas sv status'
+
+# SYSTEMD - USER
+# alias \
+# 	sUE='systemctl --user enable' \
+# 	sUENow='systemctl --user enable --now' \
+# 	sUD='systemctl --user disable' \
+# 	sUDNow='systemctl --user disable --now' \
+# 	sUL='systemctl --user list-units' \
+# 	sULa='systemctl --user list-unit-files' \
+# 	sUMon='systemctl --user status' \
+# 	sUSt='systemctl --user start' \
+# 	sUSp='systemctl --user stop' 
+
+# ROOT
+alias \
+	_="doas" \
+	chown='doas chown -v' \
+	mount='doas mount -v' \
+	umount='doas umount -v' \
+	df='doas df -h' \
+	du='doas du -sh' \
+	reboot='doas reboot' \
+	poweroff='doas poweroff'
+
+# USER
+alias \
+	luamake='/home/me/.local/src/lua-language-server/3rd/luamake/luamake' \
+	l='exa -la -T -L1 --sort=type --no-permissions --octal-permissions --group-directories-first --icons --color=auto' \
+	la='exa -la -T -L2 --sort=type --no-permissions --octal-permissions --group-directories-first --icons --color=auto' \
+	laa='exa -la -T -L3 --sort=type --no-permissions --octal-permissions --group-directories-first --icons --color=auto' \
+	laaa='exa -la -T -L4 --sort=type --no-permissions --octal-permissions --group-directories-first --icons --color=auto' \
+	ls='exa --group-directories-first --icons --color=auto' \
+	find='fd' \
+	grep='rg' \
+	cp='cp -rv' \
+	mv='mv -v' \
+	mkdir='mkdir -pv' \
+	ln='ln -sv' \
+	rm='rm -iv' \
+	rmd='rm -riv' \
+	rmf='rm -rfv' \
+	chmod='chmod -v' \
+ 	c='clear' \
+	q='exit'
+
+# GIT
+alias \
+	bax='/usr/bin/git --work-tree=/home/me --git-dir=/home/me/.config/dotfiles' \
+	g='git status' \
+	gIb='git init --bare' \
+	gI='git init' \
+	gRA='git remote add origin master' \
+	gRm='git remote remove' \
+	gRs='git remote show' \
+	gRu='git remote update' \
+	gACm='git add . && git commit -m' \
+	gPl='git pull' \
+	gP='git push' \
+	gPu='git push -u' \
+	gM='git merge' \
+	gF='git fetch' \
+	gFa='git fetch --all'
+
+# GITHUB-CLI
+alias \
+	grCl='gh repo clone ' \
+	grCrPr='gh repo create  --private' \
+	grCrPu='gh repo create --public' \
+	grV='gh repo view' \
+	grF='h repo fork --clone' \
+	gpChk='gh pr checkout' \
+	gpCls='gh pr close' \
+	gpDif='gh pr diff' \
+	gpLs='gh pr list' \
+	gpM='gh pr merge' \
+	gpR='gh pr ready' \
+	gpRe='gh pr reopen' \
+	gpEd='gh pr edit' \
+	gpRvw='gh pr review' \
+	gpSts='gh pr status' \
+	gpView='gh pr view'

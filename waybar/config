@@ -1,0 +1,115 @@
+{
+  "layer": "bottom",
+  "position": "top",
+  "exclusive": true,
+  "height": "",
+  "width": "",
+  "margin": "",
+  "modules-left": ["river/tags"],
+  // "modules-left": ["sway/workspaces"],
+  "modules-center": ["clock"],
+  "modules-right": ["custom/left-cap", "custom/pacman", "pulseaudio", "bluetooth", "network", "battery", "custom/spacer", "custom/power"],
+
+  "river/tags": {
+      "num-tags": 9,
+      "tag-labels": [ "", "", "", "", "", "", "", "", "" ],
+  },
+
+  // "sway/workspaces": {
+  //   "disable-scroll": true,
+  //   "all-outputs": true,
+  //   "format": "{icon}",
+  //   "persistent_workspaces": {
+  //       "1": [],
+  //       "2": [],
+  //       "3": [],
+  //       "4": [],
+  //    },
+  //   "format-icons": {
+  //     "1": "",
+  //     "2": "",
+  //     "3": "",
+  //     "4": "",
+  //     "urgent": "",
+  //     "focused": "",
+  //     "default": ""
+  //   }
+  // },
+
+  "clock": {
+    "format": " {:%A %B, %d %Y  %H:%M} ",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+  },
+  
+  "battery": {
+    "states": {
+      "critical": 14
+    },
+    "format": "{icon}",
+    "format-critical": "{icon}",
+    "format-icons":  [ "", "", "" ],
+    "tooltip": "{capacity}"
+  },
+  
+  "network": {
+    "format-wifi": "",
+    "format-disconnected": "",
+    "tooltip-format": "{essid}"
+  },
+
+  "custom/pacman": {
+    "format": "",
+    "interval": 3600,
+    "exec": "xbps-install -Sun | wc -l",
+    "exec-if": "xbps-wrapper",
+    "on-click": "kitty doas xbps-install -Su; pkill -SIGRTMIN+8 waybar",
+    "signal": 8
+  },
+
+  "bluetooth": {
+    "format": "{icon}",
+    "format-disabled": "",
+    "format-alt": "bluetooth: {status}",
+    "format-icons": {
+      "enabled": "",
+      "disabled": ""
+    },
+    "tooltip-format": "{status}"
+  },
+
+  "custom/power": {
+    "format": "",
+    "on-click": "power-wrapper",
+    "tooltip-format": "alacritty --hold --class \"Launcher\" --title \"Power\" -e power-wrapper",
+    "tooltip": false,
+  },
+
+  "pulseaudio": {
+    "states": {
+      "extreme": 101,
+      "high": 90,
+      "good": 60,
+      "low": 30,
+      "lowest": 0,
+    },
+    "format-muted": "",
+    "format": "{icon}",
+    "format-icons": {
+      "default": [ "", "", ""],
+    },
+    "on-click": "alacritty --class \"Launcher\" --title \"Volume\" -e volume-control",
+    "tooltip-format": "{volume}",
+  },
+
+  "custom/right-cap": {
+    "format": " ",
+  },
+
+  "custom/left-cap": {
+    "format": " ",
+  },
+
+  "custom/spacer": {
+    "format": " ",
+  },
+}
