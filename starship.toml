@@ -1,6 +1,6 @@
 # Use custom format
 format="""
-$fill$time$fill
+$fill$time$fill$package
 $directory$character"""
 right_format = """$all"""
 
@@ -126,7 +126,8 @@ format = '\[[$symbol$cloud(\($project\))]($style)\]'
 
 [package]
 symbol = "   "
-format = ' \[ [$symbol $version]($style) \] '
+format = '[\[](bold red) [$symbol $version]($style) [\]](bold red)'
+style = 'bold yellow'
 
 [perl]
 symbol = "   "

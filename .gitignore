@@ -10,3 +10,4 @@
 *.backup
 neomutt/.keys
 zsh/.*
+fish/fish_variables
