@@ -1,0 +1,77 @@
+# This file contains fish universal variable definitions.
+# VERSION: 3.0
+SETUVAR --export ANDROID_SDK_HOME:/home/me/\x2econfig/android
+SETUVAR --export ANSIBLE_CONFIG:/home/me/\x2econfig/ansible/ansible\x2ecfg
+SETUVAR --export AWT_TOOLKIT:MToolkit\x1ewmname\x1eLG3D
+SETUVAR --export CARGO_HOME:/home/me/\x2elocal/share/cargo
+SETUVAR --export CHROME_FLAGS:\x24CHROME_FLAGS\x20\x2d\x2denable\x2dfeatures\x3dVaapiVideoDecoder\x1e\x2d\x2denable\x2dfeatures\x3dVaapiVideoDecoder\x1e\x2d\x2denable\x2dfeatures\x3dVaapiVideoDecoder\x1e\x2d\x2denable\x2dfeatures\x3dVaapiVideoDecoder\x1e\x2d\x2denable\x2dfeatures\x3dVaapiVideoDecoder\x1e\x2d\x2denable\x2dfeatures\x3dVaapiVideoDecoder\x1e\x2d\x2denable\x2dfeatures\x3dVaapiVideoDecoder\x1e\x2d\x2denable\x2dfeatures\x3dVaapiVideoDecoder\x1e\x2d\x2denable\x2dfeatures\x3dVaapiVideoDecoder
+SETUVAR --export DESKTOP_SESSION:river
+SETUVAR --export EDITOR:nvim
+SETUVAR --export GO111MODULE:on
+SETUVAR --export --path GOPATH:/home/me/\x2elocal/share/go
+SETUVAR --export GPG_TTY:/dev/tty1
+SETUVAR --export GTK2_RC_FILES:/home/me/\x2econfig/gtk\x2d2\x2e0/gtkrc
+SETUVAR --export GTK_CSD:1
+SETUVAR --export LESS:\x2dR
+SETUVAR --export LESSHISTFILE:\x2d
+SETUVAR --export LESSOPEN:\x1d
+SETUVAR --export MBSYNCRC:/home/me/\x2econfig/mbsync/mbsyncrc
+SETUVAR --export MOZ_ENABLE_WAYLAND:1
+SETUVAR --export MOZ_USE_XINPUT2:1
+SETUVAR --export NOTMUCH_CONFIG:/home/me/\x2econfig/notmuch\x2dconfig
+SETUVAR --export PASSWORD_STORE_DIR:/home/me/\x2elocal/share/password\x2dstore
+SETUVAR --export --path PATH:/usr/lib/ccache/bin\x1e/home/me/\x2elocal/bin\x1e/home/me/\x2elocal/share/go/bin\x1e/home/me/\x2elocal/share/cargo/bin\x1e/home/me/\x2elocal/share/rustup/bin\x1e/home/me/\x2eyarn/bin\x1e/usr/bin\x1e/usr/sbin\x1e/usr/local/bin
+SETUVAR --export QT_QPA_PLATFORM:wayland\x2degl
+SETUVAR --export QT_QPA_PLATFORMTHEME:qt5ct
+SETUVAR --export QT_WAYLAND_DISABLE_WINDOWDECORATION:0
+SETUVAR --export RUSTC_WRAPPER:/usr/bin/sccache
+SETUVAR --export RUSTUP_HOME:/home/me/\x2elocal/share/rustup
+SETUVAR --export SSH_AGENT_PID:681
+SETUVAR --export SSH_AUTH_SOCK:/tmp/ssh\x2dXXXXXXMSNAum/agent\x2e671
+SETUVAR --export TMUX_TMPDIR:/run/user/1000
+SETUVAR --export VISUAL:nvim
+SETUVAR --export WEECHAT_HOME:/home/me/\x2econfig/weechat
+SETUVAR --export WGETRC:/home/me/\x2econfig/wget/wgetrc
+SETUVAR --export WWW_HOME:/home/me/\x2econfig/w3m
+SETUVAR --export XDG_CACHE_HOME:/home/me/\x2ecache
+SETUVAR --export XDG_CONFIG_HOME:/home/me/\x2econfig
+SETUVAR --export XDG_CURRENT_DESKTOP:river
+SETUVAR --export XDG_DATA_HOME:/home/me/\x2elocal/share
+SETUVAR --export XDG_SESSION_DESKTOP:river
+SETUVAR --export XDG_SESSION_TYPE:wayland
+SETUVAR --export XKB_DEFAULT_LAYOUT:us
+SETUVAR --export XKB_DEFAULT_OPTIONS:altwin\x3aswap_lalt_lwin\x2ccaps\x3actrl_modifier
+SETUVAR --export ZDOTDIR:/home/me/\x2econfig/zsh
+SETUVAR --export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE:fg\x3dcyan\x2cbold\x2cunderline
+SETUVAR --export _JAVA_AWT_WM_NONREPARENTING:1
+SETUVAR __fish_initialized:3100
+SETUVAR fish_color_autosuggestion:555\x1ebrblack
+SETUVAR fish_color_cancel:\x2dr
+SETUVAR fish_color_command:005fd7
+SETUVAR fish_color_comment:990000
+SETUVAR fish_color_cwd:green
+SETUVAR fish_color_cwd_root:red
+SETUVAR fish_color_end:009900
+SETUVAR fish_color_error:ff0000
+SETUVAR fish_color_escape:00a6b2
+SETUVAR fish_color_history_current:\x2d\x2dbold
+SETUVAR fish_color_host:normal
+SETUVAR fish_color_host_remote:yellow
+SETUVAR fish_color_normal:normal
+SETUVAR fish_color_operator:00a6b2
+SETUVAR fish_color_param:00afff
+SETUVAR fish_color_quote:999900
+SETUVAR fish_color_redirection:00afff
+SETUVAR fish_color_search_match:bryellow\x1e\x2d\x2dbackground\x3dbrblack
+SETUVAR fish_color_selection:white\x1e\x2d\x2dbold\x1e\x2d\x2dbackground\x3dbrblack
+SETUVAR fish_color_status:red
+SETUVAR fish_color_user:brgreen
+SETUVAR fish_color_valid_path:\x2d\x2dunderline
+SETUVAR fish_key_bindings:fish_default_key_bindings
+SETUVAR fish_pager_color_completion:\x1d
+SETUVAR fish_pager_color_description:B3A06D\x1eyellow
+SETUVAR fish_pager_color_prefix:normal\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
+SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
+SETUVAR fish_user_paths:/home/me/\x2elocal/share/go/bin\x1e/home/me/\x2elocal/share/cargo/bin\x1e/usr/sbin\x1e/home/me/\x2elocal/bin\x1e/usr/local/bin\x1e/home/me/\x2eyarn/bin\x1e/usr/local/sbin\x1e/usr/local/bin\x1e/usr/bin\x1e/usr/bin/site_perl\x1e/usr/bin/vendor_perl\x1e/usr/bin/core_perl
+SETUVAR --export npm_config_cache:/home/me/\x2ecache/npm
+SETUVAR --export npm_config_userconfig:/home/me/\x2econfig/npmrc
