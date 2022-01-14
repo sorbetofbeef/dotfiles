@@ -1,8 +1,8 @@
 # Use custom format
 format="""
-$fill$time$fill$package
+$git_branch[═](bold red)$git_status$fill$time$fill$package
 $directory$character"""
-right_format = """$all"""
+right_format = """$cmd_duration $all"""
 
 scan_timeout = 10
 add_newline = true
@@ -27,7 +27,7 @@ symbol = "   "
 format = ' \[[$symbol($profile) (\( $region \)) (\[ $duration \])]($style) \] '
 
 [cmake]
-format = ' \[ [$symbol ($version)]($style) \] '
+format = ' \[ [$symbol($version)]($style) \] '
 
 [cmd_duration]
 format = "[ $duration]($style)"
@@ -69,10 +69,10 @@ format = '\[[$symbol$account(@$domain)(\($region\))]($style)\]'
 
 [git_branch]
 symbol = "   "
-format = ' \[[$symbol$branch]($style) \] '
+format = '[\[](bold red) [$symbol$branch]($style) [\]](bold red)'
 
 [git_status]
-format = ' ([\[ $all_status $ahead_behind\]]($style)) '
+format = '([\[$all_status $ahead_behind \]]($style))'
 
 [golang]
 symbol = "   "
@@ -101,7 +101,6 @@ format = ' \[[ $symbol $context (\($namespace\) )]($style)\ ] '
 
 [lua]
 format = '\[[$symbol($version)]($style)\]'
-
 
 [memory_usage]
 symbol = "  "
@@ -171,7 +170,7 @@ format = '\[[$symbol$workspace]($style)\]'
 
 [time]
 disabled=false
-format = '[❰](bold red) [$time]($style) [❱](bold red)'
+format = '[╡](bold red)[$time]($style)[╞](bold red)'
 style = 'bold purple'
 
 [username]
