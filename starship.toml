@@ -7,6 +7,15 @@ right_format = """$cmd_duration $all"""
 scan_timeout = 10
 add_newline = true
 
+# continuation_prompt = "▶▶"
+
+[jobs]
+format='$number$symbol$style'
+symbol='   '
+number_threshold=2
+symbol_threshold=1
+style='green'
+
 [directory]
 read_only = "   "
 style="bold cyan"
@@ -70,6 +79,7 @@ format = '\[[$symbol$account(@$domain)(\($region\))]($style)\]'
 [git_branch]
 symbol = "   "
 format = '[\[](bold red) [$symbol$branch]($style) [\]](bold red)'
+style='bold italic purple'
 
 [git_status]
 format = '([\[$all_status $ahead_behind \]]($style))'

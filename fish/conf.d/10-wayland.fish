@@ -1,0 +1,8 @@
+# set -Ux GDK_BACKEND wayland
+set -Ux GTK_CSD 1
+set -Ux MOZ_ENABLE_WAYLAND 1
+set -Ux MOZ_USE_XINPUT2 1
+# qt
+set -Ux QT_QPA_PLATFORMTHEME qt5ct
+set -Ux QT_QPA_PLATFORM wayland-egl
+set -Ux QT_WAYLAND_DISABLE_WINDOWDECORATION 0

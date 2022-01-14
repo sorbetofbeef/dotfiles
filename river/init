@@ -8,10 +8,11 @@ mod="Mod4"
 
 # Mod+Shift+Return to start an instance of foot (https://codeberg.org/dnkl/foot)
 # riverctl map normal $mod Return spawn 'alacritty-start'
-riverctl map normal $mod Return spawn "kitty -1 --title lf $CWD" 
+riverctl map normal $mod Return spawn "kitty -1 --title 'Files' lf $CWD" 
 
 # password menu
-riverctl map normal $mod Space spawn wofipassmenu
+riverctl map normal $mod P spawn wofipassmenu
+riverctl map normal $mod Q spawn wofi-power-menu
 # launcher
 riverctl map normal $mod Space spawn 'wofi --allow-images --show drun'
 
@@ -73,7 +74,7 @@ riverctl map-pointer normal $mod BTN_LEFT move-view
 # Mod + Right Mouse Button to resize views
 riverctl map-pointer normal $mod BTN_RIGHT resize-view
 
-for i in $(seq 1 9)
+for i in $(seq 1 4)
 do
     tags=$((1 << ($i - 1)))
 
@@ -157,7 +158,7 @@ riverctl set-repeat 50 250
 riverctl spawn 'waybar'
 riverctl spawn 'wbg /home/me/media/wp/current-bg'
 
-# riverctl input 2_Synaptics_TouchPad events enabled
+riverctl input 2_Synaptics_TouchPad events enabled
 riverctl input 2:7:SynPS/2_Synaptics_TouchPad accel-profile adaptive
 riverctl input 2:7:SynPS/2_Synaptics_TouchPad click-method clickfinger
 riverctl input 2:7:SynPS/2_Synaptics_TouchPad drag enabled

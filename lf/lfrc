@@ -18,3 +18,25 @@ map T $for file in $fs ; do tar -xf $file ; done
 
 map z $unzip $f
 map Z $for file in $fs ; do unzip $file ; done
+
+map <c-p>
+map <c-p>i push !paru<space>-Syu<space>
+map <c-p>r push !paru<space>-Rscu<space>
+map <c-p>f push !paru<space>-Ss<space>
+
+map +
+map +x %doas chmod -v +x $fx
+map +r %doas chmod -v +r $fx
+map +w %doas chmod -v +w $fx
+
+map -
+map -x %doas chmod -v -x $fx
+map -r %doas chmod -v -r $fx
+map -w %doas chmod -v -w $fx
+
+map <c-a> %g-add $fx
+map <c-g>a %g-add $fx
+map <c-g>c push !git<space>commit<space>-m<space>
+map <c-g>p !git push
+map <c-g>u push !git<space>push<space>-u<space>
+map <c-g>

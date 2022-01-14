@@ -10,9 +10,14 @@
   "modules-center": ["clock"],
   "modules-right": ["custom/left-cap", "custom/pacman", "pulseaudio", "bluetooth", "network", "battery", "custom/spacer", "custom/power"],
 
+//   "river/tags": {
+//       "num-tags": 9,
+//       "tag-labels": [ "", "", "", "", "", "", "", "", "" ],
+//   },
+
   "river/tags": {
-      "num-tags": 9,
-      "tag-labels": [ "", "", "", "", "", "", "", "", "" ],
+      "num-tags": 4,
+      "tag-labels": [ "", "", "", "" ],
   },
 
   // "sway/workspaces": {
@@ -28,7 +33,7 @@
   //   "format-icons": {
   //     "1": "",
   //     "2": "",
-  //     "3": "",
+  //     "3": "",
   //     "4": "",
   //     "urgent": "",
   //     "focused": "",

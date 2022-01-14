@@ -21,3 +21,4 @@ zsh
 starship.toml
 user-dirs.dirs
 user-dirs.locale
+lsd
