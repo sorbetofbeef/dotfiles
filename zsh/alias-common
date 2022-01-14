@@ -15,39 +15,58 @@
 	# xF='doas xbps-query -M -R --regex' 
 
 # XBPS
-alias \
-	kI='kiss install' \
-	kB='kiss build' \
-	kR='kiss remove' \
-	kU='kiss update' \
-	kS='kiss search \* | rg -i' 
+# alias \
+# 	kI='kiss install' \
+# 	kB='kiss build' \
+# 	kR='kiss remove' \
+# 	kU='kiss update' \
+# 	kS='kiss search \* | rg -i' 
 
 # SV
+# alias \
+# 	sA="doas link-service" \
+# 	sRm="doas rm -Iv /var/service/${1}" \
+# 	sU='doas sv up' \
+# 	sD='doas sv down' \
+# 	sO='doas sv once' \
+# 	sRe='doas sv restart' \
+# 	sM='doas sv status'
+
+# PARU
 alias \
-	sA="doas link-service" \
-	sRm="doas rm -Iv /var/service/${1}" \
-	sU='doas sv up' \
-	sD='doas sv down' \
-	sO='doas sv once' \
-	sRe='doas sv restart' \
-	sM='doas sv status'
+  pI='paru -Syu' \
+  pF='paru -Ss'  
+  pR='paru -Rscu' \
 
 # SYSTEMD - USER
-# alias \
-# 	sUE='systemctl --user enable' \
-# 	sUENow='systemctl --user enable --now' \
-# 	sUD='systemctl --user disable' \
-# 	sUDNow='systemctl --user disable --now' \
-# 	sUL='systemctl --user list-units' \
-# 	sULa='systemctl --user list-unit-files' \
-# 	sUMon='systemctl --user status' \
-# 	sUSt='systemctl --user start' \
-# 	sUSp='systemctl --user stop' 
+alias \
+	sUE='systemctl --user enable' \
+	sUENow='systemctl --user enable --now' \
+	sUD='systemctl --user disable' \
+	sUDNow='systemctl --user disable --now' \
+	sUL='systemctl --user list-units' \
+	sULa='systemctl --user list-unit-files' \
+	sUMon='systemctl --user status' \
+	sUSt='systemctl --user start' \
+	sUSp='systemctl --user stop' 
+
+# SYSTEMD - System
+alias \
+	sE='doas systemctl enable' \
+	sENow='doas systemctl enable --now' \
+	sD='doas systemctl disable' \
+	sDNow='doas systemctl disable --now' \
+	sL='doas systemctl list-units' \
+	sLa='doas systemctl list-unit-files' \
+	sMon='doas systemctl status' \
+	sSt='doas systemctl start' \
+	sSp='doas systemctl stop' 
 
 # ROOT
 alias \
 	_="doas" \
 	chown='doas chown -v' \
+	chmod='doas chmod -v' \
 	mount='doas mount -v' \
 	umount='doas umount -v' \
 	df='doas df -h' \
@@ -58,21 +77,19 @@ alias \
 # USER
 alias \
 	luamake='/home/me/.local/src/lua-language-server/3rd/luamake/luamake' \
-	l='exa -la -T -L1 --sort=type --no-permissions --octal-permissions --group-directories-first --icons --color=auto' \
-	la='exa -la -T -L2 --sort=type --no-permissions --octal-permissions --group-directories-first --icons --color=auto' \
-	laa='exa -la -T -L3 --sort=type --no-permissions --octal-permissions --group-directories-first --icons --color=auto' \
-	laaa='exa -la -T -L4 --sort=type --no-permissions --octal-permissions --group-directories-first --icons --color=auto' \
-	ls='exa --group-directories-first --icons --color=auto' \
+	l="lsd -lAh --group-dirs first --date '+%m.%d %H:%M' --blocks permission,user,date,name" \
+	la="lsd -lAh --group-dirs first --tree --depth 2 --blocks name --no-symlink" \
+	laa="lsd -lAh --group-dirs first --tree --depth 3 --blocks name --no-symlink" \
+	laaa="lsd -lAh --group-dirs first --tree --depth 4 --blocks name --no-symlink" \
+	ls="lsd --group-dirs first --no-symlink" \
 	find='fd' \
 	grep='rg' \
 	cp='cp -rv' \
 	mv='mv -v' \
 	mkdir='mkdir -pv' \
 	ln='ln -sv' \
-	rm='rm -iv' \
-	rmd='rm -riv' \
-	rmf='rm -rfv' \
-	chmod='chmod -v' \
+	rm='rm -v' \
+	rmd='rm -rf' \
  	c='clear' \
 	q='exit'
 
