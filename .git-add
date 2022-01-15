@@ -5,6 +5,7 @@ khal
 kitty
 lazygit
 lf
+lsd
 mako
 neomutt
 qtile
@@ -21,4 +22,3 @@ zsh
 starship.toml
 user-dirs.dirs
 user-dirs.locale
-lsd

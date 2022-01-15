@@ -9,7 +9,6 @@ if status is-login
   if test (tty) = /dev/tty1
     new_river
   end
-
 end
 
 ### INTERACTIVE
