@@ -2,12 +2,11 @@
 if status is-login
   # Modify Path
   fish_add_path -Pm /usr/lib/ccache/bin $HOME/.local/bin $GOPATH/bin $CARGO_HOME/bin $RUSTUP_HOME/bin (yarn global bin) /usr/bin /usr/sbin /usr/local/bin
-  source ~/.config/fish/conf.d/*
-  source ~/.config/lf/icons
+  source $HOME/.config/fish/conf.d/*
   
   # Start Wayland Compositor
   if test (tty) = /dev/tty1
-    new_river
+    start_river
   end
 end
 

@@ -7,8 +7,8 @@
   "margin": "",
   "modules-left": ["river/tags"],
   // "modules-left": ["sway/workspaces"],
-  "modules-center": ["clock"],
-  "modules-right": ["custom/left-cap", "custom/pacman", "pulseaudio", "bluetooth", "network", "battery", "custom/spacer", "custom/power"],
+  "modules-center": ["custom/pacman", "clock"],
+  "modules-right": ["custom/left-cap", "pulseaudio", "bluetooth", "network", "battery", "custom/spacer", "custom/power"],
 
 //   "river/tags": {
 //       "num-tags": 9,
@@ -63,11 +63,11 @@
   },
 
   "custom/pacman": {
-    "format": "",
-    "interval": 3600,
-    "exec": "xbps-install -Sun | wc -l",
-    "exec-if": "xbps-wrapper",
-    "on-click": "kitty doas xbps-install -Su; pkill -SIGRTMIN+8 waybar",
+    "format": "{} ",
+    "interval": 43200,
+    "exec": "expr $(paru -Syuqp | wc -l) - 5",
+    "exec-if": "pacwrap",
+    "on-click": "kitty --hold paru -Syu; pkill -SIGRTMIN+8 waybar",
     "signal": 8
   },
 

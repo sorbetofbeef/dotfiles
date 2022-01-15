@@ -149,7 +149,11 @@ riverctl background-color 0x002b36
 riverctl border-color-focused 0x88c0d0
 riverctl border-color-unfocused 0x586e75
 riverctl border-width 3
-riverctl xcursor-theme Phoeton 24
+riverctl xcursor-theme cz-Hickzon-white 18
+riverctl spawn 'gsettings set org.gnome.desktop.interface gtk-theme Tokyo-Night-dark-blue'
+riverctl spawn 'gsettings set org.gnome.desktop.interface icone-theme Papirus-dark'
+riverctl spawn 'gsettings set org.gnome.desktop.interface cursor-theme cz-Hickzon-white'
+riverctl spawn 'gsettings set org.gnome.desktop.interface cursor-size 18'
 
 # Set keyboard repeat rate
 riverctl set-repeat 50 250
@@ -157,6 +161,7 @@ riverctl set-repeat 50 250
 # Set app-ids and titles of views which should use client side decorations
 riverctl spawn 'waybar'
 riverctl spawn 'wbg /home/me/media/wp/current-bg'
+
 
 riverctl input 2_Synaptics_TouchPad events enabled
 riverctl input 2:7:SynPS/2_Synaptics_TouchPad accel-profile adaptive

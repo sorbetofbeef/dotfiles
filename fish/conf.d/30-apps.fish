@@ -2,7 +2,7 @@
 # set -Ux GOOGLE_API_KEY AIzaSyDIIu9Bx5jwTDfkmRURZ95yC2FdmEcrQpo
 # set -Ux GOOGLE_DEFAULT_CLIENT_ID 262047106337-aa6ulttav15v6tu16utfalra9es7v7fb.apps.googleusercontent.com
 # set -Ux GOOGLE_DEFAULT_CLIENT_SECRET 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
-set -Ux CHROME_FLAGS $CHROME_FLAGS --enable-features=VaapiVideoDecoder
+# set -Ux CHROME_FLAGS $CHROME_FLAGS --enable-features=VaapiVideoDecoder
 # pass
 set -Ux PASSWORD_STORE_DIR $XDG_DATA_HOME/password-store
 # tmux
