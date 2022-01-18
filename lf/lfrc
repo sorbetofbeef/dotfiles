@@ -216,12 +216,12 @@ map <c-g>M push %gh<space>repo<space>create<space>--private<space>
 map <c-g>C push %gh<space>repo<space>clone<space>
   # add/push/push
 map <c-g>a :git-add $fx
-map <c-g>c push %git<space>commit<space>-m<space>
+map <c-g>c push !git<space>commit<space>-m<space>
 map <c-g>p !git push
 map <c-g>u push !git<space>push<space>-u<space>
   # pull/fetch/merge
 map <c-g>P push !git<space>pull<space>
 map <c-g>f push !git<space>fetch<space>--all<space>
-map <c-g><c-m> git merge $fx
+map <c-g><c-m> !git merge $fx
 
 
