@@ -12,7 +12,13 @@ riverctl map normal $mod Return spawn "kitty -1 --title 'Files' lf"
 
 # password menu
 riverctl map normal $mod P spawn wofipassmenu
+
+# powermenu
 riverctl map normal $mod Q spawn wofi-power-menu
+
+# spotify
+riverctl map normal $mod S spawn start-spotify
+
 # launcher
 riverctl map normal $mod Space spawn 'wofi --allow-images --show drun'
 
@@ -149,10 +155,10 @@ riverctl background-color 0x002b36
 riverctl border-color-focused 0x88c0d0
 riverctl border-color-unfocused 0x586e75
 riverctl border-width 3
-riverctl xcursor-theme cz-Hickzon-white 18
+riverctl xcursor-theme cz-Hickson-White 18
 riverctl spawn 'gsettings set org.gnome.desktop.interface gtk-theme Tokyo-Night-dark-blue'
-riverctl spawn 'gsettings set org.gnome.desktop.interface icone-theme Papirus-dark'
-riverctl spawn 'gsettings set org.gnome.desktop.interface cursor-theme cz-Hickzon-white'
+riverctl spawn 'gsettings set org.gnome.desktop.interface icon-theme Papirus-Dark'
+riverctl spawn 'gsettings set org.gnome.desktop.interface cursor-theme cz-Hickson-White'
 riverctl spawn 'gsettings set org.gnome.desktop.interface cursor-size 18'
 
 # Set keyboard repeat rate

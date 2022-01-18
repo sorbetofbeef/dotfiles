@@ -9,9 +9,10 @@
 }
 
 window#waybar {
-  background-color: #2e3440;
-  border-bottom: 2px solid #4c566a;
-  /* box-shadow: inset 0px -4px 2px -2px #56b6c2; */
+  background-color: #1f1f28;
+  border-bottom: 2px solid #c34043;
+  /* border-bottom: 2px solid #ff5D62; */
+  box-shadow: 0px -4px 2px -2px #090618; */
 }
 
 #clock,
@@ -26,7 +27,7 @@ window#waybar {
 #custom-left-cap,
 #custom-right-cap {
   background-color: rgba(0, 0, 0, 0.0);
-  color: #d8dee9;
+  color: #dcd7ba;
 }
 
 #custom-right-cap,
@@ -38,50 +39,50 @@ window#waybar {
 #clock {
   font-size: 10px;
   font-weight: bolder;
-  color: #eceff4;
+  color: #c8c093;
 }
 
 #tags button { 
-  /* background-color: #475072; */
-  color: #4c566a;
-  border-bottom: 2px solid #aeb3bb;
-  box-shadow: inset 0px -3px 2px -2px #d8dee9;
-  margin: 0 1px;
+  color: #223249;
+  border-bottom: 2px solid #c34043;
+  box-shadow: inset 0px -3px 2px -2px #223249;
+  margin: 0px 1px;
   padding: 0px 5px;
 }
 
 #tags button.occupied{
-  color: #e5e9f0;
-  border-bottom: 2px solid #aeb3bb;
-  box-shadow: inset 0px -3px 2px -1px #88c0d0;
+  color: #7E9CD8;
+  border-bottom: 2px solid #c34043;
+  box-shadow: inset 0px -3px 2px -1px #223249;
 }
 
 #tags button.focused {
-  color: #e5e9f0;
-  border-bottom: 2px solid #6d96a5;
-  box-shadow: inset 0px -18px 12px -12px #88c0d0;
+  color: #7E9CD8;
+  border-bottom: 2px solid #c34043;
+  box-shadow: inset 0px -3px 2px -1px #E82424;
+  /* box-shadow: inset 0px -18px 12px -12px #c34043; */
   transition: box-shadow 0.4s, color 0.8s, border 1.0s;
 }
 
 /* #workspaces button {
    background-color: #475072;
-   color: #e5e9f0;
-   border-bottom: 2px solid #aeb3bb;
-   box-shadow: inset 0px -3px 2px -1px #88c0d0;
+   color: #c34043;
+   border-bottom: 2px solid #727169;
+   box-shadow: inset 0px -3px 2px -1px #6a9589;
    margin: 0 1px;
    padding: 0px 5px;
  }
 
  #workspaces button.persistent{ 
-   color: #4c566a; 
-   border-bottom: 2px solid #aeb3bb;
-   box-shadow: inset 0px -3px 2px -2px #d8dee9;
+   color: #090618; 
+   border-bottom: 2px solid #727169;
+   box-shadow: inset 0px -3px 2px -2px #dcd7ba;
  }
 
  #workspaces button.focused {
-   color: #e5e9f0;
-   border-bottom: 2px solid #6d96a5;
-   box-shadow: inset 0px -18px 12px -12px #88c0d0;
+   color: #c34043;
+   border-bottom: 2px solid #7aa89f;
+   box-shadow: inset 0px -18px 12px -12px #6a9589;
    transition: box-shadow 0.4s, color 0.8s, border 1.0s;
  } 
 */
@@ -103,26 +104,26 @@ window#waybar {
 
 @keyframes blink {
   to {
-    color: #eceff4;
+    color: #c8c093;
   }
 }
 
 #battery {
-  color: #94545d;
+  color: #e82424;
 }
 
 #battery.plugged,
 #battery.full {
-  color: #aeb3bb;
+  color: #727169;
 }
 
 #battery.charging,
 #battery.plugged {
-  color: #88c0d0;
+  color: #6a9589;
 }
 
 #battery.critical:not(.charging) {
-  color: #94545d;
+  color: #e82424;
   animation-name: blink;
   animation-duration: 0.5s;
   animation-timing-function: linear;
@@ -132,7 +133,7 @@ window#waybar {
 
 /*
 #pulseaudio.extreme {
-  color: #94545d;
+  color: #e82424;
   animation-name: blink;
   animation-duration: 0.75s;
   animation-timing-function: linear;
@@ -142,20 +143,20 @@ window#waybar {
 */
 
 #pulseaudio.good {
-  color: #2e3440;
+  color: #c8c093;
 }
 
 #pulseaudio.low {
-  color: #4c566a;
+  color: #2d4f67;
 }
 
 #pulseaudio.lowest,
 #pulseaudio.muted {
-  color: #aeb3bb;
+  color: #727169;
 }
 
 #network.disconnected {
-  color: #94545d;
+  color: #e82424;
   animation-name: blink;
   animation-duration: 0.5s;
   animation-timing-function: linear;
@@ -164,11 +165,11 @@ window#waybar {
 }
 
 #custom-pacman {
-  color: #b29e75;
+  color: #c0a36e;
 }
 
 #custom-power {
-  background-color: #373e4d;
-  color: #bf616a;
-  border: 2px solid #94545d;
+  background-color: #090618;
+  color: #c34043;
+  border: 2px solid #c34043;
 }

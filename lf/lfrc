@@ -1,3 +1,12 @@
+######
+# Configuration for lf 
+# ~/.config/lf/lfrc
+#
+
+
+### SETTINGS
+
+# General
 set icons true
 set drawbox true
 set globsearch true
@@ -7,10 +16,28 @@ set relativenumber true
 set scrolloff 4
 set tabstop 2
 
+# Shell
 set shell sh
 set shellopts '-eu'
 set ifs "\n"
 
+# Unset any prolematic keybinds
+map e
+map E
+map <c-e>
+map <a-e>
+map a
+map A
+map r
+map <c-p>
+map +
+map -
+map <c-g>
+
+
+### CUSTOM COMMANDS
+
+# Opens text/* mime type with $EDITOR; other mimetpyes with $OPENEr
 cmd open ${{
     test -L $f && f=$(readlink -f $f)
     case $(file --mime-type $f -b) in
@@ -19,12 +46,22 @@ cmd open ${{
     esac
 }}
 
+# Renames a file unless target file exists
 cmd rename %[ -e $1 ] && printf "file exists" || mv $f $1
 
-cmd trash %set -f; mv -f $fx ~/.local/share/trash
+# RIP
+cmd trash %set -f; rip --graveyard="${HOME}/.local/share/trash" $fx 
+cmd untrash %{{
+  set -f
+
+  if [[ -e $fs ]]; then
+    rip -u --graveyard="${HOME}/.local/share/trash" $fs
+  else
+    rip -u --graveyard="${HOME}/.local/share/trash"
+  fi
+}}
 
 # extract the current file with the right command
-# (xkcd link: https://xkcd.com/1168/)
 cmd extract ${{
     set -f
     case $f in
@@ -37,12 +74,12 @@ cmd extract ${{
     esac
 }}
 
-# compress current file or selected files with tar and gunzip
+# compress current file or selected files with tar and xz
 cmd tar ${{
     set -f
     mkdir $1
     cp -r $fx $1
-    tar cf $1.tar $1 | xz -z -9e -T 0
+    tar cf $1.tar.xz --compress-program='xz -z -9e -T4 -f' $1 
     rm -rf $1
 }}
 
@@ -55,18 +92,29 @@ cmd zip ${{
     rm -rf $1
 }}
 
-cmd link-scripts !{{
+
+# Link
+cmd link !{{
   set -f
-  script_dir=${HOME}/.local/bin/scripts
-  target_dir=${HOME}/.local/bin
-  pushd "$script_dir"
-    for script in ./* ; do
-      target="${script%%.*}"
-      ln -sfv "${script_dir}/${script}" "${target_dir}/${target}"
-    done
-  popd
+
+  while getopts ":dfo:" option ; do
+    case $option in 
+      f ) p='f' ;;
+          #   arg=${2:-'..'} ;; 
+      d ) sup="$(doas)" ;;
+      o ) arg=$OPTARG ;;
+      \? ) echo "invalid option"
+    esac
+  done
+
+  for file in $fx ; do
+    target="${file##*/}"
+    ${sup:-''}ln -sv${p:-''} "${file}" ${arg:='..'}/${target/%.[sl][hu]*}
+  done
 }}
 
+
+# Git
 cmd git-add !{{
   set -f 
 
@@ -88,7 +136,7 @@ cmd git-add !{{
           */.local* ) add_entry ".local" "$files" ;;
           */.config* ) add_entry ".config" "$files" ;;
           */docs* ) add_entry "docs" "$files" ;;
-          * ) echo "error in for loop"
+          * ) echo "error in for loop" ;;
         esac
       done
       loop=false
@@ -99,50 +147,81 @@ cmd git-add !{{
     */.local* ) git add --verbose $(cat ~/.local/.git-add) ;;
     */.config* ) git add --verbose $(cat ~/.config/.git-add) ;;
     */docs* ) git add --verbose $(cat ~/docs/.git-add) ;;
-    * ) echo "error in last case"
+    * ) echo "error in last case" ;;
   esac
 }}
 
-cmd backup !{{
-    set -f
-    git_dir=${HOME}
-}}
+# Chown
+cmd chown %set -f; doas chown -v $1 $fx
+cmd chown-recurse %set -f; doas chown -Rv $1 $fx
 
+
+### KEYBINDS
+
+#General
 map <enter> shell
 
 map o &mimeopen $f
-map O &mimeopen --ask $f
+map O &doas mimeopen $f
 
 map H set hidden!
 
-map a push $nvim<space>
-map A push $mkdir<space>
+map a push $mkdir<space>
 
-map <delete> trash
-map D trash
+map <delete> :delete $fx
+map D :trash $fx
+map u :untrash $fx
 
-map r
 map r push :rename<space>
 
-map <c-p>
+# Link
+map <c-l>
+map <c-l>l push :link<space>-o<space>
+map <c-l>L push :link<space>-fo<space>
+map <c-l>d push :link<space>-do<space>
+map <c-l>D push :link<space>-dfo<space>
+
+
+# Neovim
+map e $nvim $fx
+map a push $nvim<space>
+map <c-e> push $doas<space>nvim<space>
+map <a-e> $nvim /home/me/.config/lf/lfrc
+
+# Paru
+map <c-p>p $pcurses
 map <c-p>i push !paru<space>-Syu<space>
 map <c-p>r push !paru<space>-Rscu<space>
 map <c-p>f push !paru<space>-Ss<space>
 
-map +
+# Add permission
 map +x %doas chmod -v +x $fx
 map +r %doas chmod -v +r $fx
 map +w %doas chmod -v +w $fx
 
-map -
+# Remove permission
 map -x %doas chmod -v -x $fx
 map -r %doas chmod -v -r $fx
 map -w %doas chmod -v -w $fx
 
-map <c-g>
-map <c-a> :git-add $fx
+# Chown
+map <a-o> push :chown<space>
+map <a-O> push :chown-recurse<space>
+
+# Git
+map <c-g>g $gitui
+  # create/clone
+map <c-g>m push %gh<space>repo<space>create<space>--public<space>
+map <c-g>M push %gh<space>repo<space>create<space>--private<space>
+map <c-g>C push %gh<space>repo<space>clone<space>
+  # add/push/push
 map <c-g>a :git-add $fx
-map <c-g>c push !git<space>commit<space>-m<space>
+map <c-g>c push %git<space>commit<space>-m<space>
 map <c-g>p !git push
 map <c-g>u push !git<space>push<space>-u<space>
+  # pull/fetch/merge
+map <c-g>P push !git<space>pull<space>
+map <c-g>f push !git<space>fetch<space>--all<space>
+map <c-g><c-m> git merge $fx
+
 

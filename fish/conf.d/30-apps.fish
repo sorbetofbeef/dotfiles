@@ -4,21 +4,21 @@
 # set -Ux GOOGLE_DEFAULT_CLIENT_SECRET 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
 # set -Ux CHROME_FLAGS $CHROME_FLAGS --enable-features=VaapiVideoDecoder
 # pass
-set -Ux PASSWORD_STORE_DIR $XDG_DATA_HOME/password-store
+set -gx PASSWORD_STORE_DIR $XDG_DATA_HOME/password-store
 # tmux
-set -Ux TMUX_TMPDIR $XDG_RUNTIME_DIR/tmux
+set -gx TMUX_TMPDIR $XDG_RUNTIME_DIR/tmux
 # chat/email/web
-set -Ux WEECHAT_HOME $XDG_CONFIG_HOME/weechat
-set -Ux NOTMUCH_CONFIG $XDG_CONFIG_HOME/notmuch-config
-set -Ux MBSYNCRC $XDG_CONFIG_HOME/mbsync/mbsyncrc
-set -Ux WWW_HOME $XDG_CONFIG_HOME/w3m
-set -Ux WGETRC $XDG_CONFIG_HOME/wget/wgetrc
+set -gx WEECHAT_HOME $XDG_CONFIG_HOME/weechat
+set -gx NOTMUCH_CONFIG $XDG_CONFIG_HOME/notmuch-config
+set -gx MBSYNCRC $XDG_CONFIG_HOME/mbsync/mbsyncrc
+set -gx WWW_HOME $XDG_CONFIG_HOME/w3m
+set -gx WGETRC $XDG_CONFIG_HOME/wget/wgetrc
 # less
-set -Ux LESS -R
-set -Ux LESSOPEN | /usr/bin/highlight -O ansi %s 2>/dev/null
-set -Ux LESSHISTFILE -
+set -gx LESS -R
+set -gx LESSOPEN | /usr/bin/highlight -O ansi %s 2>/dev/null
+set -gx LESSHISTFILE -
 # gtk2
-set -Ux GTK2_RC_FILES $XDG_CONFIG_HOME/gtk-2.0/gtkrc
+set -gx GTK2_RC_FILES $XDG_CONFIG_HOME/gtk-2.0/gtkrc
 # zsh
-set -Ux ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE fg=cyan,bold,underline
-set -Ux ZDOTDIR $XDG_CONFIG_HOME/zsh
+set -gx ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE fg=cyan,bold,underline
+set -gx ZDOTDIR $XDG_CONFIG_HOME/zsh

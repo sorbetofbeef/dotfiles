@@ -1,9 +1,9 @@
 fish
 foot
+gitui
 htop
 khal
 kitty
-lazygit
 lf
 lsd
 mako
@@ -22,3 +22,4 @@ zsh
 starship.toml
 user-dirs.dirs
 user-dirs.locale
+/home/me/.config/ion

@@ -1,4 +1,4 @@
-set -Ux LF_ICONS "\
+set -gx LF_ICONS "\
 tw= :\
 st= :\
 ow= :\
