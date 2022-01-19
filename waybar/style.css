@@ -9,10 +9,10 @@
 }
 
 window#waybar {
-  background-color: #1f1f28;
+  background-color: #101010;
   border-bottom: 2px solid #c34043;
   /* border-bottom: 2px solid #ff5D62; */
-  box-shadow: 0px -4px 2px -2px #090618; */
+  /* box-shadow: -4px 2px 2px #090618; */
 }
 
 #clock,
@@ -22,45 +22,43 @@ window#waybar {
 #custom-power,
 #network,
 #workspaces,
+#tags,
 #pulseaudio,
 #custom-spacer,
 #custom-left-cap,
 #custom-right-cap {
   background-color: rgba(0, 0, 0, 0.0);
-  color: #dcd7ba;
+  color: #ebebeb;
 }
 
 #custom-right-cap,
 #custom-left-cap,
 #custom-spacer {
-  padding: 0 3px;
+  padding: 2px 3px;
 }
 
 #clock {
   font-size: 10px;
-  font-weight: bolder;
-  color: #c8c093;
+  font-weight: bold;
+  color: #dc322f
 }
 
 #tags button { 
-  color: #223249;
-  border-bottom: 2px solid #c34043;
-  box-shadow: inset 0px -3px 2px -2px #223249;
-  margin: 0px 1px;
-  padding: 0px 5px;
+  color: #999999;
+  box-shadow: inset 0px -3px 2px -2px #999999;
+  margin: 0px 1px 2px 1px;
+  padding: 2px 0px 2px 0px;
+  /* border-bottom: 1px solid #c34043; */
 }
 
 #tags button.occupied{
-  color: #7E9CD8;
-  border-bottom: 2px solid #c34043;
-  box-shadow: inset 0px -3px 2px -1px #223249;
+  color: #dc322f;
+  box-shadow: inset 0px -3px 2px -1px #dc322f;
 }
 
 #tags button.focused {
-  color: #7E9CD8;
-  border-bottom: 2px solid #c34043;
-  box-shadow: inset 0px -3px 2px -1px #E82424;
-  /* box-shadow: inset 0px -18px 12px -12px #c34043; */
+  color: #ebebeb;
+  box-shadow: inset 0px -18px 12px -12px #dc322f;
   transition: box-shadow 0.4s, color 0.8s, border 1.0s;
 }
 
@@ -104,12 +102,12 @@ window#waybar {
 
 @keyframes blink {
   to {
-    color: #c8c093;
+    color: #dc322f;
   }
 }
 
 #battery {
-  color: #e82424;
+  color: #ec8989;
 }
 
 #battery.plugged,
@@ -119,11 +117,11 @@ window#waybar {
 
 #battery.charging,
 #battery.plugged {
-  color: #6a9589;
+  color: #c9e6fd;
 }
 
 #battery.critical:not(.charging) {
-  color: #e82424;
+  color: #dc322f;
   animation-name: blink;
   animation-duration: 0.5s;
   animation-timing-function: linear;
@@ -143,16 +141,16 @@ window#waybar {
 */
 
 #pulseaudio.good {
-  color: #c8c093;
+  color: #99ac9e;
 }
 
 #pulseaudio.low {
-  color: #2d4f67;
+  color: #adadad;
 }
 
 #pulseaudio.lowest,
 #pulseaudio.muted {
-  color: #727169;
+  color: #ffffff;
 }
 
 #network.disconnected {
@@ -165,11 +163,11 @@ window#waybar {
 }
 
 #custom-pacman {
-  color: #c0a36e;
+  color: #dc322f;
 }
 
 #custom-power {
   background-color: #090618;
-  color: #c34043;
-  border: 2px solid #c34043;
+  color: #ec8989;
+  border: 3px solid #dc322f;
 }

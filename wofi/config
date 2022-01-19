@@ -1,0 +1,7 @@
+allow_images=false
+term=kitty
+width=15%
+lines=6
+always_parse_args=true
+insensitive=true
+location=top_right

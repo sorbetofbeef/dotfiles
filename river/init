@@ -8,7 +8,7 @@ mod="Mod4"
 
 # Mod+Shift+Return to start an instance of foot (https://codeberg.org/dnkl/foot)
 # riverctl map normal $mod Return spawn 'alacritty-start'
-riverctl map normal $mod Return spawn "kitty -1 --title 'Files' lf" 
+riverctl map normal $mod Return spawn "kitty -1 --title 'File Explorer' lf" 
 
 # password menu
 riverctl map normal $mod P spawn wofipassmenu
@@ -16,11 +16,9 @@ riverctl map normal $mod P spawn wofipassmenu
 # powermenu
 riverctl map normal $mod Q spawn wofi-power-menu
 
-# spotify
-riverctl map normal $mod S spawn start-spotify
-
 # launcher
-riverctl map normal $mod Space spawn 'wofi --allow-images --show drun'
+riverctl map normal $mod Space spawn wofi-fav-list
+riverctl map normal $mod+Shift Space spawn wofi
 
 # Mod+Q to close the focused view
 riverctl map normal $mod W close
@@ -99,11 +97,11 @@ done
 
 # Mod+0 to focus all tags
 # Mod+Shift+0 to tag focused view with all tags
-all_tags=$(((1 << 32) - 1))
+riverctl map normal $mod D all_tags=$(((1 << 32) - 1))
 riverctl map normal $mod 0 toggle-focused-tags $all_tags
 riverctl map normal $mod+Shift 0 toggle-view-tags $all_tags
 
-riverctl map normal $mod D set-focused-tags 
+# riverctl map normal $mod D set-focused-tags 
 
 # Mod+Space to toggle float
 riverctl map normal $mod F toggle-float
@@ -114,7 +112,7 @@ riverctl map normal $mod M toggle-fullscreen
 # Mod+{Up,Right,Down,Left} to change layout orientation
 riverctl map normal $mod Up    send-layout-cmd rivertile "main-location top"
 riverctl map normal $mod Right send-layout-cmd rivertile "main-location right"
-riverctl ma normal $mod Down  send-layout-cmd rivertile "main-location bottom"
+riverctl map normal $mod Down  send-layout-cmd rivertile "main-location bottom"
 riverctl map normal $mod Left  send-layout-cmd rivertile "main-location left"
 
 # Declare a passthrough mode. This mode has only a single mapping to return to
@@ -151,12 +149,12 @@ do
 done
 
 # Set background and border color
-riverctl background-color 0x002b36
-riverctl border-color-focused 0x88c0d0
-riverctl border-color-unfocused 0x586e75
+riverctl background-color 0x101010
+riverctl border-color-focused 0xc34043
+riverctl border-color-unfocused 0x999999
 riverctl border-width 3
 riverctl xcursor-theme cz-Hickson-White 18
-riverctl spawn 'gsettings set org.gnome.desktop.interface gtk-theme Tokyo-Night-dark-blue'
+riverctl spawn 'gsettings set org.gnome.desktop.interface gtk-theme Graphite'
 riverctl spawn 'gsettings set org.gnome.desktop.interface icon-theme Papirus-Dark'
 riverctl spawn 'gsettings set org.gnome.desktop.interface cursor-theme cz-Hickson-White'
 riverctl spawn 'gsettings set org.gnome.desktop.interface cursor-size 18'
@@ -165,21 +163,23 @@ riverctl spawn 'gsettings set org.gnome.desktop.interface cursor-size 18'
 riverctl set-repeat 50 250
 
 # Set app-ids and titles of views which should use client side decorations
-riverctl spawn 'waybar'
+riverctl spawn 'river_dbus'
+riverctl spawn 'bar' 
 riverctl spawn 'wbg /home/me/media/wp/current-bg'
 
 
-riverctl input 2_Synaptics_TouchPad events enabled
+riverctl input 2:7:SynPS/2_Synaptics_TouchPad events enabled
 riverctl input 2:7:SynPS/2_Synaptics_TouchPad accel-profile adaptive
+riverctl input 2:7:SynPS/2_Synaptics_TouchPad pointer-accel 0.30000001192092896
 riverctl input 2:7:SynPS/2_Synaptics_TouchPad click-method clickfinger
 riverctl input 2:7:SynPS/2_Synaptics_TouchPad drag enabled
 riverctl input 2:7:SynPS/2_Synaptics_TouchPad disable-while-typing enabled
 riverctl input 2:7:SynPS/2_Synaptics_TouchPad middle-emulation enabled
-riverctl input 2:7:SynPS/2_Synaptics_TouchPad natual-scroll enabled
+riverctl input 2:7:SynPS/2_Synaptics_TouchPad natural-scroll enabled
 riverctl input 2:7:SynPS/2_Synaptics_TouchPad tap enabled
-riverctl input 2:7:SynPS/2_Synaptics_TouchPad pointer-accel 0.30000001192092896
 
 # Set and exec into the default layout generator, rivertile.
 # River will send the process group of the init executable SIGTERM on exit.
 riverctl default-layout rivertile
-exec rivertile -view-padding 16 -outer-padding 16
+exec rivertile -view-padding 16 -outer-padding 0
+

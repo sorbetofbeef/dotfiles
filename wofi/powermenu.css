@@ -1,29 +1,28 @@
 window {
-    background-color: #0E1016;
-    color: #C7C9D1;
-    font-size: 18px;
-    font-family: "CozetteVector Nerd Font";
+    background-color: #101010;
+    color: #EBEBEB;
+    font-size: 12px;
+    font-family: "ProFontIIx Nerd Font";
 }
 
 #entry:nth-child(odd) {
-    background-color: #0E1016;
+    background-color: #999999;
 }
 
 #entry:nth-child(even) {
-    background-color: #161822;
+    background-color: #101010;
 }
 
 #entry:selected {
-    background-color: #414758;
+    background-color: #c34043;
 }
 
 #input {
-    background-color: #161822;
-    color: #828597;
-    border-color: #414758;
-    border-radius: 0px;
+    background-color: #c34043;
+    color: #101010;
+    border-color: #EBEBEB;
 }
 
 #input:focus {
-    border-color: #EBCA89;
+    border-color: #EBEBEB;
 }

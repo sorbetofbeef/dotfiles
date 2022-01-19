@@ -1,39 +1,41 @@
 window {
 margin: 0px;
-border: 1px solid #bd93f9;
-background-color: #282a36;
+padding: 0px;
+border: 2px solid #c34043;
+background-color: #101010;
+font-size: 12px;
+font-family: "ProFontIIx Nerd Font";
 }
 
 #input {
 margin: 5px;
 border: none;
-color: #f8f8f2;
-background-color: #44475a;
+color: #101010;
+background-color: #c34043;
 }
 
 #inner-box {
 margin: 5px;
 border: none;
-background-color: #282a36;
+background-color: #101010;
 }
 
 #outer-box {
 margin: 5px;
 border: none;
-background-color: #282a36;
+background-color: #101010;
 }
 
 #scroll {
-margin: 0px;
+margin: 5px;
 border: none;
 }
 
 #text {
-margin: 5px;
 border: none;
-color: #f8f8f2;
+color: #EBEBEB;
 } 
 
 #entry:selected {
-background-color: #44475a;
+background-color: #c34043;
 }
