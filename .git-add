@@ -1,11 +1,12 @@
-fish
+fish/conf.d
+fish/config.fish
+fish/functions
 foot
 gitui
 htop
 khal
 kitty
 lf
-lsd
 mako
 neomutt
 qtile
@@ -22,4 +23,4 @@ zsh
 starship.toml
 user-dirs.dirs
 user-dirs.locale
-/home/me/.config/ion
+ion

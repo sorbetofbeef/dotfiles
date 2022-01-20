@@ -65,7 +65,7 @@
   "custom/pacman": {
     "format": "{} ",
     "interval": 43200,
-    "exec": "expr $(paru -Syuqp | wc -l) - 5",
+    "exec": "expr $(paru -Syuqp | wc -l) - 4",
     "exec-if": "pacwrap",
     "on-click": "kitty --hold paru -Syu; pkill -SIGRTMIN+8 waybar",
     "signal": 8
