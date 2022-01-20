@@ -15,3 +15,5 @@ fish/functions/_*
 fish/functions/tide*
 fish/functions/fisher*
 spotify-tui/.spotify_token_cache.json
+nvim
+TabNine
