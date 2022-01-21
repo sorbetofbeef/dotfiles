@@ -1,9 +1,0 @@
-#!/bin/sh
-
-_start_cinnamon () {
-  if [ -n MY_DESKTOP ] && [ -x MY_DESKTOP ]; then
-    startx
-  else
-
-  fi
-}

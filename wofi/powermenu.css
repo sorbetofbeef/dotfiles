@@ -2,7 +2,7 @@ window {
     background-color: #101010;
     color: #EBEBEB;
     font-size: 12px;
-    font-family: "ProFontIIx Nerd Font";
+    font-family: 'ProFontIIx Nerd Font';
 }
 
 #entry:nth-child(odd) {

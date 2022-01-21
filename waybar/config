@@ -17,7 +17,7 @@
 
   "river/tags": {
       "num-tags": 4,
-      "tag-labels": [ "", "", "", "" ],
+      "tag-labels": [ "", "", "", "" ],
   },
 
   // "sway/workspaces": {
@@ -52,7 +52,7 @@
     },
     "format": "{icon}",
     "format-critical": "{icon}",
-    "format-icons":  [ "", "", "" ],
+    "format-icons":  [ "",  "", "", "", "", "", "" ],
     "tooltip": "{capacity}"
   },
   
