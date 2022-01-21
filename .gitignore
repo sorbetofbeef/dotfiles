@@ -17,3 +17,4 @@ fish/functions/fisher*
 spotify-tui/.spotify_token_cache.json
 nvim
 TabNine
+gh/hosts.yml
