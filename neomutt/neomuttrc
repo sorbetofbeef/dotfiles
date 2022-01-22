@@ -3,7 +3,6 @@
 source ~/.config/neomutt/settings
 source ~/.config/neomutt/colors/dracula
 source ~/.config/neomutt/keybinds
-source ~/.config/neomutt/mailcap
 
 # Accounts
 
