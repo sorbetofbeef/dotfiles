@@ -1,14 +1,16 @@
 # vim: filetype=muttrc
 unmailboxes *
 
-source /home/me/.config/neomutt/.keys
+# source /home/me/.config/neomutt/.keys
+set my_user = "christian.dickerson@outlook.com"
+set my_pass = `pass show login.live.com/christian.dickerson@outlook.com`
 
 # in/out mail servers
 set imap_user = $my_user
 set imap_pass = $my_pass
 set realname = "Christian Dickerson"
 set smtp_url = "smtp://christian.dickerson@outlook.com@smtp-mail.outlook.com:587"
-set smtp_pass = "SOME_PASSWORD"
+set smtp_pass = $my_pass
 set folder = "imaps://christian.dickerson@outlook.com@imap-mail.outlook.com:993"
 set spoolfile = "+INBOX"
 
