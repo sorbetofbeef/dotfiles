@@ -1,17 +1,10 @@
 [calendars]
-[[calendars]]
-path = ~/dt/calendars/*
-type = discover
-color = dark red
-[[work]]
-path = ~/dt/calendars/work
 
-[[home]]
-path = ~/dt/calendars/home
+[[private]]
+path = /home/me/.local/share/khal/calendars/private
+type = calendar
 
 [locale]
-local_timezone=America/Los_Angeles
-default_timezone=America/Los_Angeles
 timeformat = %H:%M
 dateformat = %m/%d/%Y
 longdateformat = %m/%d/%Y
@@ -19,4 +12,4 @@ datetimeformat = %m/%d/%Y %H:%M
 longdatetimeformat = %m/%d/%Y %H:%M
 
 [default]
-default_calendar = work
+default_calendar = private

@@ -11,3 +11,9 @@ set -gx XKB_DEFAULT_OPTIONS altwin:swap_lalt_lwin,caps:ctrl_modifier
 # default programs
 set -gx EDITOR nvim
 set -gx VISUAL nvim
+set -gx DRIVE nvme0n1
+set -gx ROOTPART nvme0n1p3
+set -gx BOOTPART nvme0n1p1
+set -gx TIMEZONE US/Pacific
+# set -gx ROOT /mnt/oasis
+

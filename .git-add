@@ -13,8 +13,6 @@ spotify-tui
 spotifyd
 waybar
 wofi
-zsh
-starship.toml
 user-dirs.dirs
 user-dirs.locale
 .git-add

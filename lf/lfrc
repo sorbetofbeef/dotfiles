@@ -1,3 +1,4 @@
+
 ######
 # Configuration for lf 
 # ~/.config/lf/lfrc
@@ -15,6 +16,9 @@ set number true
 set relativenumber true
 set scrolloff 4
 set tabstop 2
+set ratios 1:2:3
+set cleaner ~/.config/lf/cleaner
+set previewer ~/.config/lf/preview
 
 # Shell
 set shell sh
@@ -97,17 +101,19 @@ cmd zip ${{
 cmd link !{{
   set -f
 
-  while getopts ":dfo:" option ; do
+  while getopts ":dfon:" option ; do
     case $option in 
       f ) p='f' ;;
           #   arg=${2:-'..'} ;; 
       d ) sup="$(doas)" ;;
       o ) arg=$OPTARG ;;
+      n ) name=$OPTARG
       \? ) echo "invalid option"
     esac
   done
 
   for file in $fx ; do
+
     target="${file##*/}"
     ${sup:-''}ln -sv${p:-''} "${file}" ${arg:='..'}/${target/%.[sl][hu]*}
   done

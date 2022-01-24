@@ -6,6 +6,8 @@
 # Use the "logo" key as the primary modifier
 mod="Mod4"
 
+# source $HOME/.config/river/configure-kile
+
 # Mod+Shift+Return to start an instance of foot (https://codeberg.org/dnkl/foot)
 # riverctl map normal $mod Return spawn 'alacritty-start'
 riverctl map normal $mod Return spawn "kitty -1 --title 'File Explorer' lf" 
@@ -18,7 +20,7 @@ riverctl map normal $mod Q spawn wofi-power-menu
 
 # launcher
 riverctl map normal $mod Space spawn wofi-fav-list
-riverctl map normal $mod+Shift Space spawn wofi
+riverctl map normal $mod+Shift Space spawn "wofi --show drun"
 
 # Mod+Q to close the focused view
 riverctl map normal $mod W close
@@ -152,14 +154,22 @@ riverctl background-color 0x101010
 riverctl border-color-focused 0xc34043
 riverctl border-color-unfocused 0x999999
 riverctl border-width 3
+
 riverctl xcursor-theme cz-Hickson-White 18
-riverctl spawn 'gsettings set org.gnome.desktop.interface gtk-theme Graphite'
-riverctl spawn 'gsettings set org.gnome.desktop.interface icon-theme Papirus-Dark'
+
+riverctl spawn 'gsettings set org.gnome.desktop.interface gtk-theme Yaru-remix-dark'
+riverctl spawn 'gsettings set org.gnome.desktop.interface icon-theme Fluent-dark-red'
 riverctl spawn 'gsettings set org.gnome.desktop.interface cursor-theme cz-Hickson-White'
 riverctl spawn 'gsettings set org.gnome.desktop.interface cursor-size 18'
 
 # Set keyboard repeat rate
 riverctl set-repeat 50 250
+
+# riverctl float-filter-add app-id neomutt
+# riverctl float-filter-add title htop
+# 
+# riverctl csd-filter-add app-id firefox
+# riverctl csd-filter-add app-id kitty
 
 # Set app-ids and titles of views which should use client side decorations
 riverctl spawn 'river_dbus'
@@ -179,6 +189,26 @@ riverctl input 2:7:SynPS/2_Synaptics_TouchPad tap enabled
 
 # Set and exec into the default layout generator, rivertile.
 # River will send the process group of the init executable SIGTERM on exit.
-riverctl default-layout rivertile
-exec rivertile -view-padding 16 -outer-padding 0
+# Layout
+# VRATIO="0.5"
+# HRATIO="0.5"
+# 
+# TILE="((v: h (h 0 $VRATIO 0)) 1 $HRATIO 0)"
+# SQUARE="((v: (h 0 $VRATIO 0) ((h: f d) 1 $VRATIO 0)) 2 $HRATIO 0)"
+# LAYOUT="(3 > $SQUARE ? $TILE)"
+# 
+# PADDING=2
 
+# riverctl spawn "kile -l \$LAYOUT"
+# riverctl default-layout kile
+# riverctl send-layout-cmd kile "global_outer_padding $PADDING"
+# riverctl send-layout-cmd kile "global_view_padding $PADDING"
+
+riverctl spawn "kile -l ${DECK}"
+
+source "$XDG_CONFIG_HOME"/river/kile-setup
+source "$XDG_CONFIG_HOME"/river/layout
+
+riverctl default-layout kile
+exec rivertile
+# exec kile 

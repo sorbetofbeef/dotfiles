@@ -9,6 +9,7 @@
 */.backup
 *.backup
 neomutt/.keys
+dconf
 zsh/.*
 fish/fish_variables
 fish/functions/_*

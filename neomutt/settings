@@ -62,6 +62,6 @@ set tilde
 unset markers
 
 set mailcap_path = ~/.config/neomutt/mailcap
-set header_cachedir = "~/.cache/neomutt/headers"
+set # header_cachedir = "~/.cache/neomutt/headers"
 set message_cachedir = "~/.cache/neomutt/bodies"
 set certificate_file = "~/.config/neomutt/certificates"
