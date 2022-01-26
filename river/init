@@ -1,12 +1,23 @@
-#!/bin/sh
+#!/bin/bash
 
 # See the river(1), riverctl(1), and rivertile(1) man pages for complete
 # documentation.
 
 # Use the "logo" key as the primary modifier
 mod="Mod4"
+# exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river
+systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_SESSION_TYPE
+dbus-update-activation-environment
+dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river || true
+# 
+# source ~/.config/river/layout
+riverctl spawn waybar
+riverctl spawn 'wbg /home/me/media/wp/current-bg' 
+riverctl spawn mako
+riverctl spawn 'fish -c /home/me/.config/river/startup.fish'
 
-# source $HOME/.config/river/configure-kile
+# riverctl spawn pkill wl-paste
+# riverctl spawn 'wl-paste -t text --watch clipman store & disown'
 
 # Mod+Shift+Return to start an instance of foot (https://codeberg.org/dnkl/foot)
 # riverctl map normal $mod Return spawn 'alacritty-start'
@@ -150,16 +161,16 @@ do
 done
 
 # Set background and border color
-riverctl background-color 0x101010
-riverctl border-color-focused 0xc34043
-riverctl border-color-unfocused 0x999999
+riverctl background-color 0xfaf4ed
+riverctl border-color-focused 0x286983
+riverctl border-color-unfocused 0x575279
 riverctl border-width 3
 
-riverctl xcursor-theme cz-Hickson-White 18
+riverctl xcursor-theme cz-Hickson-Black 18
 
-riverctl spawn 'gsettings set org.gnome.desktop.interface gtk-theme Yaru-remix-dark'
+riverctl spawn 'gsettings set org.gnome.desktop.interface gtk-theme Yaru-remix'
 riverctl spawn 'gsettings set org.gnome.desktop.interface icon-theme Fluent-dark-red'
-riverctl spawn 'gsettings set org.gnome.desktop.interface cursor-theme cz-Hickson-White'
+riverctl spawn 'gsettings set org.gnome.desktop.interface cursor-theme cz-Hickson-Black'
 riverctl spawn 'gsettings set org.gnome.desktop.interface cursor-size 18'
 
 # Set keyboard repeat rate
@@ -167,14 +178,14 @@ riverctl set-repeat 50 250
 
 # riverctl float-filter-add app-id neomutt
 # riverctl float-filter-add title htop
-# 
-# riverctl csd-filter-add app-id firefox
+
+riverctl float-filter-add "float"
+riverctl float-filter-add "popup"
+
+riverctl csd-filter-add app-id firefox
 # riverctl csd-filter-add app-id kitty
 
 # Set app-ids and titles of views which should use client side decorations
-riverctl spawn 'river_dbus'
-riverctl spawn 'bar' 
-riverctl spawn 'wbg /home/me/media/wp/current-bg'
 
 
 riverctl input 2:7:SynPS/2_Synaptics_TouchPad events enabled
@@ -190,25 +201,8 @@ riverctl input 2:7:SynPS/2_Synaptics_TouchPad tap enabled
 # Set and exec into the default layout generator, rivertile.
 # River will send the process group of the init executable SIGTERM on exit.
 # Layout
-# VRATIO="0.5"
-# HRATIO="0.5"
-# 
-# TILE="((v: h (h 0 $VRATIO 0)) 1 $HRATIO 0)"
-# SQUARE="((v: (h 0 $VRATIO 0) ((h: f d) 1 $VRATIO 0)) 2 $HRATIO 0)"
-# LAYOUT="(3 > $SQUARE ? $TILE)"
-# 
-# PADDING=2
+# riverctl default-layout rivertile
+riverctl default-layout rivertile
+# riverctl spawn "rivertile --per-tag-config --primary-count 2  --secondary-count 3 --primary-sublayout stack --primary-position left --primary-ratio 0.55 --outer-padding 0 --inner-padding 1 --secondary-sublayout rows --secondary-ratio 0.5 --remainder-sublayout stack" 
+exec rivertile -outer-padding 0 -view-padding 10
 
-# riverctl spawn "kile -l \$LAYOUT"
-# riverctl default-layout kile
-# riverctl send-layout-cmd kile "global_outer_padding $PADDING"
-# riverctl send-layout-cmd kile "global_view_padding $PADDING"
-
-riverctl spawn "kile -l ${DECK}"
-
-source "$XDG_CONFIG_HOME"/river/kile-setup
-source "$XDG_CONFIG_HOME"/river/layout
-
-riverctl default-layout kile
-exec rivertile
-# exec kile 

@@ -1,0 +1,1 @@
+set -gx GITHUB_TOKEN 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

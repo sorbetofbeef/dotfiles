@@ -5,10 +5,10 @@
   "height": "",
   "width": "",
   "margin": "",
-  "modules-left": ["river/tags"],
+  "modules-left": ["custom/left-cap", "clock", "custom/pacman"],
   // "modules-left": ["sway/workspaces"],
-  "modules-center": ["custom/pacman", "clock"],
-  "modules-right": ["custom/left-cap", "pulseaudio", "bluetooth", "network", "battery", "custom/spacer", "custom/power"],
+  "modules-center": ["river/tags"],
+  "modules-right": ["pulseaudio", "bluetooth", "network", "battery", "custom/right-cap", "custom/power"],
 
 //   "river/tags": {
 //       "num-tags": 9,
@@ -65,7 +65,7 @@
   "custom/pacman": {
     "format": "{} ",
     "interval": 43200,
-    "exec": "expr $(paru -Syuqp | wc -l) - 4",
+    "exec": "expr $(paru -Syuqp | wc -l) - 5",
     "exec-if": "pacwrap",
     "on-click": "kitty --hold paru -Syu; pkill -SIGRTMIN+8 waybar",
     "signal": 8

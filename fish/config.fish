@@ -6,7 +6,7 @@ if status is-login
   
   # Start Wayland Compositor
   if test (tty) = /dev/tty1
-    start_river 2> /home/me/.local/var/logs/river.log >> /home/me/.local/var/logs/river.log
+    river
   end
 end
 
