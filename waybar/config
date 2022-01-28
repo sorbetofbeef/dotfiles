@@ -5,20 +5,21 @@
   "height": "",
   "width": "",
   "margin": "",
-  "modules-left": ["custom/left-cap", "clock", "custom/pacman"],
-  // "modules-left": ["sway/workspaces"],
-  "modules-center": ["river/tags"],
-  "modules-right": ["pulseaudio", "bluetooth", "network", "battery", "custom/right-cap", "custom/power"],
+  // "modules-left": ["custom/left-cap", "sway/workspaces", "custom/pacman"],
 
-//   "river/tags": {
-//       "num-tags": 9,
-//       "tag-labels": [ "", "", "", "", "", "", "", "", "" ],
-//   },
+  "modules-left": ["custom/left-cap", "river/tags"],
+  "modules-center": ["clock", "custom/pacman"],
+  "modules-right": ["custom/right-backed", "custom/mpd", "custom/left-backed", "pulseaudio", "bluetooth", "network", "battery", "custom/power"],
 
-  "river/tags": {
-      "num-tags": 4,
-      "tag-labels": [ "", "", "", "" ],
-  },
+ // "river/tags": {
+ //     "num-tags": 9,
+ //     "tag-labels": [ "", "", "", "", "", "", "", "", "" ],
+ // },
+
+ "river/tags": {
+     "num-tags": 4,
+     "tag-labels": [ "", "", "", "" ],
+ },
 
   // "sway/workspaces": {
   //   "disable-scroll": true,
@@ -106,6 +107,18 @@
     "tooltip-format": "{volume}",
   },
 
+   "custom/mpd": {
+        "format": "    {}",
+        "max-length": 35,
+        "interval": 10,
+        "exec": "mpc current",
+        "exec-if": "pgrep mpd",
+        "on-click": "mpc toggle",
+        "on-scroll-up": "mpc next",
+        "on-scroll-down": "mpc prev",
+        "on-click-right": "kitty -1 'ncmpcpp'"
+    },
+
   "custom/right-cap": {
     "format": " ",
   },
@@ -113,6 +126,21 @@
   "custom/left-cap": {
     "format": " ",
   },
+
+  "custom/right-backed": {
+    "format": "",
+     "interval": 10,
+     "exec": "mpc current",
+     "exec-if": "pgrep mpd",
+  },
+
+  "custom/left-backed": {
+    "format": "",
+     "interval": 10,
+     "exec": "mpc current",
+     "exec-if": "pgrep mpd",
+  },
+
 
   "custom/spacer": {
     "format": " ",

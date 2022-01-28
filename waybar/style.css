@@ -1,6 +1,6 @@
 /* WAYBAR */
 * {
-  font-family: icomoon, 'PragmataPro';
+  font-family: icomoon;
   font-size: 12px;
   margin: 0;
   padding: 0;
@@ -31,17 +31,48 @@ window#waybar {
   color: #575279;
 }
 
+#custom-right-backed,
+#custom-left-backed,
 #custom-right-cap,
 #custom-left-cap,
 #custom-spacer {
   margin: 0;
   padding: 0;
-  border-left: 2px solid #2d81a3;
-  border-right: 2px solid #2d81a3;
+  border: 2px solid #2d81a3;
+  border-top: none;
 }
 
+#custom-right-backed,
+#custom-left-backed,
+#custom-mpd {
+  background-color:#2d81a3;
+  color: #faf4ed;
+  font-family: Ubuntu Nerd Font;
+  font-size: 12px;
+  padding: 0px 10px;
+  margin: 0;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+}
+
+#custom-mpd {
+  min-width: 300px;
+}
+#custom-right-backed,
+#custom-left-backed {
+  background-color: #faf4ed;
+  color: #2d81a3;
+  font-size: 16px;
+  padding: 0;
+}
+
+#custom-left-backed {
+  margin-right: 50px;
+}
 #clock {
-  font-size: 10px;
+  font-family: Ubuntu Nerd Font;
+  font-size: 14px;
   font-weight: bold;
   color: #5f5695;
 }
@@ -99,10 +130,12 @@ window#waybar {
 
 #custom-left-cap {
   border-right: none;
+  border-top: none;
 } 
 
 #custom-right-cap {
   border-left: none;
+  border-top: none;
 }
 
 @keyframes blink {
@@ -134,16 +167,14 @@ window#waybar {
   animation-direction: alternate;
 }
 
-/*
 #pulseaudio.extreme {
-  color: #e82424;
+  color: #d7827e;
   animation-name: blink;
   animation-duration: 0.75s;
   animation-timing-function: linear;
   animation-iteration-count: 15;
   animation-direction: alternate;
 }
-*/
 
 #pulseaudio.good {
   color: #618774;

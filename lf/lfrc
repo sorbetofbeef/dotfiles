@@ -101,14 +101,13 @@ cmd zip ${{
 cmd link !{{
   set -f
 
-  while getopts ":dfon:" option ; do
+  while getopts ":dfo:" option ; do
     case $option in 
       f ) p='f' ;;
           #   arg=${2:-'..'} ;; 
       d ) sup="$(doas)" ;;
       o ) arg=$OPTARG ;;
-      n ) name=$OPTARG
-      \? ) echo "invalid option"
+      ? ) echo "invalid option" ;;
     esac
   done
 
