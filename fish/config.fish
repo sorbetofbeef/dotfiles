@@ -12,6 +12,6 @@ end
 
 ### INTERACTIVE
 if status is-interactive
-  # Starship Prompt
+  # tide Prompt
   fish_prompt -gx /home/me/.config/fish/functions/tide/configure/configs/my_prompt.fish
 end

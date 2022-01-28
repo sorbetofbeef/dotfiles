@@ -1,11 +1,11 @@
 fish/conf.d
 fish/config.fish
 fish/functions
-gitui
 htop
 khal
 kitty
 lf
+lazygit
 mako
 neomutt
 river
