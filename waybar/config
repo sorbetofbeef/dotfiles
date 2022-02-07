@@ -7,7 +7,7 @@
   "margin": "",
   "modules-left": ["river/tags"],
   // "modules-left": ["sway/workspaces"],
-  "modules-center": ["custom/pacman", "clock"],
+  "modules-center": ["clock"],
   "modules-right": ["custom/left-cap", "pulseaudio", "bluetooth", "network", "battery", "custom/spacer", "custom/power"],
 
 //   "river/tags": {
@@ -20,26 +20,26 @@
       "tag-labels": [ "", "", "", "" ],
   },
 
-  // "sway/workspaces": {
-  //   "disable-scroll": true,
-  //   "all-outputs": true,
-  //   "format": "{icon}",
-  //   "persistent_workspaces": {
-  //       "1": [],
-  //       "2": [],
-  //       "3": [],
-  //       "4": [],
-  //    },
-  //   "format-icons": {
-  //     "1": "",
-  //     "2": "",
-  //     "3": "",
-  //     "4": "",
-  //     "urgent": "",
-  //     "focused": "",
-  //     "default": ""
-  //   }
-  // },
+   // "sway/workspaces": {
+   //   "disable-scroll": true,
+   //   "all-outputs": true,
+   //   "format": "{icon}",
+   //   "persistent_workspaces": {
+   //       "1": [],
+   //       "2": [],
+   //       "3": [],
+   //       "4": [],
+   //    },
+   //   "format-icons": {
+   //     "1": "",
+   //     "2": "",
+   //     "3": "",
+   //     "4": "",
+   //     "urgent": "",
+   //     "focused": "",
+   //     "default": ""
+   //   }
+   // },
 
   "clock": {
     "format": " {:%A %B, %d %Y  %H:%M} ",
@@ -62,15 +62,15 @@
     "tooltip-format": "{essid}"
   },
 
-  "custom/pacman": {
-    "format": "{} ",
-    "interval": 43200,
-    "exec": "expr $(paru -Syuqp | wc -l) - 4",
-    "exec-if": "pacwrap",
-    "on-click": "kitty --hold paru -Syu; pkill -SIGRTMIN+8 waybar",
-    "signal": 8
-  },
-
+//   "custom/pacman": {
+//     "format": "{} ",
+//     "interval": 43200,
+//     "exec": "expr $(paru -Syuqp | wc -l) - 4",
+//     "exec-if": "pacwrap",
+//     "on-click": "kitty --hold paru -Syu; pkill -SIGRTMIN+8 waybar",
+//     "signal": 8
+//   },
+// 
   "bluetooth": {
     "format": "{icon}",
     "format-disabled": "",

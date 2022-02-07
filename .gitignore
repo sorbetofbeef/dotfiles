@@ -9,7 +9,6 @@
 */.backup
 *.backup
 neomutt/.keys
-zsh/.*
 fish/fish_variables
 fish/functions/_*
 fish/functions/tide*
@@ -17,3 +16,6 @@ fish/functions/fisher*
 spotify-tui/.spotify_token_cache.json
 nvim
 TabNine
+fnm
+gh/hosts.yml
+zsh/firmware
