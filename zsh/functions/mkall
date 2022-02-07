@@ -1,0 +1,112 @@
+#!/bin/bash
+
+#
+# MKALL
+#
+# function that handles the most basic and common of build processes
+
+function mkall () {
+	while getopts "c:n:s:" opts; do
+		case $opts in 
+
+			n) export skip=false
+				 ninja_opt=true
+				 ;;
+
+			c) export skip=false
+				 export check_opt="$OPTARG"
+				 ;;
+
+		 \?) printf '\n\n\e[31mUnrecognized options passed. Aborting!\e[0m\n' 
+				 printf 'Usage: %s <-(t)est|(c)heck|(n)o-test> \n\n\n' "$0"
+				 sleep 2
+				 return 1
+				 ;;
+	  esac
+	done
+	
+	function ok () {
+		sleep 1
+		printf '\n\n[ \e[32mOK\e[0m ]\n'
+		sleep 1
+	}
+
+	function pass () {
+		sleep 1
+		printf '\n\n[ \e[32mPASS\e[0m ]\n'
+		sleep 1
+	}
+
+	function fail_out () {
+		sleep 1
+		printf '\n\n[ \e[31mFAIL\e[0m ]\n' 
+		sleep 3
+		exit 1
+	}
+
+	function test_suite () {
+		sleep 1
+		printf '\n\n\n\e[31;1mTESTING...\e[0m\n\n\n\n'
+		sleep 1
+		make test
+	}
+	
+	function check_suite () {
+		sleep 1
+		printf '\n\n\n\e[32;1mCHECKING...\e[0m\n\n\n\n'
+		sleep 1
+		make check
+	}
+	
+	function skip_suite () {
+		sleep 1
+		printf '\n\n\n\e[1;33;1mSKIPPING TEST-SUITES...\e[0m\n\n\n\n'
+		sleep 1
+	}
+
+
+	# start build
+	make || fail_out
+	pass
+
+	# test build
+	if [ "$skip" ]; then
+		skip_suite
+		export r=$?
+	else
+		if [ "$opt" ]; then
+			test_suite
+			export r=$?
+		else
+			check_suite
+			export r=$?
+		fi
+	fi
+
+	# checks tests
+	if [ "$r" -gt 0 ] ; then 
+
+		printf '\nStatus indicates a failure during tests. Continue anyway?\n(n/Y)  '
+		read -r -n1 check
+		sleep 1
+
+
+		if [ "$check" = 'n' ]; then
+
+			printf 'Aborting, make {,dist}clean (<- joke) may be needed\n\n'
+			return 1
+
+		fi
+	fi
+	pass
+
+	unset skip check opt r
+
+	# installs build
+	sudo make install || fail_out
+	pass
+
+	cd $HOME/.local/src
+
+}
+

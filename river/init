@@ -8,7 +8,7 @@ mod="Mod4"
 
 # Mod+Shift+Return to start an instance of foot (https://codeberg.org/dnkl/foot)
 # riverctl map normal $mod Return spawn 'alacritty-start'
-riverctl map normal $mod Return spawn "kitty -1 --title 'File Explorer' lf" 
+riverctl map normal $mod Return spawn "footclient --app-id 'foot'"
 
 # password menu
 riverctl map normal $mod P spawn wofipassmenu
@@ -17,8 +17,8 @@ riverctl map normal $mod P spawn wofipassmenu
 riverctl map normal $mod Q spawn wofi-power-menu
 
 # launcher
-riverctl map normal $mod Space spawn wofi-fav-list
-riverctl map normal $mod+Shift Space spawn wofi
+# riverctl map normal $mod Space spawn wofi-fav-list
+riverctl map normal $mod Space spawn 'wofi --show run'
 
 # Mod+Q to close the focused view
 riverctl map normal $mod W close
@@ -153,30 +153,32 @@ riverctl background-color 0x101010
 riverctl border-color-focused 0xc34043
 riverctl border-color-unfocused 0x999999
 riverctl border-width 3
-riverctl xcursor-theme cz-Hickson-White 18
-riverctl spawn 'gsettings set org.gnome.desktop.interface gtk-theme Graphite'
-riverctl spawn 'gsettings set org.gnome.desktop.interface icon-theme Papirus-Dark'
-riverctl spawn 'gsettings set org.gnome.desktop.interface cursor-theme cz-Hickson-White'
-riverctl spawn 'gsettings set org.gnome.desktop.interface cursor-size 18'
+# riverctl xcursor-theme cz-Hickson-White 18
+# riverctl spawn 'gsettings set org.gnome.desktop.interface gtk-theme Graphite'
+# riverctl spawn 'gsettings set org.gnome.desktop.interface icon-theme Papirus-Dark'
+# riverctl spawn 'gsettings set org.gnome.desktop.interface cursor-theme cz-Hickson-White'
+# riverctl spawn 'gsettings set org.gnome.desktop.interface cursor-size 18'
 
 # Set keyboard repeat rate
 riverctl set-repeat 50 250
 
 # Set app-ids and titles of views which should use client side decorations
-riverctl spawn 'river_dbus'
+# riverctl spawn 'river_dbus'
 riverctl spawn 'bar' 
-riverctl spawn 'wbg /home/me/media/wp/current-bg'
+riverctl spawn 'wbg /home/me/media/wp/redSeas.png'
+riverctl spawn 'foot --server'
 
+touchpad='pointer-2-7-SynPS/2_Synaptics_TouchPad'
 
-riverctl input 2:7:SynPS/2_Synaptics_TouchPad events enabled
-riverctl input 2:7:SynPS/2_Synaptics_TouchPad accel-profile adaptive
-riverctl input 2:7:SynPS/2_Synaptics_TouchPad pointer-accel 0.30000001192092896
-riverctl input 2:7:SynPS/2_Synaptics_TouchPad click-method clickfinger
-riverctl input 2:7:SynPS/2_Synaptics_TouchPad drag enabled
-riverctl input 2:7:SynPS/2_Synaptics_TouchPad disable-while-typing enabled
-riverctl input 2:7:SynPS/2_Synaptics_TouchPad middle-emulation enabled
-riverctl input 2:7:SynPS/2_Synaptics_TouchPad natural-scroll enabled
-riverctl input 2:7:SynPS/2_Synaptics_TouchPad tap enabled
+riverctl input $touchpad events enabled
+riverctl input $touchpad accel-profile adaptive
+riverctl input $touchpad pointer-accel 0.40000001192092896
+riverctl input $touchpad click-method clickfinger
+riverctl input $touchpad drag enabled
+riverctl input $touchpad disable-while-typing enabled
+riverctl input $touchpad middle-emulation enabled
+riverctl input $touchpad natural-scroll enabled
+riverctl input $touchpad tap enabled
 
 # Set and exec into the default layout generator, rivertile.
 # River will send the process group of the init executable SIGTERM on exit.

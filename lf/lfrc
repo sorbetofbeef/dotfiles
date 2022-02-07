@@ -101,7 +101,7 @@ cmd link !{{
     case $option in 
       f ) p='f' ;;
           #   arg=${2:-'..'} ;; 
-      d ) sup="$(doas)" ;;
+      d ) sup="$(sudo)" ;;
       o ) arg=$OPTARG ;;
       \? ) echo "invalid option"
     esac
@@ -152,9 +152,10 @@ cmd git-add !{{
 }}
 
 # Chown
-cmd chown %set -f; doas chown -v $1 $fx
-cmd chown-recurse %set -f; doas chown -Rv $1 $fx
+cmd chown %set -f; sudo chown -v $1 $fx
+cmd chown-recurse %set -f; sudo chown -Rv $1 $fx
 
+cmd ztar !tar --zstd -cf $fi
 
 ### KEYBINDS
 
@@ -162,11 +163,12 @@ cmd chown-recurse %set -f; doas chown -Rv $1 $fx
 map <enter> shell
 
 map o &mimeopen $f
-map O &doas mimeopen $f
+map O &sudo mimeopen $f
 
 map H set hidden!
 
-map a push $mkdir<space>
+map a push $nvim<space>
+map A push $mkdir<space>
 
 map <delete> :delete $fx
 map D :trash $fx
@@ -184,8 +186,8 @@ map <c-l>D push :link<space>-dfo<space>
 
 # Neovim
 map e $nvim $fx
-map a push $nvim<space>
-map <c-e> push $doas<space>nvim<space>
+map E push $nvim<space>
+map <c-e> push $sudo<space>nvim<space>
 map <a-e> $nvim /home/me/.config/lf/lfrc
 
 # Paru
@@ -195,14 +197,14 @@ map <c-p>r push !paru<space>-Rscu<space>
 map <c-p>f push !paru<space>-Ss<space>
 
 # Add permission
-map +x %doas chmod -v +x $fx
-map +r %doas chmod -v +r $fx
-map +w %doas chmod -v +w $fx
+map +x %sudo chmod -v +x $fx
+map +r %sudo chmod -v +r $fx
+map +w %sudo chmod -v +w $fx
 
 # Remove permission
-map -x %doas chmod -v -x $fx
-map -r %doas chmod -v -r $fx
-map -w %doas chmod -v -w $fx
+map -x %sudo chmod -v -x $fx
+map -r %sudo chmod -v -r $fx
+map -w %sudo chmod -v -w $fx
 
 # Chown
 map <a-o> push :chown<space>
