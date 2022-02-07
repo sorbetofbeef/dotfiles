@@ -1,0 +1,14 @@
+#!/bin/bash
+
+function mvd () {
+	original=$1
+	target=$2
+
+	if mv -v $original $target ; then
+		if [ -d "$target" ] ; then
+			cd "$target"
+		else
+			cd "$(dirname $target)" 
+		fi
+	fi
+}

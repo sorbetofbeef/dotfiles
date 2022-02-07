@@ -49,12 +49,27 @@ bindkey -v
 
 ## OLD COMPLETION SETTINGS ##
 
-zstyle ':completion:*' menu select
+# The following lines were added by compinstall
+
+zstyle ':completion:*' insert-unambiguous true
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*' list-prompt '%SAt %p: Hit TAB for more, or the character to insert%s'
+zstyle ':completion:*' menu select=1
+zstyle ':completion:*' original true
+zstyle ':completion:*' select-prompt '%SScrolling active: current selection at %p%s'
+zstyle ':completion:*' use-compctl false
+zstyle :compinstall filename '/home/me/.zshrc'
 zstyle ':completion:*' matcher-list '' \
   'm:{a-z\-}={A-Z\_}' \
   'r:[^[:alpha:]]||[[:alpha:]]=** r:|=* m:{a-z\-}={A-Z\_}' \
   'r:|?=** m:{a-z\-}={A-Z\_}'
 zmodload zsh/complist
+
+fpath+=($ZDOTDIR/shell_funcs $ZDOTDIR/functions)
+
+for funcs in $ZDOTDIR/shell_funcs/* ; do 
+  autoload -Uz "$funcs"
+done
 autoload -Uz compinit
 compinit -i
 
@@ -64,18 +79,22 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
 --color=info:#88909f,prompt:#d05858,pointer:#b05ccc 
 --color=marker:#608e32,spinner:#d05858,header:#3a8b84'
 
+# fnm
+export PATH=/home/me/.config/fnm:$PATH
+eval "`fnm env`"
 # source $ZDOTDIR/functions
 source $ZDOTDIR/alias-common
-source $ZDOTDIR/alias-functions
 
 # source /usr/share/zsh-syntax-highlighting/highlighters/dracula/dracula-highlitgher.zsh
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh/plugins/zsh-autopair/autopair.zsh
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+# source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source /usr/share/zsh/plugins/zsh-autopair/autopair.zsh
+# source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-fpath=($ZDOTDIR/zsh-completions/src $fpath)
-
+for funcs in $ZDOTDIR/functions/* ; do 
+  source $funcs
+done
 
 source <("${CARGO_HOME}/bin/starship" init zsh --print-full-init)
 
-pfetch
+# pfetch
+

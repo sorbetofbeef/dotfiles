@@ -9,10 +9,10 @@
 
 # XBPS
 # alias \
-	# xI='doas xbps-install -S' \
-	# xR='doas xbps-remove -Ro' \
-	# xU='doas xbps-install -Su' \
-	# xF='doas xbps-query -M -R --regex' 
+	# xI='sudo xbps-install -S' \
+	# xR='sudo xbps-remove -Ro' \
+	# xU='sudo xbps-install -Su' \
+	# xF='sudo xbps-query -M -R --regex' 
 
 # XBPS
 # alias \
@@ -24,13 +24,13 @@
 
 # SV
 # alias \
-# 	sA="doas link-service" \
-# 	sRm="doas rm -Iv /var/service/${1}" \
-# 	sU='doas sv up' \
-# 	sD='doas sv down' \
-# 	sO='doas sv once' \
-# 	sRe='doas sv restart' \
-# 	sM='doas sv status'
+# 	sA="sudo link-service" \
+# 	sRm="sudo rm -Iv /var/service/${1}" \
+# 	sU='sudo sv up' \
+# 	sD='sudo sv down' \
+# 	sO='sudo sv once' \
+# 	sRe='sudo sv restart' \
+# 	sM='sudo sv status'
 
 # PARU
 alias \
@@ -52,27 +52,27 @@ alias \
 
 # SYSTEMD - System
 alias \
-	sE='doas systemctl enable' \
-	sENow='doas systemctl enable --now' \
-	sD='doas systemctl disable' \
-	sDNow='doas systemctl disable --now' \
-	sL='doas systemctl list-units' \
-	sLa='doas systemctl list-unit-files' \
-	sMon='doas systemctl status' \
-	sSt='doas systemctl start' \
-	sSp='doas systemctl stop' 
+	sE='sudo systemctl enable' \
+	sENow='sudo systemctl enable --now' \
+	sD='sudo systemctl disable' \
+	sDNow='sudo systemctl disable --now' \
+	sL='sudo systemctl list-units' \
+	sLa='sudo systemctl list-unit-files' \
+	sMon='sudo systemctl status' \
+	sSt='sudo systemctl start' \
+	sSp='sudo systemctl stop' 
 
 # ROOT
 alias \
-	_="doas" \
-	chown='doas chown -v' \
-	chmod='doas chmod -v' \
-	mount='doas mount -v' \
-	umount='doas umount -v' \
-	df='doas df -h' \
-	du='doas du -sh' \
-	reboot='doas reboot' \
-	poweroff='doas poweroff'
+	_="sudo" \
+	chown='sudo chown -v' \
+	chmod='sudo chmod -v' \
+	mount='sudo mount -v' \
+	umount='sudo umount -v' \
+	df='sudo df -h' \
+	du='sudo du -sh' \
+	reboot='sudo reboot' \
+	poweroff='sudo poweroff'
 
 # USER
 alias \
