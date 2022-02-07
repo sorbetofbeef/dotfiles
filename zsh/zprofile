@@ -71,14 +71,14 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 # javascript
 
 ## PATH ##
-PATH="${HOME}/.local/bin":"${XDG_DATA_HOME}/go/bin":"${XDG_DATA_HOME}/cargo/bin":"/usr/local/bin":"$(yarn global bin)":"${PATH}"
+PATH="${HOME}/.local/bin":"${XDG_DATA_HOME}/go/bin":"${XDG_DATA_HOME}/cargo/bin":"/usr/local/bin":"/usr/local/sbin":"/usr/local/go/bin":"$(yarn global bin)":"${PATH}"
 export PATH=/usr/lib/ccache/bin:$PATH
 fpath+=/home/me/.config/zsh/zsh_functions
 
 ## STARTUP PROGRAMS ##
 # lf
 source ~/.config/lf/icons
-# export "$(dbus-launch)"
+export "$(dbus-launch)"
 
 # if [ "$TERM" = "linux" ]; then
 # 	printf %b '\e[40m' '\e[8]' # set default background to color 0 'dracula-bg'
@@ -116,61 +116,9 @@ _ssh () {
   	ssh-add ~/.ssh/id_ed25519 >> /home/me/.local/var/logs/sway.log
 }
 
-# sway
-_sway () {
-  sway 2> /home/me/.local/var/logs/sway.log >> /home/me/.local/var/logs/sway.log
-}
-
-# qtile
-_qtile () {
-  qtile start -b wayland 2> /home/me/.local/var/logs/qtile.log >> /home/me/.local/var/logs/qtile.log
-}
-
-# japokwm
-_river () {
-  river 2> /home/me/.local/var/logs/qtile.log >> /home/me/.local/var/logs/qtile.log
-}
-
-# start wayland wm
-start () {
-  arg="$1"
-  if [[ "$#" -gt 1 ]]; then
-    echo "Only one argument should be supplied -q for qtile and -s for sway"
-  elif [[ $arg != -* ]]; then
-    echo "Invalid argument, options are -q for qtile and -s for sway"
-  else
-    _gpg
-    _ssh
-    case $arg in 
-     	-s ) _sway
-           ;;
-     	-q ) _qtile
-           ;;
-     	-r ) _river
-           ;;
-       * )
-         exit 1
-         ;;
-    esac
-    clear
-  fi
-}
-
-[[ $(tty) == /dev/tty1 ]] && start -r
-
-## UNUSED ##
-# dbus and river
-# if [[ $(tty) == /dev/tty1 ]]; then 
-#   export $(dbus-launch)
-#   eval $(keychain --dir ~/.ssh/keychain --eval 4163DAE3A25242C4 ~/.ssh/id_ed25519 --agents gpg,ssh) &&
-#   exec dbus-run-session -- river
-# fi
-
-# if [[ $(tty) == /dev/tty1 ]]; then 
-#   export $(dbus-launch)
-#   eval $(keychain --dir ~/.ssh/keychain --eval 4163DAE3A25242C4 ~/.ssh/id_ed25519 --agents gpg,ssh) &&
-#   startx
-# fi
+# __gpg &&
+# _ssh
+[[ $(tty) == /dev/tty1 ]] && seatd-launch sway
 
 # X11
 # export XINITRC="$XDG_CONFIG_HOME"/x11/xinitrc

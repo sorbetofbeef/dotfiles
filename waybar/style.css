@@ -48,7 +48,6 @@ window#waybar {
   box-shadow: inset 0px -3px 2px -2px #999999;
   margin: 0px 1px 2px 1px;
   padding: 2px 5px 2px 5px;
-  /* border-bottom: 1px solid #c34043; */
 }
 
 #tags button.occupied{
@@ -62,28 +61,25 @@ window#waybar {
   transition: box-shadow 0.4s, color 0.8s, border 1.0s;
 }
 
-/* #workspaces button {
-   background-color: #475072;
-   color: #c34043;
-   border-bottom: 2px solid #727169;
-   box-shadow: inset 0px -3px 2px -1px #6a9589;
+  /*
+#workspaces button {
+  color: #dc322f;
+  box-shadow: inset 0px -3px 2px -1px #dc322f;
    margin: 0 1px;
    padding: 0px 5px;
  }
 
  #workspaces button.persistent{ 
-   color: #090618; 
-   border-bottom: 2px solid #727169;
-   box-shadow: inset 0px -3px 2px -2px #dcd7ba;
+   color: #999999;
+   box-shadow: inset 0px -3px 2px -2px ;
  }
 
  #workspaces button.focused {
-   color: #c34043;
-   border-bottom: 2px solid #7aa89f;
-   box-shadow: inset 0px -18px 12px -12px #6a9589;
-   transition: box-shadow 0.4s, color 0.8s, border 1.0s;
+  color: #ebebeb;
+  box-shadow: inset 0px -18px 12px -12px #dc322f;
+  transition: box-shadow 0.4s, color 0.8s, border 1.0s;
  } 
-*/
+  */
 
 #bluetooth,
 #battery,

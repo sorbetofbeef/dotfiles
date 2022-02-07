@@ -1,5 +1,5 @@
 allow_images=false
-term=kitty
+term=alacritty
 width=15%
 lines=6
 always_parse_args=true
