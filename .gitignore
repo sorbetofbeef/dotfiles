@@ -17,5 +17,7 @@ spotify-tui/.spotify_token_cache.json
 nvim
 TabNine
 fnm
-gh/hosts.yml
+gh/hosts.yaml
 zsh/firmware
+zsh/.histfile
+zsh/.zcompdump
