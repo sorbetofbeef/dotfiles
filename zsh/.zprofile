@@ -81,6 +81,8 @@ export PATH
 
 # SCRIPTS AND COMMANDS TO RUN AT LOGIN
 
+source "${XDG_CONFIG_HOME}/lf/icons"
+
 eval $(dbus-launch)
 export DBUS_SESSION_BUS_ADDRESS
 

@@ -1,4 +1,4 @@
-set -Ux LF_ICONS "\
+export LF_ICONS="\
 tw= :\
 st= :\
 ow= :\
