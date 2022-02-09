@@ -1,3 +1,4 @@
+
 ######
 # Configuration for lf 
 # ~/.config/lf/lfrc
@@ -15,6 +16,9 @@ set number true
 set relativenumber true
 set scrolloff 4
 set tabstop 2
+set ratios 1:2:3
+set cleaner ~/.config/lf/cleaner
+set previewer ~/.config/lf/preview
 
 # Shell
 set shell sh
@@ -103,11 +107,12 @@ cmd link !{{
           #   arg=${2:-'..'} ;; 
       d ) sup="$(sudo)" ;;
       o ) arg=$OPTARG ;;
-      \? ) echo "invalid option"
+      ? ) echo "invalid option" ;;
     esac
   done
 
   for file in $fx ; do
+
     target="${file##*/}"
     ${sup:-''}ln -sv${p:-''} "${file}" ${arg:='..'}/${target/%.[sl][hu]*}
   done
@@ -155,7 +160,6 @@ cmd git-add !{{
 cmd chown %set -f; sudo chown -v $1 $fx
 cmd chown-recurse %set -f; sudo chown -Rv $1 $fx
 
-cmd ztar !tar --zstd -cf $fi
 
 ### KEYBINDS
 
@@ -167,8 +171,7 @@ map O &sudo mimeopen $f
 
 map H set hidden!
 
-map a push $nvim<space>
-map A push $mkdir<space>
+map a push $mkdir<space>
 
 map <delete> :delete $fx
 map D :trash $fx
@@ -186,7 +189,7 @@ map <c-l>D push :link<space>-dfo<space>
 
 # Neovim
 map e $nvim $fx
-map E push $nvim<space>
+map a push $nvim<space>
 map <c-e> push $sudo<space>nvim<space>
 map <a-e> $nvim /home/me/.config/lf/lfrc
 

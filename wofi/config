@@ -1,7 +1,7 @@
 allow_images=false
 term=footclient
-lines=9
 width=15%
+lines=9
 always_parse_args=true
 insensitive=true
 location=top_right

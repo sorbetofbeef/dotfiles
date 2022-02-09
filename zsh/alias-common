@@ -77,6 +77,7 @@ alias \
 # USER
 alias \
 	luamake='/home/me/.local/src/lua-language-server/3rd/luamake/luamake' \
+	nvim="kak" \
 	l="lsd -lAh --group-dirs first --date '+%m.%d %H:%M' --blocks permission,user,date,name" \
 	la="lsd -lAh --group-dirs first --tree --depth 2 --blocks name --no-symlink" \
 	laa="lsd -lAh --group-dirs first --tree --depth 3 --blocks name --no-symlink" \

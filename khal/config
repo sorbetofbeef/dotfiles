@@ -1,13 +1,13 @@
 [calendars]
 [[calendars]]
-path = ~/dt/calendars/*
+path = ~/workspace/calendars/*
 type = discover
 color = dark red
 [[work]]
-path = ~/dt/calendars/work
+path = ~/workspace/calendars/work
 
 [[home]]
-path = ~/dt/calendars/home
+path = ~/workspace/calendars/home
 
 [locale]
 local_timezone=America/Los_Angeles

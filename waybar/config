@@ -5,41 +5,42 @@
   "height": "",
   "width": "",
   "margin": "",
-  "modules-left": ["river/tags"],
-  // "modules-left": ["sway/workspaces"],
+  // "modules-left": ["custom/left-cap", "sway/workspaces", "custom/pacman"],
+
+  "modules-left": ["custom/left-cap", "river/tags"],
   "modules-center": ["clock"],
-  "modules-right": ["custom/left-cap", "pulseaudio", "bluetooth", "network", "battery", "custom/spacer", "custom/power"],
+  "modules-right": ["custom/right-backed", "custom/mpd", "custom/left-backed", "pulseaudio", "bluetooth", "network", "battery", "custom/power"],
 
-//   "river/tags": {
-//       "num-tags": 9,
-//       "tag-labels": [ "", "", "", "", "", "", "", "", "" ],
-//   },
+ // "river/tags": {
+ //     "num-tags": 9,
+ //     "tag-labels": [ "", "", "", "", "", "", "", "", "" ],
+ // },
 
-  "river/tags": {
-      "num-tags": 4,
-      "tag-labels": [ "", "", "", "" ],
-  },
+ "river/tags": {
+     "num-tags": 4,
+     "tag-labels": [ "", "", "", ""],
+ },
 
-   // "sway/workspaces": {
-   //   "disable-scroll": true,
-   //   "all-outputs": true,
-   //   "format": "{icon}",
-   //   "persistent_workspaces": {
-   //       "1": [],
-   //       "2": [],
-   //       "3": [],
-   //       "4": [],
-   //    },
-   //   "format-icons": {
-   //     "1": "",
-   //     "2": "",
-   //     "3": "",
-   //     "4": "",
-   //     "urgent": "",
-   //     "focused": "",
-   //     "default": ""
-   //   }
-   // },
+  // "sway/workspaces": {
+  //   "disable-scroll": true,
+  //   "all-outputs": true,
+  //   "format": "{icon}",
+  //   "persistent_workspaces": {
+  //       "1": [],
+  //       "2": [],
+  //       "3": [],
+  //       "4": [],
+  //    },
+  //   "format-icons": {
+  //     "1": "",
+  //     "2": "",
+  //     "3": "",
+  //     "4": "",
+  //     "urgent": "",
+  //     "focused": "",
+  //     "default": ""
+  //   }
+  // },
 
   "clock": {
     "format": " {:%A %B, %d %Y  %H:%M} ",
@@ -52,7 +53,7 @@
     },
     "format": "{icon}",
     "format-critical": "{icon}",
-    "format-icons":  [ "", "", "" ],
+    "format-icons":  [ "",  "", "", "", "", "", "" ],
     "tooltip": "{capacity}"
   },
   
@@ -62,15 +63,15 @@
     "tooltip-format": "{essid}"
   },
 
-//   "custom/pacman": {
-//     "format": "{} ",
-//     "interval": 43200,
-//     "exec": "expr $(paru -Syuqp | wc -l) - 4",
-//     "exec-if": "pacwrap",
-//     "on-click": "kitty --hold paru -Syu; pkill -SIGRTMIN+8 waybar",
-//     "signal": 8
-//   },
-// 
+  "custom/pacman": {
+    "format": "{} ",
+    "interval": 43200,
+    "exec": "expr $(paru -Syuqp | wc -l) - 5",
+    "exec-if": "pacwrap",
+    "on-click": "kitty --hold paru -Syu; pkill -SIGRTMIN+8 waybar",
+    "signal": 8
+  },
+
   "bluetooth": {
     "format": "{icon}",
     "format-disabled": "",
@@ -106,6 +107,18 @@
     "tooltip-format": "{volume}",
   },
 
+   "custom/mpd": {
+        "format": "    {}",
+        "max-length": 35,
+        "interval": 10,
+        "exec": "mpc current",
+        "exec-if": "pgrep mpd",
+        "on-click": "mpc toggle",
+        "on-scroll-up": "mpc next",
+        "on-scroll-down": "mpc prev",
+        "on-click-right": "kitty -1 'ncmpcpp'"
+    },
+
   "custom/right-cap": {
     "format": " ",
   },
@@ -113,6 +126,21 @@
   "custom/left-cap": {
     "format": " ",
   },
+
+  "custom/right-backed": {
+    "format": "",
+     "interval": 10,
+     "exec": "mpc current",
+     "exec-if": "pgrep mpd",
+  },
+
+  "custom/left-backed": {
+    "format": "",
+     "interval": 10,
+     "exec": "mpc current",
+     "exec-if": "pgrep mpd",
+  },
+
 
   "custom/spacer": {
     "format": " ",

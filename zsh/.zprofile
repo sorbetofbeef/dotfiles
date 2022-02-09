@@ -20,9 +20,8 @@
 export LC_CTYPE='en_US.UTF-8'
 
 # Default programs
-export EDITOR='nvim'
-export VISUAL='nvim'
-# export BROWSER='firefox-bin'
+export EDITOR='kak'
+export VISUAL='kak'
 export READER='zathura'
 export PAGER='less -R'
 
@@ -48,7 +47,7 @@ export npm_config_user="${XDG_CONFIG_HOME}/npmrc"
 export npm_config_cachedir="${XDG_CACHE_HOME}/npm"
 
 # qt
-export QT_QPA_PLATFORM='wayland-egl'
+export QT_QPA_PLATFORM='wayland'
 
 # Make
 export MAKEFLAGS='-j16'
@@ -74,10 +73,12 @@ XORG_PREFIX="/usr"
 XORG_CONFIG="--prefix=$XORG_PREFIX --sysconfdir=/etc --localstatedir=/var --disable-static"
 export XORG_PREFIX XORG_CONFIG
 
-
-# Path
+# Paths
+LD_LIBRARY_PATH=$XDG_DATA_HOME/lib:$XDG_DATA_HOME/lib/python3.10/site-packages:$LD_LIBRARY_PATH
+MANPATH=$HOME/.local/share/man:$MANPATH
 PATH="${HOME}/.local/bin:${HOME}/.yarn/bin:${XDG_DATA_HOME}/zig:${GOPATH}/bin:${RUSTUP_HOME}/bin:${CARGO_HOME}/bin:/usr/local/go/bin:/opt:/usr/local/bin:/usr/local/sbin:$PATH:/usr/sbin:/sbin"
-export PATH
+
+export PATH LD_LIBRARY_PATH MANPATH
 
 # SCRIPTS AND COMMANDS TO RUN AT LOGIN
 
@@ -86,5 +87,5 @@ source "${XDG_CONFIG_HOME}/lf/icons"
 eval $(dbus-launch)
 export DBUS_SESSION_BUS_ADDRESS
 
- [ "/dev/tty1" = "$(tty)" ] && seatd-launch river
+ [ "/dev/tty1" = "$(tty)" ] && exec seatd-launch river
  
