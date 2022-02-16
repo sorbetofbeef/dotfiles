@@ -1,3 +1,4 @@
+#!/bin/bash
 ##############################
 # ~/.config/zsh/alias-common #
 #                            # 
@@ -34,9 +35,9 @@
 
 # PARU
 alias \
-  pI='paru -Syu' \
-  pF='paru -Ss'  
-  pR='paru -Rscu' \
+	pI='paru -Syu' \
+	pF='paru -Ss' \
+	pR='paru -Rscu'
 
 # SYSTEMD - USER
 alias \
@@ -77,7 +78,6 @@ alias \
 # USER
 alias \
 	luamake='/home/me/.local/src/lua-language-server/3rd/luamake/luamake' \
-	nvim="kak" \
 	l="lsd -lAh --group-dirs first --date '+%m.%d %H:%M' --blocks permission,user,date,name" \
 	la="lsd -lAh --group-dirs first --tree --depth 2 --blocks name --no-symlink" \
 	laa="lsd -lAh --group-dirs first --tree --depth 3 --blocks name --no-symlink" \
@@ -92,19 +92,22 @@ alias \
 	rm='rm -v' \
 	rmd='rm -rf' \
  	c='clear' \
-	q='exit'
+	q='exit' \
+	e=${EDITOR}
 
+
+# bax='/usr/bin/git --work-tree=/home/me --git-dir=/home/me/.config/dotfiles' \
 # GIT
 alias \
-	bax='/usr/bin/git --work-tree=/home/me --git-dir=/home/me/.config/dotfiles' \
 	g='git status' \
+  gC='git commit -m' \
+  gA='git add' \
 	gIb='git init --bare' \
 	gI='git init' \
-	gRA='git remote add origin master' \
-	gRm='git remote remove' \
-	gRs='git remote show' \
-	gRu='git remote update' \
-	gACm='git add . && git commit -m' \
+	gRA='git remote add' \
+	gRR='git remote remove' \
+	gRS='git remote show' \
+	gRU='git remote update' \
 	gPl='git pull' \
 	gP='git push' \
 	gPu='git push -u' \
@@ -112,13 +115,16 @@ alias \
 	gF='git fetch' \
 	gFa='git fetch --all'
 
-# GITHUB-CLI
+# REPO - GITHUB-CLI
 alias \
 	grCl='gh repo clone ' \
 	grCrPr='gh repo create  --private' \
 	grCrPu='gh repo create --public' \
 	grV='gh repo view' \
-	grF='h repo fork --clone' \
+	grF='h repo fork --clone'
+
+# PULL REQUEST - GITHUB-CLI
+alias \
 	gpChk='gh pr checkout' \
 	gpCls='gh pr close' \
 	gpDif='gh pr diff' \

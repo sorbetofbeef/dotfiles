@@ -2,33 +2,34 @@
 
 riverctl spawn "dbus-update-activation-environment --systemd SEATD_SOCK WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river"
 
-riverctl spawn \$XDG_CONFIG_HOME/river/bindings
+riverctl spawn \$XDG_CONFIG_HOME/river/bindings.sh
 riverctl spawn \$XDG_CONFIG_HOME/river/wayriver.sh
-
-riverctl background-color 0xfaf4ed
 
 riverctl border-width 3
 
-riverctl border-color-focused 0x5CA7B4
-riverctl border-color-unfocused 0xE6EBF3
+riverctl background-color 0x000000
+riverctl border-color-focused 0x81a1c1
+riverctl border-color-unfocused 0xd8dee9
 
-riverctl xcursor-theme GoogleDot-Red 22
+riverctl xcursor-theme GoogleDot-Blue 18
  
-riverctl spawn 'gsettings set org.gnome.desktop.interface gtk-theme Skeuos-Red-Dark'
-riverctl spawn 'gsettings set org.gnome.desktop.interface icon-theme Papirus-Dark'
-riverctl spawn 'gsettings set org.gnome.desktop.interface cursor-theme GoogleDot-Red'
-riverctl spawn 'gsettings set org.gnome.desktop.interface cursor-size 22'
+riverctl spawn 'gsettings set org.gnome.desktop.interface gtk-theme Nordic-Polar-v40'
+riverctl spawn 'gsettings set org.gnome.desktop.interface icon-theme Zafiro-icons-Dark'
+riverctl spawn 'gsettings set org.gnome.desktop.interface cursor-theme GoogleDot-Blue'
+riverctl spawn 'gsettings set org.gnome.desktop.interface cursor-size 18'
 
-riverctl spawn 'gsettings set org.gnome.desktop.wm.preference theme Skeuos-Red-Dark'
-riverctl spawn 'gsettings set org.gnome.desktop.wm.preference button-layout close,spacer,maximize,minimize:menu'
+riverctl spawn 'gsettings set org.gnome.desktop.wm.preferences theme Nordic-Polar-v40'
+riverctl spawn 'gsettings set org.gnome.desktop.wm.preferences button-layout close,maximize,minimize:menu'
 
 riverctl set-repeat 50 250
 
 riverctl float-filter-add float
 riverctl float-filter-add popup
 
-riverctl csd-filter-add app-id firefox
-riverctl csd-filter-add app-id foot
+# riverctl csd-filter-add app-id firefox
+# riverctl csd-filter-add app-id kitty
+# riverctl csd-filter-add app-id ide
+# riverctl csd-filter-add app-id settings
 
 pad='pointer-2-7-SynPS/2_Synaptics_TouchPad'
 

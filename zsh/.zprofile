@@ -19,9 +19,17 @@
 
 export LC_CTYPE='en_US.UTF-8'
 
+export XDG_SESSION_TYPE="wayland"
+export XDG_SESSION_DESKTOP="river"
+export XDG_CURRENT_DESKTOP="river"
+export DESKTOP_SESSION="river"
+
+export XKB_DEFAULT_LAYOUT="us"
+export XKB_DEFAULT_OPTIONS="altwin:swap_lalt_lwin,caps:ctrl_modifier"
+
 # Default programs
-export EDITOR='kak'
-export VISUAL='kak'
+export EDITOR='nvim'
+export VISUAL='nvim'
 export READER='zathura'
 export PAGER='less -R'
 
@@ -36,8 +44,9 @@ export XDG_CONFIG_HOME="${HOME}/.config"
 export XKB_DEFAULT_OPTIONS='caps:ctrl_modifier,altwin:swap_lalt_lwin'
 
 # Less
-export LESSHISTFILE=-
-export LESSCMD='-R'
+export LESS=-R
+export LESSOPEN="| /usr/bin/highlight -O ansi %s 2>/dev/null"
+export LESSHISTFILE="-"
 
 # Fnm node version manager
 export FNM_DIR="${XDG_CONFIG_HOME}/fnm"
