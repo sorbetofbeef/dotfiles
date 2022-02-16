@@ -21,3 +21,4 @@ gh/hosts.yml
 zsh/firmware
 zsh/.histfile
 zsh/.zcompdump
+htop
