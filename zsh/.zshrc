@@ -90,11 +90,14 @@ source $ZDOTDIR/alias-common
 # source /usr/share/zsh/plugins/zsh-autopair/autopair.zsh
 # source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# for funcs in $ZDOTDIR/functions/* ; do 
-#   source $funcs
-# done
-
-todo -s
-
 source <("${CARGO_HOME}/bin/starship" init zsh --print-full-init)
 
+i=0
+for f in /home/me/workspace/*.todo ; do
+  i=$(($i + 1))
+  printf '| %s ' $i >> ~/.cache/todo.cache
+  printf '%s ' $(rg -N --color never --after-context 1 -i entry $f) >> ~/.cache/todo.cache
+done
+bat -p ~/.cache/todo.cache
+\rm ~/.cache/todo.cache
+unset f i

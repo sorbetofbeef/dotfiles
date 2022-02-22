@@ -1,18 +1,20 @@
 /* WAYBAR */
 * {
   font-family: 'Cartograph CF', icomoon;
-  font-size: 14px;
   margin: 0;
   padding: 0;
   min-height: 0;
   border-radius: 0px;
+  font-size: 14px;
 }
 
-window#waybar {
+window#waybar.bar {
   background-color: #2e3440;
-  border-bottom: 2px solid #d8dee9;
-  /* border-bottom: 2px solid #ff5D62; */
-  /* box-shadow: -4px 2px 2px #090618; */
+  border-bottom: 2px solid #0087BD;
+}
+
+window#waybar.dock {
+  background-color: rgba(0, 0, 0, 0.0);
 }
 
 #clock,
@@ -27,9 +29,11 @@ window#waybar {
 #custom-spacer,
 #custom-left-cap,
 #custom-right-cap {
+  font-size: 14px;
   background-color: rgba(0, 0, 0, 0.0);
   color: #d8dee9;
 }
+
 
 #custom-right-cap,
 #custom-left-cap,
@@ -44,22 +48,30 @@ window#waybar {
   color: #81A1C1
 }
 
+#tags {
+  box-shadow: inset 0px -8px 4px -8px #2e3440;
+  padding: 0 10px;
+}
+
 #tags button { 
+  background-color: #3B4252;
+  border-radius: 8px;
   color: #eceff4;
-  box-shadow: inset 0px -3px 2px -2px #eceff4;
-  margin: 0px 1px 1px 1px;
+  box-shadow: inset -1px 3px 2px -2px #eceff4;
+  margin: 0px 3px 1px 3px;
   padding: 2px 10px 2px 10px;
 }
 
+
 #tags button.occupied{
   color: #0087BD;
-  box-shadow: inset 0px -3px 2px -1px #81A1C1;
+  box-shadow: inset -1px 4px 2px -3px #81A1C1;
 }
 
 #tags button.focused {
   color: #d8dee9;
-  box-shadow: inset 0px -18px 12px -12px #0087BD;
-  transition: box-shadow 0.4s, color 0.8s, border 1.0s;
+  box-shadow: inset -1px 18px 12px -12px #0087BD;
+  transition: box-shadow 0.4s, color 0.8s;
 }
 
   /*

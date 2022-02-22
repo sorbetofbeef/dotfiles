@@ -1,13 +1,16 @@
-{
+[{
+  "name": "bar",
   "layer": "bottom",
   "position": "top",
   "exclusive": true,
+  "fixed-center": true,
   "height": "",
   "width": "",
   "margin": "",
   // "modules-left": ["custom/left-cap", "sway/workspaces", "custom/pacman"],
 
-  "modules-left": ["custom/left-cap", "river/tags"],
+  // "modules-left": ["custom/left-cap", "river/tags"],
+  "modules-left": [],
   "modules-center": ["clock"],
   "modules-right": ["custom/right-backed", "custom/mpd", "custom/left-backed", "pulseaudio", "bluetooth", "network", "battery", "custom/power"],
 
@@ -16,10 +19,10 @@
  //     "tag-labels": [ "", "", "", "", "", "", "", "", "" ],
  // },
 
- "river/tags": {
-     "num-tags": 4,
-     "tag-labels": [ "", "", "", ""],
- },
+ // "river/tags": {
+ //     "num-tags": 4,
+ //     "tag-labels": [ "", "", "", ""],
+ // },
 
   // "sway/workspaces": {
   //   "disable-scroll": true,
@@ -145,4 +148,22 @@
   "custom/spacer": {
     "format": " ",
   },
-}
+}, {
+  "name": "dock",
+  // "layer": "top",
+  // "exclusive": false,
+  "position": "bottom",
+  "mode": "overlay",
+  "height": "",
+  "width": "",
+  "margin": "",
+
+  "modules-left": [],
+  "modules-center": ["river/tags"],
+  "modules-right": [],
+
+ "river/tags": {
+     "num-tags": 4,
+     "tag-labels": [ "", "", "", ""],
+ },
+}]
