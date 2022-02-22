@@ -1,6 +1,6 @@
 # Use custom format
 format="""
-$git_branch[═](bold blue)$git_status$fill$time$fill$package
+$git_branch[═](bold white)$git_status$fill$time$fill$package
 $directory$character"""
 right_format = """$cmd_duration $all"""
 
@@ -28,7 +28,7 @@ vicmd_symbol = "[ ](yellow)"
 
 [fill]
 symbol='═'
-style='bold blue'
+style='bold white'
 disabled=false
 
 [aws]

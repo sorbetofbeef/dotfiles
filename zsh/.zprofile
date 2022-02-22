@@ -95,5 +95,8 @@ source "${XDG_CONFIG_HOME}/lf/icons"
 eval $(dbus-launch)
 export DBUS_SESSION_BUS_ADDRESS
 
+export GPG_TTY=$(tty)
+gpg-connect-agent UPDATESTARTUPTTY /bye
+
  [ "/dev/tty1" = "$(tty)" ] && exec seatd-launch river
  

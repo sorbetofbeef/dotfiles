@@ -90,11 +90,11 @@ source $ZDOTDIR/alias-common
 # source /usr/share/zsh/plugins/zsh-autopair/autopair.zsh
 # source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-for funcs in $ZDOTDIR/functions/* ; do 
-  source $funcs
-done
+# for funcs in $ZDOTDIR/functions/* ; do 
+#   source $funcs
+# done
+
+todo -s
 
 source <("${CARGO_HOME}/bin/starship" init zsh --print-full-init)
-
-# pfetch
 
