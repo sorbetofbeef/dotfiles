@@ -1,0 +1,8 @@
+#!/bin/bash
+
+function ex () {
+	t=$1
+
+	tar -xf $t &&
+		cd "${t%%.tar*}"
+}
