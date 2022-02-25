@@ -5,12 +5,13 @@
   padding: 0;
   min-height: 0;
   border-radius: 0px;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 window#waybar.bar {
-  background-color: #2e3440;
-  border-bottom: 2px solid #0087BD;
+  background-color: #212121;
+  box-shadow: inset 6px -10px 6px -6px #232322, inset 4px -8px 3px -3px #424242, inset 1px -2px 2px -1px #c2c2c2;
+  border-bottom-left-radius: 8px;
 }
 
 window#waybar.dock {
@@ -23,114 +24,81 @@ window#waybar.dock {
 #custom-pacman,
 #custom-power,
 #network,
-#workspaces,
-#tags,
 #pulseaudio,
 #custom-spacer,
 #custom-left-cap,
 #custom-right-cap {
-  font-size: 14px;
+  font-size: 12px;
   background-color: rgba(0, 0, 0, 0.0);
-  color: #d8dee9;
-}
-
-
-#custom-right-cap,
-#custom-left-cap,
-#custom-spacer {
-  padding: 2px 3px;
+  color: #e5e5e5;
+  margin: 0 0 2px 0;
 }
 
 #clock {
-  font-size: 12px;
   font-weight: bold;
   font-style: italic;
-  color: #81A1C1
+  color: #b7141f;
 }
 
 #tags {
-  box-shadow: inset 0px -8px 4px -8px #2e3440;
+  box-shadow: inset 0px -12px 4px -8px #e5e5e5;
   padding: 0 10px;
 }
 
 #tags button { 
-  background-color: #3B4252;
+  background-color: #212121;
   border-radius: 8px;
-  color: #eceff4;
-  box-shadow: inset -1px 3px 2px -2px #eceff4;
+  color: #424242;
+  box-shadow: inset 3px 6px 4px -4px #232322, inset 2px 3px 2px -2px #424242, inset 1px 2px 2px -1px #c2c2c2;
   margin: 0px 3px 1px 3px;
-  padding: 2px 10px 2px 10px;
+  padding: 3px 10px 2px 10px;
 }
 
 
 #tags button.occupied{
-  color: #0087BD;
-  box-shadow: inset -1px 4px 2px -3px #81A1C1;
+  color: #e83a3f;
+  box-shadow: inset 6px 12px 8px -8px #232322, inset 3px 6px 4px -4px #424242, inset 1px 2px 2px -1px #c2c2c2;
 }
 
 #tags button.focused {
-  color: #d8dee9;
-  box-shadow: inset -1px 18px 12px -12px #0087BD;
-  transition: box-shadow 0.4s, color 0.8s;
+  color: #e5e5e5;
+  box-shadow: inset 8px 18px 12px -12px #b7141f, inset 4px 9px 6px -6px #e83a3f, inset 1px 2px 2px -1px #e5e5e5;
+  transition: box-shadow 0.5s, color 0.8s;
 }
-
-  /*
-#workspaces button {
-  color: #0087BD;
-  box-shadow: inset 0px -3px 2px -1px #0087BD;
-   margin: 0 1px;
-   padding: 0px 5px;
- }
-
- #workspaces button.persistent{ 
-   color: #eceff4;
-   box-shadow: inset 0px -3px 2px -2px ;
- }
-
- #workspaces button.focused {
-  color: #d8dee9;
-  box-shadow: inset 0px -18px 12px -12px #0087BD;
-  transition: box-shadow 0.4s, color 0.8s, border 1.0s;
- } 
-  */
 
 #bluetooth,
 #battery,
 #custom-pacman,
 #custom-power,
 #network,
-#pulseaudio {
+#pulseaudio,
+#clock {
   padding: 0 5px;
 }
 
-/* #custom-left-cap {
-  border-bottom-left-radius: 10px;
-  border-top-left-radius: 10px;
-  border-left: 1px;
-} */
-
 @keyframes blink {
   to {
-    color: #eceff4;
+    color: #c1c1c1;
   }
 }
 
 #battery {
-  color: #bf616a;
+  color: #b7141e;
+  padding: 0 5px;
 }
 
 #battery.plugged,
 #battery.full {
-  color: #a3be8c;
+  color: #f5971d;
 }
 
 #battery.charging,
 #battery.plugged {
-  color: #8fbcbb;
+  color: #f5971d;
 }
 
 #battery.critical:not(.charging) {
-  color: #bf615a;
+  color: #134eb2;
   animation-name: blink;
   animation-duration: 0.5s;
   animation-timing-function: linear;
@@ -138,45 +106,41 @@ window#waybar.dock {
   animation-direction: alternate;
 }
 
-/*
 #pulseaudio.extreme {
-  color: #e82424;
+  color: #b7141e;
   animation-name: blink;
   animation-duration: 0.75s;
   animation-timing-function: linear;
   animation-iteration-count: 15;
   animation-direction: alternate;
 }
-*/
+
+#pulseaudio.high {
+  color: #e5e5e5;
+}
 
 #pulseaudio.good {
-  color: #eceff4;
+  color: #d9d9d9;
 }
+
 
 #pulseaudio.low {
-  color: #4c566a;
+  color: #c2c2c2;
 }
 
-#pulseaudio.lowest,
+#pulseaudio.lowest {
+  color: #424242;
+}
+
 #pulseaudio.muted {
-  color: #bf616a;
+  color: #e83a3f;
 }
 
 #network.disconnected {
-  color: #bf616a;
+  color: #b7141e;
   animation-name: blink;
   animation-duration: 0.5s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-direction: alternate;
-}
-
-#custom-pacman {
-  color: #ebcb8b;
-}
-
-#custom-power {
-  background-color: #3b4252;
-  color: #e5e9f0;
-  border: 3px solid #bf616a;
 }

@@ -31,7 +31,9 @@ export XKB_DEFAULT_OPTIONS="altwin:swap_lalt_lwin,caps:ctrl_modifier"
 export EDITOR='nvim'
 export VISUAL='nvim'
 export READER='zathura'
-export PAGER='less -R'
+export PAGER='bat'
+export TERM="xterm-kitty"
+export TERMINFO=/usr/share/terminfo/
 
 # Default directories
 export XDG_RUNTIME_DIR='/run/user/1000'
@@ -55,9 +57,6 @@ export FNM_DIR="${XDG_CONFIG_HOME}/fnm"
 export npm_config_user="${XDG_CONFIG_HOME}/npmrc"
 export npm_config_cachedir="${XDG_CACHE_HOME}/npm"
 
-# qt
-export QT_QPA_PLATFORM='wayland'
-
 # Make
 export MAKEFLAGS='-j16'
 
@@ -78,13 +77,22 @@ export npm_config_cachedir="${XDG_CACHE_HOME}/npm"
 # Zsh
 export ZDOTDIR="${XDG_CONFIG_HOME}/zsh"
 
-XORG_PREFIX="/usr"
-XORG_CONFIG="--prefix=$XORG_PREFIX --sysconfdir=/etc --localstatedir=/var --disable-static"
-export XORG_PREFIX XORG_CONFIG
+# GnuPG
+export PINENTRY_BINARY="/usr/bin/pinentry-curses"
+GPG_TTY=$(tty)
+export GPG_TTY
+
+# Xorg Installation Enviorn
+# XORG_CONFIG_PREFIX="--prefix=${XORG_PREFIX}" 
+# XORG_CONFIG_SYSCONF="--sysconfdir=/etc" 
+# XORG_CONFIG_LOCAL_STATE="--localstatedir=/var" 
+# XORG_CONFIG_DISABLE_STATIC="--disable-static"
+# export XORG_PREFIX='/usr'
+#export XORG_CONFIG=$XORG_CONFIG_PREFIX $XORG_CONFIG_SYSCONF $XORG_CONFIG_LOCAL_STATE $XORG_CONFIG_DISABLE_STATIC
 
 # Paths
-export LD_LIBRARY_PATH=$XDG_DATA_HOME/lib:$XDG_DATA_HOME/lib/python3.10/site-packages:$LD_LIBRARY_PATH
-export MANPATH=$HOME/.local/share/man:$MANPATH
+# export LD_LIBRARY_PATH=$XDG_DATA_HOME/lib:$XDG_DATA_HOME/lib/python3.10/site-packages:$LD_LIBRARY_PATH
+# export MANPATH=$HOME/.local/share/man:$MANPATH
 PATH="${HOME}/.local/bin:${HOME}/.yarn/bin:${XDG_DATA_HOME}/zig:${GOPATH}/bin:${RUSTUP_HOME}/bin:${CARGO_HOME}/bin:/usr/local/go/bin:/opt:/usr/local/bin:/usr/local/sbin:$PATH:/usr/sbin:/sbin"
 export PATH
 
@@ -93,10 +101,10 @@ export PATH
 source "${XDG_CONFIG_HOME}/lf/icons"
 
 eval $(dbus-launch)
-export DBUS_SESSION_BUS_ADDRESS
+export DBUS_SESSION_BUS_ADDRESS 
+export DBUS_SESSION_BUS_PID
 
-export GPG_TTY=$(tty)
-gpg-connect-agent UPDATESTARTUPTTY /bye
+gpg-connect-agent UPDATESTARTUPTTY /bye 
 
  [ "/dev/tty1" = "$(tty)" ] && exec seatd-launch river
  

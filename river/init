@@ -3,32 +3,33 @@
 riverctl spawn "dbus-update-activation-environment --systemd SEATD_SOCK WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river"
 
 riverctl spawn \$XDG_CONFIG_HOME/river/bindings.sh
-riverctl spawn \$XDG_CONFIG_HOME/river/wayriver.sh
+riverctl spawn "source \$XDG_CONFIG_HOME/river/wayriver.sh"
 
 riverctl border-width 4
 
-riverctl background-color 0x2E3440
-riverctl border-color-focused 0xD8DEE9
-riverctl border-color-unfocused 0x3B4252
+riverctl background-color 0x232322
+riverctl border-color-focused 0xb7141f
+riverctl border-color-unfocused 0x424242
 
-riverctl xcursor-theme GoogleDot-White 18
+riverctl xcursor-theme Bibata-Original-DarkRed 18
  
-riverctl spawn 'gsettings set org.gnome.desktop.interface gtk-theme Nordic-Polar-v40'
-riverctl spawn 'gsettings set org.gnome.desktop.interface icon-theme Zafiro-icons-Dark'
-riverctl spawn 'gsettings set org.gnome.desktop.interface cursor-theme GoogleDot-White'
+riverctl spawn 'gsettings set org.gnome.desktop.interface gtk-theme Skeuos-Red-Dark'
+riverctl spawn 'gsettings set org.gnome.desktop.interface icon-theme Yaru-Red'
+riverctl spawn 'gsettings set org.gnome.desktop.interface cursor-theme Bibata-Original-DarkRed'
 riverctl spawn 'gsettings set org.gnome.desktop.interface cursor-size 18'
 
-riverctl spawn 'gsettings set org.gnome.desktop.wm.preferences theme Nordic-Polar-v40'
+riverctl spawn 'gsettings set org.gnome.desktop.wm.preferences theme Skeuos-Red-Dark'
 riverctl spawn 'gsettings set org.gnome.desktop.wm.preferences button-layout close,maximize,minimize:menu'
 
 riverctl set-repeat 50 250
 
-riverctl float-filter-add float
-riverctl float-filter-add popup
+riverctl float-filter-add app-id float
+riverctl float-filter-add app-id popup
+riverctl float-filter-add title imv*
 
 # riverctl csd-filter-add app-id firefox
 # riverctl csd-filter-add app-id kitty
-riverctl csd-filter-add app-id ide
+#riverctl csd-filter-add app-id ide
 # riverctl csd-filter-add app-id settings
 
 pad='pointer-2-7-SynPS/2_Synaptics_TouchPad'

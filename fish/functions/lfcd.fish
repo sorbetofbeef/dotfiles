@@ -1,1 +1,0 @@
-/home/me/.local/share/go/pkg/mod/github.com/gokcehan/lf@v0.0.0-20220104204804-fea4ededb6b3/etc/lfcd.fish

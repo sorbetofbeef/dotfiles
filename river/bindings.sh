@@ -4,7 +4,7 @@ mod="Mod4"
 
 # Mod+Shift+Return to start an instance of foot (https://codeberg.org/dnkl/foot)
 # riverctl map normal $mod Return spawn 'alacritty-start'
-riverctl map normal $mod Return spawn "kitty -1 --class 'kitty'"
+riverctl map normal $mod Return spawn "wezterm-gui"
 
 # password menu
 riverctl map normal $mod P spawn wofipassmenu
@@ -54,6 +54,8 @@ riverctl map normal $mod+Shift Return zoom
 riverctl map normal $mod H send-layout-cmd stacktile "primary_ratio -0.05"
 riverctl map normal $mod L send-layout-cmd stacktile "primary_ratio +0.05"
 
+riverctl map normal $mod+Shift M send-layout-cmd stacktile "outer_padding 0"
+
 # Mod+Shift+H and Mod+Shift+L to increment/decrement the main count of stacktile(1)
 riverctl map normal $mod+Shift H send-layout-cmd stacktile "primary_count +1"
 riverctl map normal $mod+Shift L send-layout-cmd stacktile "primary_count -1"
@@ -82,7 +84,7 @@ riverctl map-pointer normal $mod BTN_LEFT move-view
 # Mod + Right Mouse Button to resize views
 riverctl map-pointer normal $mod BTN_RIGHT resize-view
 
-for i in $(seq 1 9)
+for i in $(seq 1 4)
 do
     tags=$((1 << ("$i" - 1)))
 

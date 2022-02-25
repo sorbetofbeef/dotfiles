@@ -1,0 +1,26 @@
+colors:
+  primary:
+    foreground: '#4C566A'
+    background: '#c2c2c3'
+
+  normal:
+    
+    color0: '#354157'
+    color1: '#fb4934'
+    color2: '#50a14f'
+    color3: '#fabd2f'
+    color4: '#528bff'
+    color5: '#9370DB'
+    color6: '#0997b3'
+    color7: '#d0d0d0'
+
+
+  bright:
+    color8: '#676E95'
+    color9: '#ff6655'
+    color10: '#8ec07c'
+    color11: '#ECBE7B'
+    color12: '#6cb6eb'
+    color13: '#8A2BE2'
+    color14: '#4db5bd'
+    color15: '#d3d3d3'

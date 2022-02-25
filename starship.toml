@@ -1,6 +1,6 @@
 # Use custom format
 format="""
-$git_branch[═](bold white)$git_status$fill$time$fill$package
+$git_branch[═](red)$git_status$fill$time$fill$package
 $directory$character"""
 right_format = """$cmd_duration $all"""
 
@@ -19,7 +19,7 @@ style='green'
 [directory]
 read_only = "   "
 style="bold cyan"
-home_symbol = "   "
+home_symbol = "   "
 
 [character]
 success_symbol = "[ ](green)"
@@ -28,7 +28,7 @@ vicmd_symbol = "[ ](yellow)"
 
 [fill]
 symbol='═'
-style='bold white'
+style='red'
 disabled=false
 
 [aws]
@@ -78,7 +78,7 @@ format = '\[[$symbol$account(@$domain)(\($region\))]($style)\]'
 
 [git_branch]
 symbol = "   "
-format = '[\[](bold blue) [$symbol$branch]($style) [\]](bold blue)'
+format = '[\[](red) [$symbol$branch]($style) [\]](red)'
 style='bold italic purple'
 
 [git_status]
@@ -135,8 +135,8 @@ format = '\[[$symbol$cloud(\($project\))]($style)\]'
 
 [package]
 symbol = "   "
-format = '[\[](bold blue) [$symbol $version]($style) [\]](bold blue)'
-style = 'bold yellow'
+format = '[\[](red) [$symbol $version]($style) [\]](blue)'
+style = 'yellow'
 
 [perl]
 symbol = "   "
@@ -180,8 +180,8 @@ format = '\[[$symbol$workspace]($style)\]'
 
 [time]
 disabled=false
-format = '[╡](bold blue)[$time]($style)[╞](bold blue)'
-style = 'bold purple'
+format = '[╡](red)[$time]($style)[╞](red)'
+style = 'bold white'
 
 [username]
 format = '\[[$user]($style)\]'

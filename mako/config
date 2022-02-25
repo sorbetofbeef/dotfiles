@@ -1,9 +1,9 @@
 # Colors
 
-background-color=#1E1D2F
-text-color=#D9E0EE
-border-color=#96CDFB
-progress-color=over #302D41
+background-color=#232322
+text-color=#e5e5e5
+border-color=#b7141f
+progress-color=#f6981e
 
 [urgency=high]
-border-color=#F8BD96
+border-color=#b7141e

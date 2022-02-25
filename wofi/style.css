@@ -1,29 +1,29 @@
 window {
 margin: 0px;
 padding: 0px;
-border: 2px solid #d8dee9;
-background-color: #2e3440;
-font-size: 12px;
-font-family: "ProFontIIx Nerd Font";
+border: 2px solid #b7141f;
+background-color: #232324;
+font-size: 14px;
+font-family: "PragmataPro";
 }
 
 #input {
 margin: 5px;
 border: none;
-color: #2e3440;
-background-color: #d8dee9;
+color: #e5e5e5;
+background-color: #424242;
 }
 
 #inner-box {
 margin: 5px;
-border: none;
-background-color: #2e3440;
+background-color: #232322;
+border-color: #b7141f;
 }
 
 #outer-box {
 margin: 5px;
 border: none;
-background-color: #2e3440;
+background-color: #232322;
 }
 
 #scroll {
@@ -33,9 +33,21 @@ border: none;
 
 #text {
 border: none;
-color: #4c566a;
+color: #e5e5e5;
 } 
 
+#entry:nth-child(odd) {
+    background-color: #424242;
+j}
+
+#entry:nth-child(even) {
+    background-color: #232324;
+}
+
 #entry:selected {
-background-color: #88c0d0;
+background-color: #b7141f;
+}
+
+#input:focus {
+    border-color: #212121;
 }

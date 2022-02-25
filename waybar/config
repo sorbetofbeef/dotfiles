@@ -1,52 +1,21 @@
 [{
   "name": "bar",
-  "layer": "bottom",
   "position": "top",
-  "exclusive": true,
+  /* "layer": "bottom",
+  "exclusive": true, */
+  "mode": "overlay",
   "fixed-center": true,
   "height": "",
   "width": "",
   "margin": "",
-  // "modules-left": ["custom/left-cap", "sway/workspaces", "custom/pacman"],
-
-  // "modules-left": ["custom/left-cap", "river/tags"],
+  "margin-left": 1670,
+  "margin-bottom": 20,
   "modules-left": [],
-  "modules-center": ["clock"],
-  "modules-right": ["custom/right-backed", "custom/mpd", "custom/left-backed", "pulseaudio", "bluetooth", "network", "battery", "custom/power"],
-
- // "river/tags": {
- //     "num-tags": 9,
- //     "tag-labels": [ "", "", "", "", "", "", "", "", "" ],
- // },
-
- // "river/tags": {
- //     "num-tags": 4,
- //     "tag-labels": [ "", "", "", ""],
- // },
-
-  // "sway/workspaces": {
-  //   "disable-scroll": true,
-  //   "all-outputs": true,
-  //   "format": "{icon}",
-  //   "persistent_workspaces": {
-  //       "1": [],
-  //       "2": [],
-  //       "3": [],
-  //       "4": [],
-  //    },
-  //   "format-icons": {
-  //     "1": "",
-  //     "2": "",
-  //     "3": "",
-  //     "4": "",
-  //     "urgent": "",
-  //     "focused": "",
-  //     "default": ""
-  //   }
-  // },
+  "modules-center": [],
+  "modules-right": ["clock", "pulseaudio", "bluetooth", "network", "battery"],
 
   "clock": {
-    "format": " {:%A %B, %d %Y  %H:%M} ",
+    "format": " {:%b, %d %Y  %H:%M} ",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
   },
   

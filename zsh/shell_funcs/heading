@@ -1,0 +1,12 @@
+#!/bin/sh
+
+i=0
+for f in /home/me/workspace/*.todo ; do
+  i=$(($i + 1))
+  printf '\e[1;31m[ %s ]\e[0m ' $i >> ~/.cache/todo.cache
+  printf '\e[36m%s \e[0m' $(rg -N --color never --after-context 1 '\- Entry \-' $f) >> ~/.cache/todo.cache
+done
+bat -p ~/.cache/todo.cache
+\rm ~/.cache/todo.cache
+unset f i
+
