@@ -1,14 +1,15 @@
 #!/bin/bash
 
+# Moves files to a target directory then switches to that directroy, listing the files within
 function mvd () {
 	original=$1
 	target=$2
 
 	if mv -v $original $target ; then
 		if [ -d "$target" ] ; then
-			cd "$target"
+			cd "$target" && lsd
 		else
-			cd "$(dirname $target)" 
+			cd "${target%/*}" && lsd
 		fi
 	fi
 }

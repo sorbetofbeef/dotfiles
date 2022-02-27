@@ -8,8 +8,8 @@ riverctl spawn "source \$XDG_CONFIG_HOME/river/wayriver.sh"
 riverctl border-width 4
 
 riverctl background-color 0x232322
-riverctl border-color-focused 0xb7141f
-riverctl border-color-unfocused 0x424242
+riverctl border-color-focused 0xe5e5e5
+riverctl border-color-unfocused 0xb7141f
 
 riverctl xcursor-theme Bibata-Original-DarkRed 18
  

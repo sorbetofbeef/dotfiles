@@ -4,17 +4,17 @@ mod="Mod4"
 
 # Mod+Shift+Return to start an instance of foot (https://codeberg.org/dnkl/foot)
 # riverctl map normal $mod Return spawn 'alacritty-start'
-riverctl map normal $mod Return spawn "wezterm-gui"
+riverctl map normal $mod Return spawn "kitty -1 --class 'kitty'"
 
 # password menu
 riverctl map normal $mod P spawn wofipassmenu
 
 # powermenu
-riverctl map normal $mod Q spawn wofi-power-menu
+riverctl map normal $mod Q spawn power-menu
 
 # launcher
 # riverctl map normal $mod Space spawn wofi-fav-list
-riverctl map normal $mod Space spawn "wofi --show run"
+riverctl map normal $mod Space spawn run
 
 # Mod+Q to close the focused view
 riverctl map normal $mod W close

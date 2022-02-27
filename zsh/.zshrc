@@ -2,6 +2,7 @@ HISTFILE=~/.config/zsh/.histfile
 HISTSIZE=4096
 SAVEHIST=4096
 setopt autocd extendedglob notify
+setopt COMBINING_CHARS
 unsetopt beep
 bindkey -v
 
@@ -33,15 +34,15 @@ source $ZDOTDIR/alias-common
 autoload -Uz compinit
 compinit -i
 
-# FNM - Node Manager
-export PATH=/home/me/.config/fnm:$PATH
-eval "$(fnm env)"
-
 # Sheldon - Zsh Plugin Manager
 eval "$(sheldon source)"
 
+export GPG_TTY=$(tty)
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+gpgconf --launch gpg-agent
+
+# Starship
+source <("${CARGO_HOME}/bin/starship" init zsh --print-full-init)
+
 # Terminal Heading
 heading
-
-# source <("${CARGO_HOME}/bin/starship" init zsh --print-full-init)
-

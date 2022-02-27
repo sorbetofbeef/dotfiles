@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+# Changes directory and lists files
+builtin cd $1 && lsd

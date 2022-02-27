@@ -89,8 +89,8 @@ alias \
 	mv='mv -v' \
 	mkdir='mkdir -pv' \
 	ln='ln -sv' \
-	rm='rm -v' \
-	rmd='rm -rf' \
+	rm='rip' \
+	rmd='rip' \
  	c='clear' \
 	q='exit' \
 	e=${EDITOR}

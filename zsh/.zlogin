@@ -1,3 +1,12 @@
 # ~/.config/zsh/.zlogin
+# SCRIPTS AND COMMANDS TO RUN AT LOGIN
 
-printf "Welcome %s" $(id -u)
+source "${XDG_CONFIG_HOME}/lf/icons"
+
+eval $(dbus-launch)
+export DBUS_SESSION_BUS_ADDRESS 
+export DBUS_SESSION_BUS_PID
+
+gpg-connect-agent UPDATESTARTUPTTY /bye 
+
+ [ "/dev/tty1" = "$(tty)" ] && seatd-launch river

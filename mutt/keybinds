@@ -18,10 +18,10 @@ bind index L limit
 bind index h noop
 # bind index l display-message
 bind index o display-message
-bind browser h goto-parent
+# bind browser h goto-parent
 bind browser l select-entry
-bind pager,browser gg top-page
-bind pager,browser G bottom-page
+# bind pager,browser gg top-page
+# bind pager,browser G bottom-page
 bind index,pager,browser d half-down
 bind index,pager,browser u half-up
 bind index,pager R group-reply

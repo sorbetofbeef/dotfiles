@@ -1,6 +1,7 @@
 #!/bin/bash
 
+# Creates a directory, changes to that directory and lists files
 function mkcd () {
-	mkdir -pv $1 && cd $1
+	mkdir -pv $1 && cd $1 && lsd
 }
 

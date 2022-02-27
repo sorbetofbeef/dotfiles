@@ -6,9 +6,9 @@ function cpd () {
 
 	if cp -vr $original $target ; then
 		if [ -d "$target" ] ; then
-			cd "$target"
+			cd "$target" && lsd
 		else
-			cd "${target%/*}" 
+			cd "${target%/*}" && lsd
 		fi
 	fi
 }

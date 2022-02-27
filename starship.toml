@@ -18,11 +18,11 @@ style='green'
 
 [directory]
 read_only = "   "
-style="bold cyan"
+style="bold green"
 home_symbol = "   "
 
 [character]
-success_symbol = "[ ](green)"
+success_symbol = "[ ](bold cyan)"
 error_symbol = "[ ](red)"
 vicmd_symbol = "[ ](yellow)"
 

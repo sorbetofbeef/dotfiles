@@ -38,7 +38,7 @@ color: #e5e5e5;
 
 #entry:nth-child(odd) {
     background-color: #424242;
-j}
+}
 
 #entry:nth-child(even) {
     background-color: #232324;
