@@ -1,3 +1,5 @@
 
+clear
+printf '\nLogging out'
 kill $DBUS_SESSION_BUS_PID && echo "dbus killed"
-pkill gpg-agent && echo "gpg agent killed"
+/usr/bin/gpg-connect-agent /bye && echo "gpg agent killed"
