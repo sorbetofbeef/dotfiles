@@ -7,7 +7,7 @@ mod="Mod4"
 riverctl map normal $mod Return spawn "kitty -1 --class 'kitty'"
 
 # password menu
-riverctl map normal $mod P spawn wofipassmenu
+riverctl map normal $mod P spawn pass
 
 # powermenu
 riverctl map normal $mod Q spawn power-menu

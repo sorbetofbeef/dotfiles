@@ -3,13 +3,13 @@
 # Moves files to a target directory then switches to that directroy, listing the files within
 function mvd () {
 	original=$1
-	target=$2
+	target="${!#}"
 
 	if mv -v $original $target ; then
 		if [ -d "$target" ] ; then
-			cd "$target" && lsd
+			cd "$target"
 		else
-			cd "${target%/*}" && lsd
+			cd "${target%/*}"
 		fi
 	fi
 }
