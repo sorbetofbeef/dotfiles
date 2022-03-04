@@ -88,6 +88,7 @@ export PINENTRY_BINARY="/usr/bin/pinentry-curses"
 # export XORG_PREFIX='/usr'
 #export XORG_CONFIG=$XORG_CONFIG_PREFIX $XORG_CONFIG_SYSCONF $XORG_CONFIG_LOCAL_STATE $XORG_CONFIG_DISABLE_STATIC
 
+
 # Paths
 # export LD_LIBRARY_PATH=$XDG_DATA_HOME/lib:$XDG_DATA_HOME/lib/python3.10/site-packages:$LD_LIBRARY_PATH
 # export MANPATH=$HOME/.local/share/man:$MANPATH

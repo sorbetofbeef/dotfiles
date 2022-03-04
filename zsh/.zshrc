@@ -27,6 +27,23 @@ for funcs in $ZDOTDIR/shell_funcs/* ; do
   autoload -Uz "$funcs"
 done
 
+export LF_COLORS="\
+~/docs=31:\
+~/dl=31:\
+~/.local/share31:\
+~/.config/=31:\
+.git/=32:\
+.git=32:\
+.gitignore=32:\
+Makefile=01,36:\
+README.*=01,36:\
+*.txt=01,31:\
+*.md=01,31:\
+ln=01;31:\
+di=01;31:\
+ex=01;31:\
+"
+
 # Local Aliases
 source $ZDOTDIR/alias-common
 

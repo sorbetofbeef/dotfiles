@@ -4,7 +4,8 @@ mod="Mod4"
 
 # Mod+Shift+Return to start an instance of foot (https://codeberg.org/dnkl/foot)
 # riverctl map normal $mod Return spawn 'alacritty-start'
-riverctl map normal $mod Return spawn "kitty -1 --class 'kitty'"
+
+riverctl map normal $mod Return spawn "kitty-background"
 
 # password menu
 riverctl map normal $mod P spawn pass

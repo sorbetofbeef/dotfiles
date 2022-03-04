@@ -5,7 +5,7 @@ application/vnd.openxmlformats-officedocument.presentationml.presentation; ~/dot
 application/vnd.oasis.opendocument.text; ~/dotfiles/office/view-attachment.sh %s "-" '/Applications/LibreOffice.app'
 
 # HTML
-text/html; w3m -I %{charset} -T text/html; copiousoutput;
+text/html; elinks -no-home -dump-charset %{charset} -default-mime-type text/html; copiousoutput;
 text/plain; nvim %s
 
 #PDFs
