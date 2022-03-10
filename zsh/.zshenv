@@ -54,14 +54,15 @@ export LESSHISTFILE="-"
 export FNM_DIR="${XDG_CONFIG_HOME}/fnm"
 
 # npm
-export npm_config_user="${XDG_CONFIG_HOME}/npmrc"
-export npm_config_cachedir="${XDG_CACHE_HOME}/npm"
+export npm_config_userconfig="${XDG_CONFIG_HOME}/npmrc"
+export npm_config_cache="${XDG_CACHE_HOME}/npm"
 
 # Make
 export MAKEFLAGS='-j16'
 
 # C/C++
 export CFLAGS='-march=native -O3'
+export CXXFLAGS='-march=native -O3'
 
 # Rust
 export RUSTUP_HOME="${XDG_DATA_HOME}/rustup"

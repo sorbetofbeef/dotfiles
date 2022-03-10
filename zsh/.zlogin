@@ -9,4 +9,6 @@ export DBUS_SESSION_BUS_PID
 
 gpg-connect-agent UPDATESTARTUPTTY /bye 
 
+cp -r $HOME/.local/share/ncspot $HOME/.cache
+
  [ "/dev/tty1" = "$(tty)" ] && seatd-launch river

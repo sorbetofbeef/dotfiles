@@ -90,10 +90,11 @@ alias \
 	mkdir='mkdir -pv' \
 	ln='ln -sv' \
 	rm='rip' \
+  t='todo' \
 	rmd='rip' \
  	c='clear' \
 	q='exit' \
-	e=${EDITOR}
+	e=\$EDITOR
 
 
 # bax='/usr/bin/git --work-tree=/home/me --git-dir=/home/me/.config/dotfiles' \
@@ -121,7 +122,8 @@ alias \
 	grCrPr='gh repo create  --private' \
 	grCrPu='gh repo create --public' \
 	grV='gh repo view' \
-	grF='h repo fork --clone'
+  grL='gh repo list' \
+	grF='gh repo fork --clone'
 
 # PULL REQUEST - GITHUB-CLI
 alias \

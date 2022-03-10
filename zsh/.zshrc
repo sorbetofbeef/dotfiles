@@ -28,15 +28,6 @@ for funcs in $ZDOTDIR/shell_funcs/* ; do
 done
 
 export LF_COLORS="\
-~/docs=31:\
-~/dl=31:\
-~/.local/share31:\
-~/.config/=31:\
-.git/=32:\
-.git=32:\
-.gitignore=32:\
-Makefile=01,36:\
-README.*=01,36:\
 *.txt=01,31:\
 *.md=01,31:\
 ln=01;31:\
@@ -63,3 +54,5 @@ source <("${CARGO_HOME}/bin/starship" init zsh --print-full-init)
 
 # Terminal Heading
 heading
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
