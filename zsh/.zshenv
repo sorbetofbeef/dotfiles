@@ -93,6 +93,6 @@ export PINENTRY_BINARY="/usr/bin/pinentry-curses"
 # Paths
 # export LD_LIBRARY_PATH=$XDG_DATA_HOME/lib:$XDG_DATA_HOME/lib/python3.10/site-packages:$LD_LIBRARY_PATH
 # export MANPATH=$HOME/.local/share/man:$MANPATH
-PATH="${HOME}/.local/bin:${HOME}/.yarn/bin:${XDG_DATA_HOME}/zig:${GOPATH}/bin:${RUSTUP_HOME}/bin:${CARGO_HOME}/bin:/usr/local/go/bin:/opt:/usr/local/bin:/usr/local/sbin:$PATH:/usr/sbin:/sbin"
+PATH="${HOME}/.local/bin:${HOME}/.yarn/bin:${XDG_DATA_HOME}/zig:${GOPATH}/bin:${RUSTUP_HOME}/bin:${CARGO_HOME}/bin:/opt/goneovim:/usr/local/go/bin:/opt:/usr/local/bin:/usr/local/sbin:$PATH:/usr/sbin:/sbin"
 export PATH
 
