@@ -4,6 +4,8 @@ background-color=#232322
 text-color=#e5e5e5
 border-color=#b7141f
 progress-color=#f6981e
+default-timeout=5000
+anchor=bottom-right
 
 [urgency=high]
 border-color=#b7141e

@@ -67,19 +67,20 @@ export CXXFLAGS='-march=native -O3'
 # Rust
 export RUSTUP_HOME="${XDG_DATA_HOME}/rustup"
 export CARGO_HOME="${XDG_DATA_HOME}/cargo"
+export RUSTC_WRAPPER="${CARGO_HOME}/bin/sccache"
 
 # Go
 export GOPATH="${XDG_DATA_HOME}/go"
 
 # {Java,Type}script and (Nodejs Yarn)
-export npm_config_user="${XDG_CONFIG_HOME}/npmrc"
+export npm_config_userconfig="${XDG_CONFIG_HOME}/npmrc"
 export npm_config_cachedir="${XDG_CACHE_HOME}/npm"
 
 # Zsh
 export ZDOTDIR="${XDG_CONFIG_HOME}/zsh"
 
 # GnuPG
-export PINENTRY_BINARY="/usr/bin/pinentry-curses"
+export PINENTRY_BINARY="/usr/bin/pinentry-gnome3"
 
 # Xorg Installation Enviorn
 # XORG_CONFIG_PREFIX="--prefix=${XORG_PREFIX}" 
