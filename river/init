@@ -1,48 +1,46 @@
 #!/bin/bash
 
-riverctl spawn "dbus-update-activation-environment --systemd SEATD_SOCK WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river"
+dbus-update-activation-environment SEATD_SOCK WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river &
+$XDG_CONFIG_HOME/river/bindings.sh &
+source "$XDG_CONFIG_HOME/river/wayriver.sh" &
 
-riverctl spawn \$XDG_CONFIG_HOME/river/bindings.sh
-riverctl spawn "source \$XDG_CONFIG_HOME/river/wayriver.sh"
+riverctl border-width 4 &
 
-riverctl border-width 4
+riverctl background-color 0x232322 &
+riverctl border-color-focused 0xe5e5e5 &
+riverctl border-color-unfocused 0xb7141f &
 
-riverctl background-color 0x232322
-riverctl border-color-focused 0xe5e5e5
-riverctl border-color-unfocused 0xb7141f
+riverctl xcursor-theme Bibata-Original-DarkRed 18 &
 
-riverctl xcursor-theme Bibata-Original-DarkRed 18
- 
-riverctl spawn 'gsettings set org.gnome.desktop.interface gtk-theme Skeuos-Red-Dark'
-riverctl spawn 'gsettings set org.gnome.desktop.interface icon-theme Yaru-Red'
-riverctl spawn 'gsettings set org.gnome.desktop.interface cursor-theme Bibata-Original-DarkRed'
-riverctl spawn 'gsettings set org.gnome.desktop.interface cursor-size 18'
+riverctl spawn 'gsettings set org.gnome.desktop.interface gtk-theme Skeuos-Red-Dark' &
+riverctl spawn 'gsettings set org.gnome.desktop.interface icon-theme Yaru-Red' &
+riverctl spawn 'gsettings set org.gnome.desktop.interface cursor-theme Bibata-Original-DarkRed' &
+riverctl spawn 'gsettings set org.gnome.desktop.interface cursor-size 18' &
 
-riverctl spawn 'gsettings set org.gnome.desktop.wm.preferences theme Skeuos-Red-Dark'
-riverctl spawn 'gsettings set org.gnome.desktop.wm.preferences button-layout close,maximize,minimize:menu'
+riverctl spawn 'gsettings set org.gnome.desktop.wm.preferences theme Skeuos-Red-Dark' &
+riverctl spawn 'gsettings set org.gnome.desktop.wm.preferences button-layout close,maximize,minimize:menu' &
 
-riverctl set-repeat 50 250
+riverctl set-repeat 50 250 &
 
-riverctl float-filter-add app-id float
-riverctl float-filter-add app-id popup
-riverctl float-filter-add title imv*
+riverctl float-filter-add app-id float &
+riverctl float-filter-add app-id popup &
+riverctl float-filter-add app-id imv* &
 
-# riverctl csd-filter-add app-id firefox
-# riverctl csd-filter-add app-id kitty
-#riverctl csd-filter-add app-id ide
-# riverctl csd-filter-add app-id settings
+# riverctl csd-filter-add app-id firefox &
+# riverctl csd-filter-add app-id kitty &
+#riverctl csd-filter-add app-id ide &
+# riverctl csd-filter-add app-id settings &
 
-pad='pointer-2-7-SynPS/2_Synaptics_TouchPad'
+pad='pointer-2-7-SynPS/2_Synaptics_TouchPad' &
 
-riverctl input $pad events enabled
-riverctl input $pad accel-profile adaptive
-riverctl input $pad pointer-accel 0.4
-riverctl input $pad click-method clickfinger
-riverctl input $pad drag enabled
-riverctl input $pad disable-while-typing enabled
-riverctl input $pad middle-emulation enabled
-riverctl input $pad natural-scroll enabled
-riverctl input $pad tap enabled
+riverctl input $pad events enabled &
+riverctl input $pad accel-profile adaptive &
+riverctl input $pad pointer-accel 0.4 &
+riverctl input $pad click-method clickfinger &
+riverctl input $pad drag enabled &
+riverctl input $pad disable-while-typing enabled &
+riverctl input $pad middle-emulation enabled &
+riverctl input $pad natural-scroll enabled &
+riverctl input $pad tap enabled &
 
-riverctl spawn \$XDG_CONFIG_HOME/river/process.sh
-
+zsh "$XDG_CONFIG_HOME/river/process.sh" &
