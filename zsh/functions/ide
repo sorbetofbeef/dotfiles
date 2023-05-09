@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+ide ()
+{
+  exec kitty --class DevEnv --detach --diectory "$PROJECT_PATH" --single-instance --instance-group Dev --session "$SESSION_PATH" 
+}

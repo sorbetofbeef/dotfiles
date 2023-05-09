@@ -3,7 +3,8 @@ unmailboxes *
 
 # source /home/me/.config/neomutt/.keys
 set my_user = "christian.dickerson@outlook.com"
-set my_pass = `pass show login.live.com/christian.dickerson@outlook.com`
+# set my_pass = `pass show live.com/christian.dickerson@outlook.com`
+set my_pass = `op item get ykfsthizgdhm27sh5x54o3nqfi --fields label=password`
 
 # in/out mail servers
 set imap_user = $my_user

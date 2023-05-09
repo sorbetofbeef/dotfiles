@@ -1,5 +1,5 @@
 allow_images=false
-term=footclient
+term=kitty
 width=15%
 lines=9
 always_parse_args=true

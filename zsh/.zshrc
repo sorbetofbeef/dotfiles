@@ -1,3 +1,4 @@
+#!/usr/bin/env zsh
 HISTFILE=~/.config/zsh/.histfile
 HISTSIZE=4096
 SAVEHIST=4096
@@ -65,7 +66,15 @@ zstyle ':completion:*' matcher-list '' \
   'r:|?=** m:{a-z\-}={A-Z\_}'
 zmodload zsh/complist
 
-fpath+=($ZDOTDIR/shell_funcs $ZDOTDIR/functions)
+fpath+=($ZDOTDIR/site-functions $ZDOTDIR/shell_funcs $ZDOTDIR/functions)
+
+for funcs in $ZDOTDIR/site-functions/* ; do 
+  autoload -Uz "$funcs"
+done
+
+for funcs in $ZDOTDIR/functions/* ; do 
+  source $funcs
+done
 
 for funcs in $ZDOTDIR/shell_funcs/* ; do 
   autoload -Uz "$funcs"
@@ -79,20 +88,13 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
 --color=info:#88909f,prompt:#d05858,pointer:#b05ccc 
 --color=marker:#608e32,spinner:#d05858,header:#3a8b84'
 
-# fnm
-export PATH=/home/me/.config/fnm:$PATH
-eval "`fnm env`"
-# source $ZDOTDIR/functions
 source $ZDOTDIR/alias-common
+source "${XDG_CONFIG_HOME}/environment.d/project.sh"
+source "${XDG_CONFIG_HOME}/environment.d/dark_mode.sh"
 
-# source /usr/share/zsh-syntax-highlighting/highlighters/dracula/dracula-highlitgher.zsh
-# source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-# source /usr/share/zsh/plugins/zsh-autopair/autopair.zsh
-# source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-for funcs in $ZDOTDIR/functions/* ; do 
-  source $funcs
-done
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-autopair/autopair.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 source <("${CARGO_HOME}/bin/starship" init zsh --print-full-init)
 

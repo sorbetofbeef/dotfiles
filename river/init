@@ -1,46 +1,59 @@
 #!/bin/bash
-
-riverctl spawn "dbus-update-activation-environment --systemd SEATD_SOCK WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river"
+riverctl spawn "systemctl --user import-environment DISPLAY WAYLAND_DISPLAY"
+riverctl spawn "hash dbus-update-activation-environment 2>/dev/null && \
+     dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY"
 
 riverctl spawn \$XDG_CONFIG_HOME/river/bindings
-riverctl spawn \$XDG_CONFIG_HOME/river/wayriver.sh
 
 riverctl background-color 0xfaf4ed
 
-riverctl border-width 3
+riverctl border-width 2
 
 riverctl border-color-focused 0x5CA7B4
 riverctl border-color-unfocused 0xE6EBF3
 
-riverctl xcursor-theme GoogleDot-Red 22
+riverctl xcursor-theme cz-Hickson-Black 16
  
-riverctl spawn 'gsettings set org.gnome.desktop.interface gtk-theme Skeuos-Red-Dark'
+riverctl spawn 'gsettings set org.gnome.desktop.interface gtk-theme Tokyo-Night-dark-solid-blue'
 riverctl spawn 'gsettings set org.gnome.desktop.interface icon-theme Papirus-Dark'
-riverctl spawn 'gsettings set org.gnome.desktop.interface cursor-theme GoogleDot-Red'
-riverctl spawn 'gsettings set org.gnome.desktop.interface cursor-size 22'
+riverctl spawn 'gsettings set org.gnome.desktop.interface cursor-theme cz-Hickson-Black'
+riverctl spawn 'gsettings set org.gnome.desktop.interface cursor-size 16'
 
-riverctl spawn 'gsettings set org.gnome.desktop.wm.preference theme Skeuos-Red-Dark'
+riverctl spawn 'gsettings set org.gnome.desktop.wm.preference theme Tokyo-Night-dark-solid-blue'
 riverctl spawn 'gsettings set org.gnome.desktop.wm.preference button-layout close,spacer,maximize,minimize:menu'
 
-riverctl set-repeat 50 250
+riverctl set-repeat 50 300
 
-riverctl float-filter-add float
-riverctl float-filter-add popup
+riverctl float-filter-add app-id float
+riverctl float-filter-add app-id "popup"
+riverctl float-filter-add app-id "pavucontrol"
+riverctl float-filter-add app-id "*mpv*"
+riverctl float-filter-add title "(?:Open|Save) (?:File|Folder|As)"
 
-riverctl csd-filter-add app-id firefox
-riverctl csd-filter-add app-id foot
+# riverctl csd-filter-add app-id firefox
+# riverctl csd-filter-add app-id foot
 
 pad='pointer-2-7-SynPS/2_Synaptics_TouchPad'
 
 riverctl input $pad events enabled
-riverctl input $pad accel-profile adaptive
-riverctl input $pad pointer-accel 0.30000001192092896
+# riverctl input $pad accel-profile adaptive
+# riverctl input $pad pointer-accel 0.30000001192092896
 riverctl input $pad click-method clickfinger
 riverctl input $pad drag enabled
 riverctl input $pad disable-while-typing enabled
 riverctl input $pad middle-emulation enabled
 riverctl input $pad natural-scroll enabled
 riverctl input $pad tap enabled
+#
+# riverctl send-layout-cmd "outer_padding 10"
+# riverctl send-layout-cmd "view_padding 10"
+# riverctl send-layout-cmd "smart_padding false"
+#
+#
 
 riverctl spawn \$XDG_CONFIG_HOME/river/process.sh
+riverctl default-layout 'kile'
+riverctl send-layout-cmd kile "global_view_padding 10"
+riverctl send-layout-cmd kile "global_outer_padding 10"
+riverctl send-layout-cmd kile "smart_padding false"
 

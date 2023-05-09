@@ -1,7 +1,20 @@
+@define-color foreground #d8dee9;
+@define-color background #2e3440;
+@define-color black #3b4252;
+@define-color red #bf616a;
+@define-color green #a3be8c;
+@define-color yellow #ebcb8b;
+@define-color blue #81a1c1;
+@define-color magenta #b48ead;
+@define-color cyan #88c0d0;
+@define-color white #e5e9f0;
+@define-color gray #4c566a;
+@define-color bcyan #8fbcbb;
+@define-color bwhite #eceff4;
 /* WAYBAR */
 * {
-  font-family: feather, ProgmataPro;
-  font-size: 13px;
+  font-family: PragmataPro;
+  font-size: 10px;
   margin: 0;
   padding: 0;
   min-height: 0;
@@ -9,10 +22,10 @@
 }
 
 window#waybar {
-  background-color: #101010;
-  border-bottom: 2px solid #c34043;
+  background-color: @background;
+  border-bottom: 2px solid @blue;
   /* border-bottom: 2px solid #ff5D62; */
-  /* box-shadow: -4px 2px 2px #090618; */
+  /* box-shadow: -4px 2px 2px #15161E; */
 }
 
 #clock,
@@ -27,8 +40,8 @@ window#waybar {
 #custom-spacer,
 #custom-left-cap,
 #custom-right-cap {
-  background-color: rgba(0, 0, 0, 0.0);
-  color: #ebebeb;
+  background-color: rgba(0, 0, 0, 0);
+  color: @yellow;
 }
 
 #custom-right-cap,
@@ -40,43 +53,43 @@ window#waybar {
 #clock {
   font-size: 10px;
   /* font-weight: bold; */
-  color: #dc322f
+  color: @blue;
 }
 
-#tags button { 
-  color: #999999;
-  box-shadow: inset 0px -3px 2px -2px #999999;
+#tags button {
+  color: @foreground;
+  box-shadow: inset 0px -3px 2px -2px @foreground;
   margin: 0px 1px 1px 1px;
   padding: 2px 10px 2px 10px;
 }
 
-#tags button.occupied{
-  color: #dc322f;
-  box-shadow: inset 0px -3px 2px -1px #dc322f;
+#tags button.occupied {
+  color: @blue;
+  box-shadow: inset 0px -3px 2px -1px @blue;
 }
 
 #tags button.focused {
-  color: #ebebeb;
-  box-shadow: inset 0px -18px 12px -12px #dc322f;
-  transition: box-shadow 0.4s, color 0.8s, border 1.0s;
+  color: @yellow;
+  box-shadow: inset 0px -18px 12px -12px @blue;
+  transition: box-shadow 0.4s, color 0.8s, border 1s;
 }
 
-  /*
+/*
 #workspaces button {
-  color: #dc322f;
-  box-shadow: inset 0px -3px 2px -1px #dc322f;
+  color: @blue;
+  box-shadow: inset 0px -3px 2px -1px @blue;
    margin: 0 1px;
    padding: 0px 5px;
  }
 
  #workspaces button.persistent{ 
-   color: #999999;
+   color: @foreground;
    box-shadow: inset 0px -3px 2px -2px ;
  }
 
  #workspaces button.focused {
-  color: #ebebeb;
-  box-shadow: inset 0px -18px 12px -12px #dc322f;
+  color: @yellow;
+  box-shadow: inset 0px -18px 12px -12px @blue;
   transition: box-shadow 0.4s, color 0.8s, border 1.0s;
  } 
   */
@@ -98,26 +111,26 @@ window#waybar {
 
 @keyframes blink {
   to {
-    color: #dc322f;
+    color: @red;
   }
 }
 
 #battery {
-  color: #ec8989;
+  color: @magenta;
 }
 
 #battery.plugged,
 #battery.full {
-  color: #727169;
+  color: @green;
 }
 
 #battery.charging,
 #battery.plugged {
-  color: #c9e6fd;
+  color: @yellow;
 }
 
-#battery.critical:not(.charging) {
-  color: #dc322f;
+#battery:not(.charging) {
+  color: @red;
   animation-name: blink;
   animation-duration: 0.5s;
   animation-timing-function: linear;
@@ -127,7 +140,7 @@ window#waybar {
 
 /*
 #pulseaudio.extreme {
-  color: #e82424;
+  color: @red;
   animation-name: blink;
   animation-duration: 0.75s;
   animation-timing-function: linear;
@@ -137,20 +150,20 @@ window#waybar {
 */
 
 #pulseaudio.good {
-  color: #99ac9e;
+  color: @green;
 }
 
 #pulseaudio.low {
-  color: #adadad;
+  color: @yellow;
 }
 
 #pulseaudio.lowest,
 #pulseaudio.muted {
-  color: #ffffff;
+  color: @bwhite;
 }
 
 #network.disconnected {
-  color: #e82424;
+  color: @red;
   animation-name: blink;
   animation-duration: 0.5s;
   animation-timing-function: linear;
@@ -159,11 +172,11 @@ window#waybar {
 }
 
 #custom-pacman {
-  color: #dc322f;
+  color: @blue;
 }
 
 #custom-power {
-  background-color: #090618;
-  color: #ec8989;
-  border: 3px solid #dc322f;
+  background-color: @gray;
+  color: @magenta;
+  border: 3px solid @blue;
 }

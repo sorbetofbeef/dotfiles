@@ -5,9 +5,9 @@
 ## APPLICATION SETTINGS ##
 # xdg standard
 export XDG_SESSION_TYPE="wayland"
-export XDG_SESSION_DESKTOP="sway"
-export XDG_CURRENT_DESKTOP="sway"
-export DESKTOP_SESSION="sway"
+export XDG_SESSION_DESKTOP="river"
+export XDG_CURRENT_DESKTOP="river"
+export DESKTOP_SESSION="river"
 export XDG_CONFIG_HOME="${HOME}/.config"
 export XDG_DATA_HOME="${HOME}/.local/share"
 export XDG_CACHE_HOME="${HOME}/.cache"
@@ -54,6 +54,7 @@ fpath+="${ZDOTDIR}/zsh_functions"
 ## DEV ##
 # go
 export GOPATH="${XDG_DATA_HOME}/go"
+export GOBIN="${GOPATH}/bin"
 export GO111MODULE='on'
 # rust
 export CARGO_HOME="${XDG_DATA_HOME}/cargo"
@@ -71,7 +72,7 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 # javascript
 
 ## PATH ##
-PATH="${HOME}/.local/bin":"${XDG_DATA_HOME}/go/bin":"${XDG_DATA_HOME}/cargo/bin":"/usr/local/bin":"/usr/local/sbin":"/usr/local/go/bin":"$(yarn global bin)":"${PATH}"
+PATH="${HOME}/.local/bin":"${GOBIN}":"${XDG_DATA_HOME}/cargo/bin":"/usr/local/bin":"/usr/local/sbin":"/usr/local/go/bin":"$(yarn global bin)":"${PATH}"
 export PATH=/usr/lib/ccache/bin:$PATH
 fpath+=/home/me/.config/zsh/zsh_functions
 
@@ -105,19 +106,20 @@ export "$(dbus-launch)"
 # gpg
 _gpg () {
   	export GPG_TTY="$(tty)" 
-  	gpg-connect-agent UPDATESTARTUPTTY /bye >> /home/me/.local/var/logs/sway.log
+  	gpg-connect-agent UPDATESTARTUPTTY /bye | tee /home/me/.local/var/logs/sway.log
 }
 
 # ssh
 _ssh () {
-  	eval $(ssh-agent) >> /home/me/.local/var/logs/sway.log
-  	export SSH_AUTH_SOCK
-  	export SSH_AGENT_PID
-  	ssh-add ~/.ssh/id_ed25519 >> /home/me/.local/var/logs/sway.log
+  killall ssh-agent
+	eval $(ssh-agent) | tee /home/me/.local/var/logs/sway.log || return 1
+	export SSH_AUTH_SOCK
+	export SSH_AGENT_PID
+	ssh-add ~/.ssh/id_rsa | tee /home/me/.local/var/logs/sway.log
 }
 
-# __gpg &&
-# _ssh
+_gpg &&
+_ssh
 [[ $(tty) == /dev/tty1 ]] && seatd-launch sway
 
 # X11
