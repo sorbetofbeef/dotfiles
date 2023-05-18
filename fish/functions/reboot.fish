@@ -1,3 +1,3 @@
-function reboot --description 'alias reboot=doas reboot'
-  doas reboot $argv; 
+function reboot --description 'alias reboot=sudo reboot'
+  sudo reboot $argv; 
 end

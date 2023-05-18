@@ -24,7 +24,7 @@ bold_italic_font Cartograph CF Heavy Italic
 #:     italic_font      Operator Mono Book Italic
 #:     bold_italic_font Operator Mono Medium Italic
 
-font_size 16.0
+font_size 9.0
 
 #: Font size (in pts)
 
@@ -1244,6 +1244,18 @@ listen_on none
 #: socket or socket-only. Changing this option by reloading the config
 #: is not supported.
 
+# env
+
+#: Specify the environment variables to be set in all child processes.
+#: Using the name with an equal sign (e.g. env VAR=) will set it to
+#: the empty string. Specifying only the name (e.g. env VAR) will
+#: remove the variable from the child process' environment. Note that
+#: environment variables are expanded recursively, for example::
+
+#:     env VAR1=a
+#:     env VAR2=${HOME}/${VAR1}/b
+
+#: The value of VAR2 will be <path to home directory>/a/b.
 
 # watcher
 
@@ -2228,150 +2240,5 @@ map shift+cmd+/ open_url https://sw.kovidgoyal.net/kitty/
 
 #: }}}
 
-
-#: Specify the environment variables to be set in all child processes.
-#: Using the name with an equal sign (e.g. env VAR=) will set it to
-#: the empty string. Specifying only the name (e.g. env VAR) will
-#: remove the variable from the child process' environment. Note that
-#: environment variables are expanded recursively, for example::
-
-#:     env VAR1=a
-#:     env VAR2=${HOME}/${VAR1}/b
-
-#: The value of VAR2 will be <path to home directory>/a/b.
-
-# # symbol_map
-# # symbol_map U+23FB-U+23FE,U+2665,U+26A1,U+2B58,U+E000-U+E00A,U+E0A0-U+E0A3,U+E0B0-U+E0CA,U+E0CC-U+E0D2,U+E0D4,U+E200-U+E2A9,U+E300-U+E3E3,U+E5FA-U+E62F,U+E700-U+E7C5,U+F000-U+F100,U+F209-U+F2E0,U+F300-U+F31C,U+F400-U+F4A9,U+F500-U+F8FF Hack Nerd Font
-#
-# # "Nerd Fonts - Pomicons"
-# symbol_map  U+E000-U+E00D Symbols Nerd Font
-#
-# # "Nerd Fonts - Powerline"
-# symbol_map U+e0a0-U+e0a2,U+e0b0-U+e0b3 Symbols Nerd Font
-#
-# # "Nerd Fonts - Powerline Extra"
-# symbol_map U+e0a3-U+e0a3,U+e0b4-U+e0c8,U+e0cc-U+e0d2,U+e0d4-U+e0d4 Symbols Nerd Font
-#
-# # "Nerd Fonts - Symbols original"
-# symbol_map U+e5fa-U+e62b Symbols Nerd Font
-#
-# # "Nerd Fonts - Devicons"
-# symbol_map U+e700-U+e7c5 Symbols Nerd Font
-#
-# # "Nerd Fonts - Font awesome"
-# symbol_map U+f000-U+f2e0 Symbols Nerd Font
-#
-# # "Nerd Fonts - Font awesome extension"
-# symbol_map U+e200-U+e2a9 Symbols Nerd Font
-#
-# # "Nerd Fonts - Octicons"
-# symbol_map U+f400-U+f4a8,U+2665-U+2665,U+26A1-U+26A1,U+f27c-U+f27c Symbols Nerd Font
-#
-# # "Nerd Fonts - Font Linux"
-# symbol_map U+F300-U+F313 Symbols Nerd Font
-#
-# #  Nerd Fonts - Font Power Symbols"
-# symbol_map U+23fb-U+23fe,U+2b58-U+2b58 Symbols Nerd Font
-#
-# #  "Nerd Fonts - Material Design Icons"
-# symbol_map U+f500-U+fd46 Symbols Nerd Font
-#
-# # "Nerd Fonts - Weather Icons"
-# symbol_map U+e300-U+e3eb Symbols Nerd Font
-#
-# # Misc Code Point Fixes
-# symbol_map U+21B5,U+25B8,U+2605,U+2630,U+2632,U+2714,U+E0A3,U+E615,U+E62B Symbols Nerd Font
-
-# symbol_map U+f101-U+f208 nonicons
-# U+E0A0-U+E0A3,U+E0C0-U+E0C7 Ellograph CF
-
-font_features CascadiaCodePL-ExtraLight +calt +liga +ss20
-font_features CascadiaCodePL-SemiBold +calt +liga +ss20
-font_features CascadiaCodePL-Bold +calt +liga +ss20
-font_features CascadiaCodePL-SemiBoldItalic +calt +liga +ss01 +ss20
-font_features CascadiaCodePL-ExtraLightItalic +calt +liga +ss01 +ss20
-font_features CascadiaCodePL-BoldItalic +calt +liga +ss01 +ss20
-
-window_border_width 2.0pt
-
-draw_minimal_borders no
-
-window_padding_width 0 0
-
-hide_window_decorations yes
-
-confirm_os_window_close 0
-
-background_opacity 1.0
-
-
-dim_opacity 0.35
-
-
-allow_remote_control yes
-
-listen_on unix:/tmp/kitty
-
-kitty_mod alt
-
-action_alias launch_tab launch --type=tab --cwd=current
-action_alias launch_wub launch --type=window --cwd=current
-
-
-map ctrl+shift+c copy_to_clipboard
-
-map ctrl+shift+v paste_from_clipboard
-map shift+insert paste_from_selection
-
-map kitty_mod+ctrl+k     scroll_line_up
-map kitty_mod+ctrl+j       scroll_line_down
-
-map kitty_mod+ctrl+b scroll_page_up
-map kitty_mod+ctrl+f scroll_page_down
-
-map kitty_mod+ctrl+h show_scrollback
-
-map kitty_mod+shift+enter new_window
-map kitty_mod+shift+l>e launch_tab nvim
-map kitty_mod+shift+l>m launch_tab neomutt
-
-
-map kitty_mod+w close_window
-
-map kitty_mod+j next_window
-
-map kitty_mod+k previous_window
-
-map kitty_mod+shift+j move_window_forward
-
-map kitty_mod+shift+k move_window_backward
-
-map kitty_mod+enter move_window_to_top
-map kitty_mod+l next_tab
-
-map kitty_mod+h previous_tab
-map kitty_mod+t new_tab
-map kitty_mod+w close_tab
-map kitty_mod+q close_os_window
-map kitty_mod+shift+l move_tab_forward
-map kitty_mod+shift+h move_tab_backward
-map kitty_mod+shift+t set_tab_title
-map kitty_mod+] next_layout
-
-map kitty_mod+m toggle_layout stack
-map ctrl+alt+t goto_layout tall
-map ctrl+alt+s goto_layout stack
-map ctrl+alt+w goto_layout fat
-
-
-tab_bar_min_tabs            1
-tab_bar_edge                bottom
-tab_bar_style               powerline
-tab_powerline_style         slanted
-tab_title_template          {title}{' :{}:'.format(num_windows) if num_windows > 1 else ''}
-
-env DARK_THEME=kanagawa
-env DARK_VARIANT=dark
-
-include /home/me/.config/kitty/themes/kanagawa_dark.conf
+include /home/me/.config/kitty/themes/{DARK_THEME}_{DARK_VARIENT}.conf
 

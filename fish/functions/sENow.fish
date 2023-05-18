@@ -1,3 +1,3 @@
-function sENow --wraps='doas systemctl enable --now' --description 'alias sENow=doas systemctl enable --now'
-  doas systemctl enable --now $argv; 
+function sENow --wraps='sudo systemctl enable --now' --description 'alias sENow=doas systemctl enable --now'
+  sudo systemctl enable --now $argv; 
 end

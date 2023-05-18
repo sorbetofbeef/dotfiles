@@ -1,3 +1,3 @@
-function sL --wraps='doas systemctl list-units' --description 'alias sL=doas systemctl list-units'
-  doas systemctl list-units $argv; 
+function sL --wraps='sudo systemctl list-units' --description 'alias sL=doas systemctl list-units'
+  sudo systemctl list-units $argv; 
 end

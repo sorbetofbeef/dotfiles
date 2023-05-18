@@ -1,3 +1,3 @@
-function sSt --wraps='doas systemctl start' --description 'alias sSt=doas systemctl start'
-  doas systemctl start $argv; 
+function sSt --wraps='sudo systemctl start' --description 'alias sSt=doas systemctl start'
+  sudo systemctl start $argv; 
 end

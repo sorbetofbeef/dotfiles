@@ -1,3 +1,3 @@
-function poweroff --description 'alias poweroff=doas poweroff'
-  doas poweroff $argv; 
+function poweroff --description 'alias poweroff=sudo poweroff'
+  sudo poweroff $argv; 
 end

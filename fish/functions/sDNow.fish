@@ -1,3 +1,3 @@
-function sDNow --wraps='doas systemctl disable --now' --description 'alias sDNow=doas systemctl disable --now'
-  doas systemctl disable --now $argv; 
+function sDNow --wraps='sudo systemctl disable --now' --description 'alias sDNow=doas systemctl disable --now'
+  sudo systemctl disable --now $argv; 
 end

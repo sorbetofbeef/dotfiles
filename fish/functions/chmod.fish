@@ -1,3 +1,3 @@
-function chmod --wraps='doas chmod -v' --description 'alias chmod=doas chmod -v'
-  doas chmod -v $argv; 
+function chmod --wraps='chmod -v' --description 'alias chmod=sudo chmod -v'
+   sudo  chmod -v $argv; 
 end

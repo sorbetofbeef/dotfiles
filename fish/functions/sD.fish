@@ -1,3 +1,3 @@
-function sD --wraps='doas systemctl disable' --description 'alias sD=doas systemctl disable'
-  doas systemctl disable $argv; 
+function sD --wraps='sudo systemctl disable' --description 'alias sD=doas systemctl disable'
+  sudo systemctl disable $argv; 
 end

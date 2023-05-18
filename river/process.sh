@@ -1,34 +1,40 @@
 #!/usr/bin/env bash
 
-killall kile
-killall waybar
+pkill waybar
 waybar &
 
-# riverctl default-layout rivertile &
-# exec rivertile -main-ratio 0.5 -view-padding 5 -outer-padding 8 &
+# # riverctl default-layout rivertile &
+# # exec rivertile -main-ratio 0.5 -view-padding 5 -outer-padding 8 &
 
-# killall foot
-# foot --server &
+# # pkill foot
+# # foot --server &
 
-killall mako
+pkill mako
 mako &
 
-killall wl-paste
+pkill wl-paste
 wl-paste -t text --watch clipman store & disown
 
-killall polkit-gnome-authentication-agent-1 
-/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+# pkill polkit-gnome-authentication-agent-1 
+# /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
-killall 1password
-1password --silent &
+# pkill 1password
+# 1password --silent &
 
-killall swww
+pkill wireplumber
+pkill pipewire-pulse
+pkill pipewire
+dbus-run-session pipewire &
+pipewire-pulse &
+
+pkill swww
 swww init &&
-swww img "$HOME/media/wp/current-bg" &
+swww img "$HOME/media/wp/kanagawa.jpg" &
 
-# exec kile -n 'default' -l "(( ver: hor (( hor: full deck ) 1 0.62 0)) 1 0.6 0)"
- # kile --namespace 'kile' --layout "(( ver: full deck ) 1 0.6 0)"
- exec kile --namespace 'kile' --layout "((v:
-  ((h: f d) 1 0.62)
-  ((h: f d) 1 0.62)) 1 0.6 1)"
+gsettings set org.gnome.desktop.interface gtk-theme Desert-Blue-light
+gsettings set org.gnome.desktop.interface icon-theme 'Kora Light'
+# gsettings set org.gnome.desktop.interface cursor-theme cz-Hickson-Black'
+# gsettings set org.gnome.desktop.interface cursor-size 16'
 
+gsettings set org.gnome.desktop.wm.preference theme Desert-Blue-light
+gsettings set org.gnome.desktop.wm.preference button-layout close,spacer,maximize,minimize:menu

@@ -1,3 +1,3 @@
 function pI --wraps='paru -Syu' --description 'alias pI=paru -Syu'
-  paru -Syu $argv; 
+  sudo xbps-install -S $argv; 
 end

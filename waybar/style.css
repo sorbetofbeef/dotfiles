@@ -1,20 +1,30 @@
-@define-color foreground #d8dee9;
-@define-color background #2e3440;
-@define-color black #3b4252;
-@define-color red #bf616a;
-@define-color green #a3be8c;
-@define-color yellow #ebcb8b;
-@define-color blue #81a1c1;
-@define-color magenta #b48ead;
-@define-color cyan #88c0d0;
-@define-color white #e5e9f0;
-@define-color gray #4c566a;
-@define-color bcyan #8fbcbb;
-@define-color bwhite #eceff4;
+/* @define-color foreground #d8dee9; */
+/* @define-color background #2e3440; */
+/* @define-color black #3b4252; */
+/* @define-color red #bf616a; */
+/* @define-color green #a3be8c; */
+/* @define-color yellow #ebcb8b; */
+/* @define-color magenta #b48ead; */
+/* @define-color cyan #88c0d0; */
+/* @define-color white #e5e9f0; */
+/* @define-color gray #4c566a; */
+/* @define-color bcyan #8fbcbb; */
+/* @define-color bwhite #eceff4; */
 /* WAYBAR */
+
+/* B-Man */
+@define-color bg #1f1f28;
+@define-color primary #c0a36e;
+@define-color blue #7fb4ca;
+@define-color white #dcd7ba;
+@define-color yellow #e6c384;
+@define-color red #c34043;
+@define-color gray #c8c093;
+@define-color green #76946a;
+
 * {
-  font-family: PragmataPro;
-  font-size: 10px;
+  font-family: 'GohuFont 14-uni Nerd Font Propo';
+  font-size: 14px;
   margin: 0;
   padding: 0;
   min-height: 0;
@@ -22,8 +32,8 @@
 }
 
 window#waybar {
-  background-color: @background;
-  border-bottom: 2px solid @blue;
+  background-color: @bg;
+  border-bottom: 2px solid @primary;
   /* border-bottom: 2px solid #ff5D62; */
   /* box-shadow: -4px 2px 2px #15161E; */
 }
@@ -41,7 +51,7 @@ window#waybar {
 #custom-left-cap,
 #custom-right-cap {
   background-color: rgba(0, 0, 0, 0);
-  color: @yellow;
+  color: @white;
 }
 
 #custom-right-cap,
@@ -51,14 +61,15 @@ window#waybar {
 }
 
 #clock {
-  font-size: 10px;
+  font-family: 'GohuFont 11-uni Nerd Font Propo';
+  font-size: 11px;
   /* font-weight: bold; */
-  color: @blue;
+  color: @primary;
 }
 
 #tags button {
-  color: @foreground;
-  box-shadow: inset 0px -3px 2px -2px @foreground;
+  color: @primary;
+  box-shadow: inset 0px -3px 2px -2px @blue;
   margin: 0px 1px 1px 1px;
   padding: 2px 10px 2px 10px;
 }
@@ -69,8 +80,8 @@ window#waybar {
 }
 
 #tags button.focused {
-  color: @yellow;
-  box-shadow: inset 0px -18px 12px -12px @blue;
+  color: @white;
+  box-shadow: inset 0px -18px 12px -12px @primary;
   transition: box-shadow 0.4s, color 0.8s, border 1s;
 }
 
@@ -116,7 +127,7 @@ window#waybar {
 }
 
 #battery {
-  color: @magenta;
+  color: @white;
 }
 
 #battery.plugged,
@@ -159,7 +170,7 @@ window#waybar {
 
 #pulseaudio.lowest,
 #pulseaudio.muted {
-  color: @bwhite;
+  color: @red;
 }
 
 #network.disconnected {
@@ -176,7 +187,7 @@ window#waybar {
 }
 
 #custom-power {
-  background-color: @gray;
-  color: @magenta;
-  border: 3px solid @blue;
+  background-color: @bg;
+  color: @gray;
+  border: 3px solid @primary;
 }

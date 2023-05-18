@@ -1,3 +1,3 @@
-function sE --wraps='doas systemctl enable' --description 'alias sE=doas systemctl enable'
-  doas systemctl enable $argv; 
+function sE --wraps='sudo systemctl enable' --description 'alias sE=doas systemctl enable'
+  sudo systemctl enable $argv; 
 end

@@ -18,7 +18,7 @@
 
  "river/tags": {
      "num-tags": 4,
-     "tag-labels": [ "", "", "", ""],
+     "tag-labels": [ " ", " ", " ", " "],
  },
 
   // "sway/workspaces": {
@@ -53,13 +53,13 @@
     },
     "format": "{icon}",
     "format-critical": "{icon}",
-    "format-icons":  [ "",  "", "", "", "", "", "" ],
+    "format-icons":  [ "   ",  "   ", "   ", "   " ],
     "tooltip": "{capacity}"
   },
   
   "network": {
-    "format-wifi": "",
-    "format-disconnected": "",
+    "format-wifi": " ",
+    "format-disconnected": "",
     "tooltip-format": "{essid}"
   },
 
@@ -77,14 +77,14 @@
     "format-disabled": "",
     "format-alt": "bluetooth: {status}",
     "format-icons": {
-      "enabled": "",
-      "disabled": ""
+      "enabled": " ",
+      "disabled": ""
     },
     "tooltip-format": "{status}"
   },
 
   "custom/power": {
-    "format": "",
+    "format": " ",
     "on-click": "power-wrapper",
     "tooltip-format": "alacritty --hold --class \"Launcher\" --title \"Power\" -e power-wrapper",
     "tooltip": false,
@@ -98,10 +98,10 @@
       "low": 30,
       "lowest": 0,
     },
-    "format-muted": "",
+    "format-muted": " ",
     "format": "{icon}",
     "format-icons": {
-      "default": [ "", "", ""],
+      "default": [ " ", " ", " "],
     },
     "on-click": "alacritty --class \"Launcher\" --title \"Volume\" -e volume-control",
     "tooltip-format": "{volume}",

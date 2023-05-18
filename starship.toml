@@ -15,9 +15,9 @@ style = 'green'
 disabled = false
 
 [directory]
-read_only = "﫺"
+read_only = " "
 style = "bold green"
-home_symbol = "～"
+home_symbol = "∼"
 
 [character]
 success_symbol = "[ ](bold cyan)"
@@ -85,7 +85,7 @@ symbol = " "
 format = '\[[$symbol$state(\($name\))]($style)\]'
 
 [nodejs]
-symbol = " "
+symbol = " "
 format = '[$symbol]($style)'
 
 [package]
@@ -110,7 +110,7 @@ format = '[$symbol]($style) '
 disabled = false
 symbol = " "
 format = '\[ [$symbol $shlvl]($style) \]'
-threshold = 2
+threshold = 3
 
 [swift]
 symbol = "ﯣ "

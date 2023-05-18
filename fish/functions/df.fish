@@ -1,3 +1,3 @@
-function df --wraps='doas df -h' --description 'alias df=doas df -h'
-  doas df -h $argv; 
+function df --wraps='sudo df -h' --description 'alias df=doas df -h'
+  sudo df -h $argv; 
 end
