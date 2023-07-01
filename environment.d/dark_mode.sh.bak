@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+export LIGHT_THEME="melange"
+export LIGHT_VARIANT="light"
+export BAT_THEME_LIGHT="OneHalfDark"
+
+export DARK_THEME="melange"
+export DARK_VARIANT="dark"
+export BAT_THEME_DARK="OneHalfDark"
+

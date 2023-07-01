@@ -1,0 +1,28 @@
+window {
+    background-color: #1a1b26;
+    color: #15161e;
+    font-size: 12px;
+    font-family: 'Hasklug Nerd Font';
+}
+
+#entry:nth-child(odd) {
+    background-color: #414868;
+}
+
+#entry:nth-child(even) {
+    background-color: #7dcfff;
+}
+
+#entry:selected {
+    background-color: #7aa2f7;
+}
+
+#input {
+    background-color: #7aa2f7;
+    color: #1a1b26;
+    border-color: #15161e;
+}
+
+#input:focus {
+    border-color: #15161e;
+}

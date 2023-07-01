@@ -1,0 +1,12 @@
+#!/bin/bash
+
+zsh -c "$HOME/.local/bin/scripts/switch_mode.sh" &
+
+( if ! pgrep sketchybar ; then
+    ~/.local/bin/sketchybar
+  else
+    exit 0
+  fi & ) &> /dev/null
+
+
+

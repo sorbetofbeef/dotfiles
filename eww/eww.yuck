@@ -1,0 +1,43 @@
+(defwindow example
+           :monitor 0
+           :geometry (geometry :x "0%"
+                               :y "20px"
+                               :width "90%"
+                               :height "30px"
+                               :anchor "top center")
+           :stacking "overlay"
+           :reserve (struts :distance "40px" :side "top")
+           :windowtype "dock"
+           :wm-ignore false
+  (box :orientation "h" :space-evenly true :halign "end" 
+    (greeter :text "Say hello!"
+             :name "Christian")
+    (clock :current-time time)
+    (battery-capacity :capacity battery)
+  ))
+
+(defwidget greeter [?text name]
+  (box :orientation "horizontal"
+       :halign "center"
+    (button :onclick "notify-send 'Hello' 'Hello, ${name}'"
+      "${text}")))
+
+(defvar time-visible true)
+
+(defpoll time :interval "1s"
+              :run-while time-visible
+  `date '+%A %B %d, %Y - %H:%M:%S'`)
+
+
+(defwidget clock [current-time]
+  (box :orientation "horizontal"
+       :halign "end"
+    current-time))
+
+(deflisten battery :initial ""
+  "cat /sys/class/power_supply/BAT0/capacity") 
+
+(defwidget battery-capacity [capacity]
+  (box :orientation "h" :space-evenly false :halign "end"
+    "${capacity}%"
+))

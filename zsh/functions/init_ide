@@ -1,0 +1,14 @@
+#!/opt/local/bin/zsh
+
+init_ide () {
+  ls /Users/me/Projects
+  printf 'Project Name: ' ; read -r user_input
+
+  export CURRENT_PROJECT="$user_input"
+
+  /Applications/MacPorts/kitty.app/Contents/MacOS/kitty --single-instance --instance-group "IDE" --title "Development" -d "/Users/me/Projects/$CURRENT_PROJECT" --session "/Users/me/.config/kitty/sessions/ide.conf" &
+  /Users/me/.local/bin/neovide --multigrid -- --cmd ":cd ~/Projects/$CURRENT_PROJECT"
+}
+
+
+

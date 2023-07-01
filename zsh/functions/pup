@@ -1,0 +1,36 @@
+#!/bin/bash
+
+pup () 
+{
+  check ()
+  {
+    printf '\e[33mContinue?\e[0m (Y/n)\n'
+    read -r -k1 -s response
+    if [[ $response == [Nn]* ]]; then
+      sleep 1
+      printf '\e[31mNo upgrades were made\e[0m'; sleep 1; printf '.'; sleep 1; printf '.'; sleep 1; printf '.'
+      sleep 1
+      exit 1
+    else
+      sleep 1
+      printf '\e[32mUpgrading!\e[0m\n'
+      sleep 1
+      return 0
+    fi
+    return 0
+  }
+
+  pkg=$1
+  
+  if sudo port selfupdate && [[ -n $pkg ]]; then
+    printf '\e[32mI am about to upgrade %s ' "$pkg"
+    check
+    sudo port upgrade -Ruc "$pkg"
+  else
+    printf '\e[32mI am about to upgrade these packages: \n'
+    sudo port list outdated
+    check
+    sleep 2
+    sudo port upgrade -Ruc outdated
+  fi
+}

@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+check_dir () 
+{
+  target_dir=$1
+
+  [[ -d $target_dir ]] && return 0
+  ( [[ ! -d $target_dir ]] && mkdir -pv "$target_dir") || return 1
+}

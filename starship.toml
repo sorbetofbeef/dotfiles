@@ -1,0 +1,128 @@
+# Use custom format
+format = '$shlvl$jobs$golang$lua$rust$dart$nodejs$python $directory$character'
+right_format = '$git_branch$git_status $time'
+
+scan_timeout = 10
+add_newline = false
+continuation_prompt = "▶▶"
+
+[jobs]
+symbol = ' '
+format = '\[[$symbol$number]($style)\]'
+number_threshold = 2
+symbol_threshold = 1
+style = 'green'
+disabled = false
+
+[directory]
+read_only = "﫺"
+style = "bold green"
+home_symbol = "󰜥"
+
+[character]
+success_symbol = "[](bold cyan)"
+error_symbol = "[](red)"
+vicmd_symbol = "[](yellow)"
+
+[fill]
+symbol = '═'
+style = 'red'
+disabled = true
+
+[aws]
+symbol = ""
+format = '\[[$symbol($profile)(\($region\))(\[$duration\])]($style)\]'
+
+[cmake]
+format = '\[[$symbol]($style)\]'
+
+[cmd_duration]
+format = "[$duration]($style)"
+disabled = true
+
+[dart]
+symbol = ""
+# format = '\[[$symbol]($style)\] '
+format = '[$symbol]($style)'
+
+[deno]
+format = '\[[$symbol]($style)\]'
+
+[docker_context]
+symbol = " "
+format = '\[[$symbol $context]($style)\]'
+[gcloud]
+format = '\[[$symbol$account(@$domain)(\($region\))]($style)\]'
+
+[git_branch]
+symbol = ""
+format = '[\[](bold cyan)[$symbol$branch]($style)[\]](bold cyan)'
+style = 'italic yellow'
+
+[git_status]
+format = '([\[$all_status$ahead_behind\]]($style))'
+
+[golang]
+symbol = ""
+# format = '\[[$symbol]($style)\] '
+format = '[$symbol]($style)'
+
+[hg_branch]
+symbol = ""
+format = ' \[[$symbol$branch]($style)\]'
+
+[lua]
+symbol = ""
+# format = '\[[$symbol]($style)\] '
+format = '[$symbol]($style)'
+
+[memory_usage]
+symbol = " "
+format = '\[$symbol[$ram( | $swap)]($style)\]'
+
+[nix_shell]
+symbol = ""
+format = '\[[$symbol$state(\($name\))]($style)\]'
+
+[nodejs]
+symbol = ""
+format = '[$symbol]($style)'
+
+[package]
+symbol = " "
+format = '[\[](bold black)[$symbol]($style)[\]](bold black)'
+style = 'yellow'
+
+[python]
+symbol = ""
+format = '[${symbol}${pyenv_prefix}(\($virtualenv\))]($style)'
+
+[ruby]
+symbol = ""
+format = '\[[$symbol]($style)\]'
+
+[rust]
+symbol = ""
+# format = '\[[$symbol]($style)\] '
+format = '[$symbol]($style) '
+
+[shlvl]
+disabled = false
+symbol = " "
+format = '\[[$symbol$shlvl]($style)\]'
+threshold = 2
+
+[swift]
+symbol = "ﯣ "
+format = '\[[$symbol]($style)\]'
+
+[terraform]
+format = '\[[$symbol$workspace]($style)\]'
+
+[time]
+disabled = false
+format = '[$time]($style)'
+style = 'bold yellow'
+
+[username]
+format = '\[[$user]($style)\]'

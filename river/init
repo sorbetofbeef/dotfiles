@@ -1,0 +1,118 @@
+#!/bin/bash
+
+riverctl spawn \$HOME/.config/river/bindings
+
+riverctl background-color 0xfaf4ed
+
+riverctl border-width 2
+
+riverctl border-color-focused 0x5CA7B4
+riverctl border-color-unfocused 0xE6EBF3
+
+riverctl xcursor-theme 'Bibata-Modern-Ice' 22
+ 
+riverctl spawn 'gsettings set org.gnome.desktop.interface gtk-theme Dracula-slim'
+riverctl spawn 'gsettings set org.gnome.desktop.interface icon-theme kora-light'
+riverctl spawn 'gsettings set org.gnome.desktop.interface cursor-theme "Bibata-Modern-Ice"'
+riverctl spawn 'gsettings set org.gnome.desktop.interface cursor-size 22'
+
+riverctl spawn 'gsettings set org.gnome.desktop.wm.preference theme Dracula-slim'
+riverctl spawn 'gsettings set org.gnome.desktop.wm.preference button-layout close,spacer,maximize,minimize:menu'
+
+riverctl set-repeat 50 300
+
+riverctl float-filter-add app-id float
+riverctl float-filter-add app-id "popup"
+riverctl float-filter-add app-id "pavucontrol"
+riverctl float-filter-add app-id "*mpv*"
+riverctl float-filter-add title "(?:Open|Save) (?:File|Folder|As)"
+
+#riverctl csd-filter-add app-id firefox
+# riverctl csd-filter-add app-id foot
+
+pad='pointer-1267-12753-VEN_04F3:00_04F3:31D1_Mouse'
+
+padMaybe='pointer-1267-12753-VEN_04F3:00_04F3:31D1_Touchpad'
+
+riverctl input $pad events enabled
+riverctl input $pad accel-profile adaptive
+riverctl input $pad pointer-accel 0.30000001192092896
+riverctl input $pad click-method clickfinger
+riverctl input $pad drag enabled
+riverctl input $pad disable-while-typing enabled
+riverctl input $pad middle-emulation enabled
+riverctl input $pad natural-scroll enabled
+riverctl input $pad tap enabled
+
+riverctl input $padMaybe events enabled
+riverctl input $padMaybe accel-profile adaptive
+riverctl input $padMaybe pointer-accel 0.30000001192092896
+riverctl input $padMaybe click-method clickfinger
+riverctl input $padMaybe drag enabled
+riverctl input $padMaybe middle-emulation enabled
+riverctl input $padMaybe natural-scroll enabled
+riverctl input $padMaybe tap enabled
+
+# riverctl send-layout-cmd "outer_padding 10"
+# riverctl send-layout-cmd "view_padding 10"
+# riverctl send-layout-cmd "smart_padding false"
+
+# Sample kile config to achieve a basic layout similar to rivertile
+
+# Ratio of display used by main area
+# riverctl map -repeat normal Super H send-layout-cmd kile "mod_main_ratio +0.01"
+# riverctl map -repeat normal Super L send-layout-cmd kile "mod_main_ratio -0.01"
+#
+# # Number of views/windows/clients in the main area
+# riverctl map normal Super+Shift H send-layout-cmd kile "mod_main_amount +1"
+# riverctl map normal Super+Shift L send-layout-cmd kile "mod_main_amount -1"
+#
+# # arg1, Tags to apply command to: default|focused|all|0..32
+# # arg2, Name to assign to this layout
+# # arg3, Layout definition
+# riverctl map normal Super+Control Up    send-layout-cmd kile "focused U ((h: v v) 1 0.65 0)"
+# riverctl map normal Super+Control Down  send-layout-cmd kile "focused D ((h: v v) 1 0.65 1)"
+# riverctl map normal Super+Control Left  send-layout-cmd kile "focused L ((v: h h) 1 0.65 0)"
+# riverctl map normal Super+Control Right send-layout-cmd kile "focused R ((v: h h) 1 0.65 1)"
+# riverctl map normal Super+Control D     send-layout-cmd kile "focused Deck deck"
+# riverctl map normal Super+Control F     send-layout-cmd kile "focused Full full"
+
+# Tell river to use kile as its layout generator
+
+# These are fairly simple layout that serves as
+# both example of what can be done and also bulding blocks for your own layouts
+# ROW="((h: h d) 2 0.65 0)"
+#
+# JUMP="(2 >
+# 	$ROW
+#     ? (h 1 0.65 0)
+# )"
+#
+# HOR="((h:
+# 	v (
+# 		(v: f d) 1 0.5 0
+# 	)
+# ) 1 0.63 0)"
+
+# If you wish to add more layout, please follow the indenting style.
+# Since the syntax isn't really a lisp, I took inspiration from infix-lsp
+# https://github.com/elkowar/infix-lisp
+# Feel free to add more below :)
+# riverctl default-layout kile
+# riverctl send-layout-cmd kile "global_view_padding 10"
+# riverctl send-layout-cmd kile "global_outer_padding 10"
+# riverctl send-layout-cmd kile "smart_padding false"
+riverctl default-layout stacktile
+
+riverctl spawn 'exec hash dbus-update-activation-environment 2>/dev/null && \
+  dbus-update-activation-environment DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP'
+
+riverctl spawn pipewire &
+riverctl spawn mako &
+riverctl spawn pipewire-pulse &
+riverctl spawn waybar &
+riverctl spawn /usr/libexec/polkit-gnome-authentication-agent-1 &
+riverctl spawn 'wl-paste -t text --watch clipman store; disown'
+riverctl spawn /home/me/.config/river/process.sh &
+
+

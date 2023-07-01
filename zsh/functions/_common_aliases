@@ -1,0 +1,19 @@
+#!/opt/local/bin/zsh
+#shellcheck=zsh
+
+_common_aliases ()
+{
+  alias \
+    _='sudo ' \
+    htop='TERM=xterm-256color sudo htop' \
+    q='exit' \
+    c='clear' \
+    e="$EDITOR"\
+    f="lfcd" \
+    s="kitty +kitten ssh" \
+    ls='exa --group-directories-first --icons --sort Extension --color=always' \
+    l='exa --group-directories-first --icons --color=always -lah --sort Extension --git' \
+    m='mpv --ytdl $(pbpaste)' \
+    y='yt-dlp $(pbpaste)'
+}
+
