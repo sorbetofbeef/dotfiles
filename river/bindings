@@ -8,7 +8,7 @@ mod="Mod4"
 riverctl map normal $mod Return spawn "kitty"
 
 # riverctl map normal $mod+Control E spawn "kitty --session /home/me/workspace/cocktail-codex/project-session.conf "
-riverctl map normal $mod+Control E spawn "kitty --session /home/me/workspace/cocktail-codex/dev-env/project-session.conf "
+riverctl map normal $mod+Control E spawn "kitty --session /home/me/workspace/current_project/dev-env/project-session.conf "
 
 # password menu
 riverctl map normal $mod P spawn wofipassmenu

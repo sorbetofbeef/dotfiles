@@ -8,7 +8,7 @@
 
   "modules-left": ["custom/left-cap", "river/tags"],
   "modules-center": ["clock"],
-  "modules-right": ["custom/right-backed", "custom/ncspot", "custom/mpd", "custom/left-backed", "wireplumber", "bluetooth", "network", "battery", "custom/power"],
+  "modules-right": ["custom/right-backed", "custom/ncspot", "custom/mpd", "custom/left-backed", "wireplumber", "bluetooth", "network", "tray", "battery", "custom/power"],
 
  // "river/tags": {
  //     "num-tags": 9,
@@ -103,27 +103,27 @@
     "tooltip-format": "",
     "tooltip": false,
   },
-// "wireplumber": {
-//         "format": " {volume}% ",
-//         "format-muted": "  ",
-//         "on-click": "pavucontrol"
-// },
-  "pulseaudio": {
-    "states": {
-      "extreme": 101,
-      "high": 90,
-      "good": 60,
-      "low": 30,
-      "lowest": 0,
-    },
-    "format-muted": " ",
-    "format": " {icon} {volume}% ",
-    "format-icons": {
-      "default": [ " ", " ", " "],
-    },
-    "on-click": "alacritty --class \"Launcher\" --title \"Volume\" -e volume-control",
-    "tooltip-format": "{volume}",
-  },
+"wireplumber": {
+        "format": " {volume}% ",
+        "format-muted": "   ",
+        "on-click": "pavucontrol"
+},
+//  "pulseaudio": {
+//    "states": {
+//      "extreme": 101,
+//      "high": 90,
+//      "good": 60,
+//      "low": 30,
+//      "lowest": 0,
+//    },
+//    "format-muted": " ",
+//    "format": " {icon} {volume}% ",
+//    "format-icons": {
+//      "default": [ " ", " ", " "],
+//    },
+//    "on-click": "alacritty --class \"Launcher\" --title \"Volume\" -e volume-control",
+//    "tooltip-format": "{volume}",
+//  },
    "custom/ncspot": {
         "format": "   {} ",
         "max-length": 35,
@@ -165,6 +165,11 @@
      "interval": 10,
      "exec": "mpc current",
      "exec-if": "pgrep mpd",
+  },
+
+  "tray": {
+    "icon-size": 14,
+    "spacing": 10,
   },
 
 

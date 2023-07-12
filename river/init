@@ -104,15 +104,12 @@ riverctl input $padMaybe tap enabled
 # riverctl send-layout-cmd kile "smart_padding false"
 riverctl default-layout stacktile
 
-riverctl spawn 'exec hash dbus-update-activation-environment 2>/dev/null && \
-  dbus-update-activation-environment DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP'
 
-riverctl spawn pipewire &
-riverctl spawn mako &
-riverctl spawn pipewire-pulse &
-riverctl spawn waybar &
-riverctl spawn /usr/libexec/polkit-gnome-authentication-agent-1 &
-riverctl spawn 'wl-paste -t text --watch clipman store; disown'
-riverctl spawn /home/me/.config/river/process.sh &
-
-
+hash dbus-update-activation-environment 2>/dev/null &&
+  dbus-update-activation-environment DISPLAY WAYLAND_DISPLAY DBUS_SESSION_BUS_ADDRESS XDG_CURRENT_DESKTOP
+gentoo-pipewire-launcher &
+mako &
+waybar &
+/usr/libexec/polkit-gnome-authentication-agent-1 &
+wl-paste -t text --watch clipman store & disown
+/home/me/.config/river/process.sh &

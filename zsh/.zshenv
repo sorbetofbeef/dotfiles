@@ -55,6 +55,7 @@ export MOZ_USE_XINPUT2="1"
 export QT_QPA_PLATFORMTHEME="qt5ct"
 export QT_QPA_PLATFORM="wayland-egl"
 export QT_WAYLAND_DISABLE_WINDOWDECORATION="0"
+export JETBRAINS_TOOLBOX_NO_SOFTWARE_OPEN_GL=true
 
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 export GPG_TTY=$(tty)

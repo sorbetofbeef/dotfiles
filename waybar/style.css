@@ -45,6 +45,7 @@ window#waybar {
 #custom-power,
 #network,
 #workspaces,
+#tray,
 #tags,
 #pulseaudio,
 #custom-spacer,
@@ -106,6 +107,7 @@ window#waybar {
 #bluetooth,
 #battery,
 #custom-pacman,
+#tray,
 #custom-power,
 #network,
 #custom-ncspot,
@@ -114,6 +116,7 @@ window#waybar {
 }
 
 #bluetooth,
+#tray,
 #custom-ncspot {
   color: @blue;
 }
