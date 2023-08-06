@@ -13,18 +13,20 @@
 /* WAYBAR */
 
 /* B-Man */
-@define-color bg #1f1f28;
-@define-color primary #c0a36e;
-@define-color blue #7fb4ca;
-@define-color white #dcd7ba;
-@define-color yellow #e6c384;
-@define-color red #c34043;
-@define-color gray #c8c093;
-@define-color green #76946a;
+@define-color bg #2e3440;
+@define-color primary #88c0d0;
+@define-color blue #81a1c1;
+@define-color white #eceff4;
+@define-color yellow #ebcb8b;
+@define-color red #bf616a;
+@define-color gray #434c5e;
+@define-color green #a3be8c;
+@define-color magenta #b48ead;
+@define-color cyan #8fbcbb;
 
 * {
-  font-family: "Fixedsys Excelsior", "Symbols Nerd Font";
-  font-size: 14px;
+  font-family: "ShureTechMono Nerd Font", "Symbols Nerd Font";
+  font-size: 12px;
   margin: 0;
   padding: 0;
   min-height: 0;
@@ -33,7 +35,7 @@
 
 window#waybar {
   background-color: @bg;
-  border-bottom: 2px solid @white;
+  border-bottom: 2px solid @magenta;
   /* border-bottom: 2px solid #ff5D62; */
   /* box-shadow: -4px 2px 2px #15161E; */
 }
@@ -52,7 +54,7 @@ window#waybar {
 #custom-left-cap,
 #custom-right-cap {
   background-color: rgba(0, 0, 0, 0);
-  color: @white;
+  color: @green;
 }
 
 #custom-right-cap,
@@ -62,47 +64,76 @@ window#waybar {
 }
 
 #clock {
-  font-family: "Fixedsys Excelsior";
-  font-size: 11px;
+  /* font-family: "ProggyCleanSZ Nerd Font"; */
+  font-family: "ShureTechMono Nerd Font";
+  font-size: 12px;
   /* font-weight: bold; */
-  color: @primary;
+  color: @green;
 }
 
 #tags button {
-  color: @primary;
-  box-shadow: inset 0px -3px 2px -2px @blue;
+  color: @green;
+  box-shadow: inset 0px -3px 2px -2px @white;
   margin: 0px 1px 1px 1px;
   padding: 2px 10px 2px 10px;
+  border: 1px solid @green;
+  transition:
+    box-shadow 0.4s,
+    color 0.8s,
+    border 1s;
 }
 
 #tags button.occupied {
-  color: @blue;
-  box-shadow: inset 0px -3px 2px -1px @blue;
+  color: @green;
+  box-shadow: inset 0px -3px 2px -1px @green;
+  border: 1px solid @green;
+  transition:
+    box-shadow 0.4s,
+    color 0.8s,
+    border 1s;
 }
 
 #tags button.focused {
-  color: @white;
+  color: @green;
   box-shadow: inset 0px -18px 12px -12px @primary;
-  transition: box-shadow 0.4s, color 0.8s, border 1s;
+  border: 1px solid @green;
+  transition:
+    box-shadow 0.4s,
+    color 0.8s,
+    border 1s;
 }
 
-/* #workspaces button { */
-/*   margin: 0px 1px 1px 1px; */
-/*   padding: 2px 10px 2px 10px; */
-/*   color: @primary; */
-/*   box-shadow: inset 0px -3px 2px -1px @blue; */
-/* } */
-/**/
-/* #workspaces button.hidden { */
-/*   color: @white; */
-/*   box-shadow: inset 0px -3px 2px -2px @blue; */
-/* } */
-/**/
-/* #workspaces button.active { */
-/*   color: @yellow; */
-/*   box-shadow: inset 0px -18px 12px -12px @yellow; */
-/*   transition: box-shadow 0.4s, color 0.8s, border 1s; */
-/* } */
+#workspaces button {
+  color: @cyan;
+  box-shadow: inset 0px 0px 5px -3px @blue;
+  margin: 0px 1px 1px 1px;
+  padding: 2px 10px 2px 10px;
+  border: 1px solid @blue;
+  transition:
+    box-shadow 0.4s,
+    color 0.8s,
+    border 1s;
+}
+
+#workspaces button.hidden {
+  color: @cyan;
+  box-shadow: inset 0px -3px 2px -1px @primary;
+  border: 1px solid @cyan;
+  transition:
+    box-shadow 0.4s,
+    color 0.8s,
+    border 1s;
+}
+
+#workspaces button.active {
+  color: @green;
+  box-shadow: inset 0px 0px 4px 1px @blue;
+  border: 1px solid @cyan;
+  transition:
+    box-shadow 0.4s,
+    color 0.8s,
+    border 1s;
+}
 
 #bluetooth,
 #battery,
@@ -116,6 +147,7 @@ window#waybar {
 }
 
 #bluetooth,
+#custom-notification,
 #tray,
 #custom-ncspot {
   color: @blue;
@@ -211,7 +243,9 @@ window#waybar {
 }
 
 #custom-power {
-  background-color: @bg;
-  color: @gray;
-  border: 3px solid @primary;
+  background-color: @red;
+  font-size: 14px;
+  padding: 0 2px 0 0;
+  color: @bg;
+  border: 2px solid @bg;
 }

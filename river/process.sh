@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-gsettings set org.gnome.desktop.interface gtk-theme Dracula-slim
+gsettings set org.gnome.desktop.interface gtk-theme 
 gsettings set org.gnome.desktop.interface icon-theme 'kora-light'
 gsettings set org.gnome.desktop.interface cursor-theme "Bibata-Modern-Ice"
 gsettings set org.gnome.desktop.interface cursor-size 22

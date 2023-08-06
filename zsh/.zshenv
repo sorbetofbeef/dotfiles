@@ -12,24 +12,14 @@ export VISUAL='/usr/local/bin/nvim'
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
-export XDG_CURRENT_DESKTOP="GNOME3"
-
-# export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
-# export DISPLAY=:0.0
 
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
 export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 export GOPATH="$XDG_DATA_HOME/go"
-
 # export RUSTC_WRAPPER="$CARGO_HOME/bin/sccache"
 
 export RANGER_LOAD_DEFAULT_RC=false
-# export BAT_THEME='TwoDark'
-# export BAT_THEME="$BAT_THEME_DARK"
-# export BAT_THEME='Coldark-Dark'
 
-# export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/opt/homebrew/share/zsh-syntax-highlighting/highlighters
-# export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/opt/local/share/zsh-syntax-highlighting/highlighters
 export NEOVIDE_MULTIGRID=true
 export NEOVIDE_FRAMELESS=true
 export FZF_DEFAULT_COMMAND='rg --files --smart-case'
@@ -43,19 +33,19 @@ export YT_API_KEY='AIzaSyDIIu9Bx5jwTDfkmRURZ95yC2FdmEcrQpo'
 
 # lf icons
 source ~/.config/lf/icons
-# for file in "$HOME"/.config/environment.d/*.sh; do
-#   source $file
-# done
 
 export GDK_BACKEND="wayland"
 export GTK_CSD="1"
 export MOZ_ENABLE_WAYLAND="1"
 export MOZ_USE_XINPUT2="1"
+
 # qt
 export QT_QPA_PLATFORMTHEME="qt5ct"
-export QT_QPA_PLATFORM="wayland-egl"
+export QT_QPA_PLATFORM="wayland"
 export QT_WAYLAND_DISABLE_WINDOWDECORATION="0"
+
 export JETBRAINS_TOOLBOX_NO_SOFTWARE_OPEN_GL=true
+export ELECTRON_FLAGS="--enable-features=WaylandWindowDecorations --ozone-platform-hint=auto"
 
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 export GPG_TTY=$(tty)

@@ -8,6 +8,7 @@ _common_aliases ()
     htop='TERM=xterm-256color sudo htop' \
     q='exit' \
     c='clear' \
+    dmesg='sudo dmesg --color=always | bat --paging always' \
     e="$EDITOR"\
     f="lfcd" \
     s="kitty +kitten ssh" \

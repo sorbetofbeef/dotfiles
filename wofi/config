@@ -1,7 +1,11 @@
 allow_images=true
 term=kitty
-width=15%
+width=18%
+style=style.css
 lines=9
 always_parse_args=true
 insensitive=true
-location=center
+location=top_right
+xoffset=-10
+yoffset=10
+monitor=eDP-1

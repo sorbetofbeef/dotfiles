@@ -1,0 +1,3 @@
+[credentials]
+username_cmd = "gopass show --noparsing websites/accounts.spotify.com/q26el34rgdc638l3ps3dih7f2 | rg username: | sed -e 's/username: //'"
+password_cmd = "gopass show --noparsing websites/accounts.spotify.com/q26el34rgdc638l3ps3dih7f2 | grep -v ':'"

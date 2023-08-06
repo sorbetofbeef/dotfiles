@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+psearch ()
+{
+  pkg=("$@")
+  paru -Ss --color=always "${pkg[@]}" | bat --color=always --paging=always
+}

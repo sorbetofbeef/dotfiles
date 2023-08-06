@@ -106,10 +106,9 @@ riverctl default-layout stacktile
 
 
 hash dbus-update-activation-environment 2>/dev/null &&
-  dbus-update-activation-environment DISPLAY WAYLAND_DISPLAY DBUS_SESSION_BUS_ADDRESS XDG_CURRENT_DESKTOP
-gentoo-pipewire-launcher &
-mako &
-waybar &
-/usr/libexec/polkit-gnome-authentication-agent-1 &
+  dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY DBUS_SESSION_BUS_ADDRESS XDG_CURRENT_DESKTOP
+# pipewire &
+# pipewire-pulse &
+# /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 wl-paste -t text --watch clipman store & disown
 /home/me/.config/river/process.sh &

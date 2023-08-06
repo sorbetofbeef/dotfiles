@@ -1,13 +1,18 @@
 #!/bin/bash
 
+# alias \
+#   padd='sudo port install -c' \
+#   pset='sudo port select --set' \
+#   psel='sudo port select --summary' \
+#   pinfo='sudo port info' \
+#   psearch='sudo port search' \
+#   pvars='sudo port variants' \
+#   prm='sudo port uninstall -Ruc'
+
+
 alias \
-  padd='sudo port install -c' \
-  pset='sudo port select --set' \
-  psel='sudo port select --summary' \
-  pinfo='sudo port info' \
-  psearch='sudo port search' \
-  pvars='sudo port variants' \
-  prm='sudo port uninstall -Ruc'
+  padd='paru -S ' \
+  prm='paru -Rcnsuv '
 
 alias \
   badd='brew install' \

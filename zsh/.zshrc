@@ -34,9 +34,6 @@ zstyle ':completion:*' matcher-list '' \
   'r:|?=** m:{a-z\-}={A-Z\_}'
 zmodload zsh/complist
 
-# if type brew &>/dev/null; then
-# 	fpath=($(brew --prefix)/share/zsh-completions $fpath)
-# fi
 fpath=($ZDOTDIR/functions $ZDOTDIR/site_functions $fpath)
 autoload -Uz promptinit; autoload -Uz compinit
 
@@ -47,45 +44,9 @@ done
 
 promptinit; compinit -i; aliasinit
 
-# source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-# source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-# source /opt/local/share/zsh/zsh-autopair/autopair.zsh
-
-# if [[ -n $KITTY_INSTALLATION_DIR ]]; then
-#   export KITTY_SHELL_INTEGRATION="enabled"
-#   autoload -Uz -- "$KITTY_INSTALLATION_DIR"/shell-integration/zsh/kitty-integration
-#   kitty-integration
-#   unfunction kitty-integration
-# fi
-
-# bindkey -s '^o' 'lfcd\n'  # zsh
-
-# source /opt/homebrew/Cellar/nvm/0.39.1_1/libexec/nvm.sh
-# source /Users/me/.config/broot/launcher/bash/br
-
-# source /Users/me/.config/zsh/themes/poimandres/None.sh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-autopair/autopair.zsh
 
 source /usr/share/fzf/key-bindings.zsh
 source <(starship init --print-full-init zsh)
-
-# pfetch
-# heading
-# /Users/me/.local/bin/dark_mode 
-
-# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-# __conda_setup="$('/Users/me/.local/src/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-# if [ $? -eq 0 ]; then
-#     eval "$__conda_setup"
-# else
-#     if [ -f "/Users/me/.local/src/anaconda3/etc/profile.d/conda.sh" ]; then
-#         . "/Users/me/.local/src/anaconda3/etc/profile.d/conda.sh"
-#     else
-#         export PATH="/Users/me/.local/src/anaconda3/bin:$PATH"
-#     fi
-# fi
-# unset __conda_setup
-# <<< conda initialize <<<
-
